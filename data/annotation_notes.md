@@ -10,7 +10,7 @@
 - **Units:** `VDD` and `VDDIO` mean multiples of the reference voltage, not fixed voltages.
 - **Review status:** The user checked all 220 objects against their passages. The corrections below were applied afterward and need final confirmation; passage consistency does not independently establish PDF accuracy.
 - **Dataset:** 220 examples; 177 positive and 43 negative (19.5%).
-- **Splits:** Preserve the pilot assignments; apply GroupShuffleSplit twice to the new families with seed 42. Training: 135 examples / 7 families. Validation: 40 / 2. Test: 45 / 3. Assignments and indices are in `data/splits/manifest.json`.
+- **Splits:** Preserve the pilot assignments; apply GroupShuffleSplit twice to the new families with seed 42. Training: 135 examples / 7 families. Validation: 40 / 2. Test: 45 / 3. The notebook records the split policy, seed and family assignments.
 - **Test families:** BME280, FDC1004, SHT31. Keep them fixed and exclude them from model and hyperparameter selection.
 - **New sources:** Official manufacturer PDFs. URLs, revisions, hashes, physical PDF pages, and one-based entry references are in `data/source_references.json`.
 - **New prose:** Selected prose was shortened or paraphrased; table facts were normalized into column labels. Labels were authored by the assistant, without regex or an external labeling API.
