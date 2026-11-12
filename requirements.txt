@@ -1,0 +1,5 @@
+# PyMuPDF 2.1 includes the PyMuPDF4LLM / layout dependencies and to_chunks API.
+pymupdf==2.1
+
+# Reproducible device-family splitting in the extraction notebook.
+scikit-learn==1.6.1

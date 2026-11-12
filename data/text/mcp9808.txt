@@ -1,0 +1,2480 @@
+--- PDF page 1 ---
+             MCP9808
+
+  ±0.5°C Maximum Accuracy Digital Temperature Sensor
+
+
+Features                                   General Description
+
+• Accuracy:                                                  Microchip Technology Inc.’s MCP9808 digital temperature
+   - ±0.25 (typical) from –40°C to +125°C                    sensor  converts  temperatures between –20°C and
+                                                   +100°C to a  digital word with ±0.25°C/±0.5°C  (typi-   - ±0.5°C (maximum) from –20°C to 100°C
+                                                        cal/maximum) accuracy.
+   - ±1°C (maximum) from –40°C to +125°C
+                                                 The MCP9808 comes with user-programmable registers   - ±0.0625°C or ±1 LSb (typical) repeatability
+                                                                    that  provide   flexibility   for  temperature  sensing
+• User-Selectable Measurement Resolution:                                                                   applications.  The   registers  allow  user-selectable
+   - +0.5°C, +0.25°C, +0.125°C, +0.0625°C                                                                  settings such as Shutdown or Low-Power modes and
+• User-Programmable Temperature Limits:                    the specification of temperature Alert window limits and
+   - Temperature Window Limit                                         critical output limits. When the temperature changes
+   -  Critical Temperature Limit                           beyond the specified boundary limits, the MCP9808
+                                                             outputs an Alert signal. The user has the option of setting• User-Programmable Temperature Alert Output
+                                                             the Alert output signal polarity as an active-low or active-
+• Operating Voltage Range: 2.7V-5.5V                                                            high comparator output for thermostat operation, or as a
+• Operating Current: 200 μA (typical)                        temperature Alert interrupt output for microprocessor-
+• Shutdown Current: 0.1 μA (typical)                      based systems. The Alert output can also be configured
+• 2-wire Interface: I2C/SMBus Compatible                  as a critical temperature output only.
+• Available Packages: 2x3 DFN-8, MSOP-8                  This sensor has an industry standard 400 kHz, 2-wire,
+                                                   SMBus/I2C compatible serial interface, allowing up to
+Typical Applications                                     eight or sixteen sensors to be controlled with a single
+                                                                      serial bus (see Table 3-2 for available Address codes).
+• General Purpose                                   These  features  make  the  MCP9808  ideal   for
+•  Industrial Applications                                        sophisticated,   multi-zone,   temperature-monitoring
+•  Industrial Freezers and Refrigerators                         applications.
+• Food Processing
+                                        Package Types• Personal Computers and Servers
+• PC Peripherals
+                                                               8-Pin 2x3 DFN*           8-Pin MSOP• Consumer Electronics
+• Handheld/Portable Devices                           SDA 1         8 VDD   SDA 1        8 VDD
+                                                   SCL 2   EP   7 A0     SCL 2        7 A0
+Temperature Accuracy                                             Alert 3    9    6 A1       Alert 3        6 A1
+                                             GND 4         5 A2    GND 4        5 A2
+   40%
+            TA = -20°C, 25°C, 85°C, 100°C
+            VDD = 3.3V                                                              * Includes Exposed Thermal Pad (EP); see Table 3-1.
+            854 units
+   30%
+
+
+
+   20%    Occurrences
+   10%
+
+
+
+   0%
+                   -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5
+                  Temperature Accuracy (°C)
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                      DS20005095B-page 1
+
+--- PDF page 2 ---
+MCP9808
+
+
+Functional Block Diagram
+
+
+
+
+
+                                          Hysteresis
+
+                                    Shutdown
+
+                                                    Critical Trip Lock
+
+                                         Alarm Window Lock
+
+                                         Clear Alert
+
+                                                Alert Status
+
+                                        Output Control
+
+                                                   Critical Alert only
+                                                              Band Gap
+                                                Alert Polarity                                                                     Temperature
+                                                Alert Comp./Int.                   Sensor
+
+                                       Configuration
+
+                                   Temperature
+                                                             ADC
+                               TUPPER Limit
+                              TLOWER Limit
+                                                                       +0.5°C
+                                     TCRITICAL Limit                                                                      +0.25°C
+                                    Manufacturer ID                      +0.125°C
+                                                                    +0.0625°C
+                                   Device ID/Rev
+
+                                     Resolution
+
+
+
+
+
+                            Register
+                              Pointer
+
+
+
+                                              SMBus/Standard I2C
+                                                                Interface
+
+
+
+              A0   A1   A2         Alert     SDA      SCL        VDD  GND
+
+
+
+
+
+DS20005095B-page 2                                        2011-2018 Microchip Technology Inc.
+
+--- PDF page 3 ---
+                           MCP9808
+
+
+1.0   ELECTRICAL                                †Notice: Stresses above those listed under “Maximum
+     CHARACTERISTICS                           ratings” may cause permanent damage to the device.
+                                                           This is a stress rating only and functional operation of
+                                                             the device at those or any other conditions above those
+Absolute Maximum Ratings †                         indicated in the operational listings of this specification
+                                                                              is not implied. Exposure to maximum rating conditionsVDD.................................................................................. 6.0V
+                                                                        for extended periods may affect device reliability.
+Voltage at All Input/Output Pins .............. GND – 0.3V to 6.0V
+Storage Temperature ...................................–65°C to +150°C
+Ambient Temperature with Power Applied....–40°C to +125°C
+Junction Temperature (TJ)...........................................+150°C
+ESD Protection on All Pins (HBM:MM) ................ (4 kV:400V)
+Latch-up Current at Each Pin (+25°C) ..................... ±200 mA
+
+TEMPERATURE SENSOR DC CHARACTERISTICS
+ Electrical Specifications: Unless otherwise indicated, VDD = 2.7V to 5.5V, GND = Ground and
+ TA = –40°C to +125 °C.
+       Parameters         Sym.    Min.    Typ.    Max.   Unit               Conditions
+
+ Temperature Sensor Accuracy
+ –20°C < TA  +100 °C         TACY     –0.5   ±0.25    +0.5    °C  VDD = 3.3V (Note 1)
+ –40°C < TA  +125 °C                   –1.0   ±0.25    +1.0    °C
+ Accuracy Drift                TDRIFT  —    +0.05  —     °C  VDD = 3.3V (Note 2)
+ Accuracy Repeatability       TREPEAT  —   ±0.0625  —     °C   48 hours at +55°C, VDD = 3.3V
+ Temperature Conversion Time
+ 0.5°C/bit                    tCONV   —     30   —    ms   33s/sec (typical)
+ 0.25°C/bit               —     65   —    ms   15s/sec (typical)
+ 0.125°C/bit              —    130   —    ms   7s/sec (typical)
+ 0.0625°C/bit              —    250   —    ms   4s/sec (typical)
+ Power Supply
+ Operating Voltage Range      VDD      2.7   —      5.5    V
+ Operating Current              IDD   —    200    400   μA
+ Shutdown Current            ISHDN   —     0.1      2    μA
+ Power-on Reset (POR)       VPOR   —     2.2   —    V   Threshold for falling VDD
+ Power Supply Rejection     °C/VDD  —     –0.1   —    °C/V  VDD = 2.7V to 5.5V, TA = +25°C
+ Alert Output (open-drain output, external pull-up resistor required), see Section 5.2.3, Alert Output Configuration
+ High-Level Current (leakage)     IOH   —   —      1    μA  VOH = VDD (Active-Low, Pull-up Resistor)
+ Low-Level Voltage           VOL   —   —      0.4    V   IOL= 3 mA (Active-Low, Pull-up Resistor)
+ Thermal Response, from +25°C (air) to +125°C (oil bath)
+ 8L-DFN                       tRES   —     0.7   —      s   Time to 63% (+89°C)
+ 8L-MSOP               —     1.4   —      s
+  Note 1:  Accuracy specification includes life time drift.
+         2:  Using Accelerated Life Cycle, equivalent of 12 years of operation at +55°C.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                      DS20005095B-page 3
+
+--- PDF page 4 ---
+MCP9808
+
+
+DIGITAL INPUT/OUTPUT PIN CHARACTERISTICS
+ Electrical Specifications: Unless otherwise indicated, VDD = 2.7V to 5.5V, GND = Ground and
+ TA = –40°C to +125 °C.
+           Parameters          Sym      Min       Typ     Max    Units      Conditions
+
+ Serial Input/Output (SCL, SDA, A0, A1, A2)
+ Input
+     High-Level Voltage                 VIH      0.7 VDD   —      VDD    V
+     Low-Level Voltage                    VIL     GND    —       0.3 VDD   V
+     Input Current                               IIN    —     —        ±5     μA
+ Output (SDA)
+     Low-Level Voltage               VOL    —     —         0.4     V    IOL= 3 mA
+     High-Level Current (leakage)        IOH    —     —        1     μA   VOH = 5.5V
+     Low-Level Current                   IOL        6     —    —    mA   VOL = 0.6V
+SDA and SCL Inputs
+ Hysteresis                        VHYST   —       0.05 VDD   —     V
+ Spike Suppression                        tSP    —     —        50      ns
+ Capacitance                          CIN    —         5     —     pF
+
+GRAPHICAL SYMBOL DESCRIPTION
+
+                                                             OUTPUT
+                          INPUT                    VDD    Voltage                                        Voltage          VDD
+                  V IH
+                                                VIL              VOL
+
+
+                                                                     IOL
+
+   Current                                        Current
+                  IIN
+                                                               IOH
+                     time                                             time
+
+TEMPERATURE CHARACTERISTICS
+ Electrical Specifications: Unless otherwise indicated, VDD = 2.7V to 5.5V and GND = Ground.
+             Parameters            Sym    Min    Typ    Max     Units       Conditions
+
+ Temperature Ranges
+ Specified Temperature Range               TA      –40   —    +125     °C    (Note 1)
+ Operating Temperature Range              TA      –40   —    +125     °C
+ Storage Temperature Range                TA       -65   —    +150     °C
+ Thermal Package Resistances
+ Thermal Resistance, 8L-DFN                 JA   —     68   —     °C/W
+ Thermal Resistance, 8L-MSOP               JA   —     211   —     °C/W
+ Note 1:  Operation in this range must not cause TJ to exceed Maximum Junction Temperature (+150°C).
+
+
+
+
+
+DS20005095B-page 4                                        2011-2018 Microchip Technology Inc.
+
+--- PDF page 5 ---
+                          MCP9808
+
+
+SENSOR SERIAL INTERFACE TIMING SPECIFICATIONS
+ Electrical Specifications: Unless otherwise indicated, VDD = 2.7V to 5.5V, TA = -40°C to +125°C, GND = Ground
+ and CL = 80 pF. (Note 1)
+           Parameters             Sym         Min       Max        Units      Conditions
+ 2-Wire SMBus/I2C Interface (Note 1)
+ Serial Port Clock Frequency                  fSC           0         400       kHz     (Note 2, 4)
+ Low Clock                              tLOW        1300    —         ns     (Note 2)
+ High Clock                                  tHIGH         600     —         ns     (Note 2)
+ Rise Time                                      tR           20        300         ns
+ Fall Time                                            tF           20        300         ns
+ Data in Setup Time                            tSU-DI         100     —         ns     (Note 3)
+ Data In Hold Time                             tHD-DI          0     —         ns     (Note 5)
+ Data Out Hold Time                       tHD-DO        200        900         ns     (Note 4)
+ Start Condition Setup Time               tSU-START       600     —         ns
+ Start Condition Hold Time                tHD-START       600     —         ns
+ Stop Condition Setup Time                tSU-STOP       600     —         ns
+ Bus Free                                  tB-FREE       1300    —         ns
+ Time-out                                 tOUT          25         35       ms
+ Bus Capacitive Load                    Cb      —         400           pf
+ Note 1:   All values referred to VIL MAX and VIH MIN levels.
+       2:    If tLOW > tOUT or tHIGH > tOUT, the temperature sensor I2C interface will time-out. A Repeat Start command
+              is required for communication.
+       3:  This device can be used in a Standard mode I2C bus system, but the requirement, tSU-DI ≥ 100 ns, must
+         be met. This device does not stretch the SCL Low time.
+       4:  As a transmitter, the device provides internal minimum delay time, tHD-DO MIN, to bridge the undefined
+           region (min. 200 ns) of the falling edge of SCL, tF MAX, to avoid unintended generation of Start or Stop
+            conditions.
+       5:  As a receiver, SDA should not be sampled at the falling edge of SCL. SDA can transition tHD-DI after SCL
+           toggles Low.
+
+TIMING DIAGRAM
+
+                tHD-START                                                                                                   tB-FREE
+       tSU-START                                                    tHIGH   tLOW            tSU-STOP
+
+  SCL
+
+
+
+ SDA
+
+
+                            tOUT
+                                                                                             tR, tF
+                                                    tSU-DI     tHD-DI/tHD-DO
+
+     START Condition                          Data Transmission              STOP Condition
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                      DS20005095B-page 5
+
+--- PDF page 6 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 6                                        2011-2018 Microchip Technology Inc.
+
+--- PDF page 7 ---
+                           MCP9808
+
+
+2.0   TYPICAL PERFORMANCE CURVES
+
+  Note:   The graphs and tables provided following this note are a statistical summary based on a limited number of
+          samples and are provided for informational purposes only. The performance characteristics listed herein
+           are not tested or guaranteed. In some graphs or tables, the data presented may be outside the specified
+           operating range (e.g., outside specified power supply range) and therefore outside the warranted range.
+
+Note: Unless otherwise indicated, VDD = 2.7V to 5.5V, GND = Ground, SDA/SCL pulled-up to VDD and
+TA = –40°C to +125 °C.
+
+
+       1.0                                               40%
+                     VDD = 3.3V                                                          TA = -20°C, 25°C, 85°C, 100°C
+                     854 units at -20°C, 25°C, 85°C, 100°C                                    VDD = 3.3V    (°C)
+                     240 units at -40°C, 125°C                                             854 units
+        Accuracy  0.50.0                                               30%20%                                                                                                                                                                                                                                                                                                                                                                                            Occurrences
+      -0.5                                               10%
+                      +Std. Dev.
+                                  +3 * Std. Dev.
+                     Average
+                                            -3 * Std. Dev.           Temperature                   -Std. Dev.
+      -1.0                                            0%
+         -40   -20   0   20   40   60   80  100  120                                           -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5
+                             TA (°C)                                                Temperature Accuracy (°C)
+FIGURE 2-1:      Temperature Accuracy.          FIGURE 2-4:      Temperature Accuracy
+                                                    Histogram.
+
+
+    40%                                                40%
+             TA = -20°C                                                                   TA = 85°C
+              VDD = 3.3V                                                                    VDD = 3.3V
+             827 units                                                                    859 units
+    30%                                                30%
+
+
+    20%                                                20%          Occurrences                                                                                                                                                                                                                                                                                                                                                                            Occurrences
+    10%                                                10%
+
+
+    0%                                                   0%
+                      -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5                                                                                                                                                              -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5
+                   Temperature Accuracy (°C)                                                                                  Temperature Accuracy (°C)
+FIGURE 2-2:      Temperature Accuracy          FIGURE 2-5:      Temperature Accuracy
+Histogram, TA = –20°C.                               Histogram, TA = +85°C.
+
+
+    40%                                               40%
+              TA = 25°C                                                                  TA = 100°C
+              VDD = 3.3V                                                                   VDD = 3.3V
+              875 units                                                                  856 units
+    30%                                               30%
+
+
+    20%                                               20%             Occurrences                                                                                                                                                                                                                                                                                                                                                                   Occurrences
+    10%                                                      10%
+
+
+    0%
+                                                  0%
+                       -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5
+                    Temperature Accuracy (°C)                                                                 -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5
+                                                                                 Temperature Accuracy (°C)
+FIGURE 2-3:      Temperature Accuracy          FIGURE 2-6:      Temperature Accuracy
+Histogram, TA = +25°C.                               Histogram, TA = +100°C.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                      DS20005095B-page 7
+
+--- PDF page 8 ---
+MCP9808
+
+
+Note: Unless otherwise indicated, VDD = 2.7V to 5.5V, GND = Ground, SDA/SCL pulled-up to VDD and
+TA = -40°C to +125 °C.
+
+
+   40%                                                40%
+             TA = -40°C                                                                   TA = 125°C
+             VDD = 3.3V                                                                    VDD = 3.3V
+             240 units                                                                    240 units
+   30%                                                30%
+
+
+   20%                                                20%        Occurrences                                                                                                                                                                                                                                                                                                                                                                             Occurrences
+   10%                                                10%
+
+
+    0%                                             0%
+                     -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5                                           -0.5     -0.4     -0.3     -0.2     -0.1    0.0    0.1    0.2    0.3    0.4    0.5
+                   Temperature Accuracy (°C)                                       Temperature Accuracy (°C)
+FIGURE 2-7:      Temperature Accuracy          FIGURE 2-10:     Temperature Accuracy
+Histogram, TA = –40°C.                               Histogram, TA = +125°C.
+
+
+
+
+
+FIGURE 2-8:      Supply Current vs.             FIGURE 2-11:     Temperature Accuracy vs.
+Temperature.                                      Supply Voltage.
+
+
+
+
+
+FIGURE 2-9:      Power-on Reset Threshold       FIGURE 2-12:     Temperature Conversion
+Voltage vs. Temperature.                          Time vs. Temperature.
+
+
+
+
+
+DS20005095B-page 8                                        2011-2018 Microchip Technology Inc.
+
+--- PDF page 9 ---
+                           MCP9808
+
+
+Note: Unless otherwise indicated, VDD = 2.7V to 5.5V, GND = Ground, SDA/SCL pulled-up to VDD and
+TA = -40°C to +125 °C.
+
+
+
+
+
+FIGURE 2-13:    SDA and Alert Output VOL       FIGURE 2-16:    SMBus Time-out vs.
+vs. Temperature.                                    Temperature.
+
+
+
+
+
+FIGURE 2-14:    SDA IOL vs. Temperature.        FIGURE 2-17:     Shutdown Current vs.
+                                                   Temperature.
+
+
+
+
+
+FIGURE 2-15:     Package Thermal             FIGURE 2-18:     Power Supply Rejection vs.
+Response.                                         Frequency.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                      DS20005095B-page 9
+
+--- PDF page 10 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 10                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 11 ---
+                           MCP9808
+
+
+3.0   PIN DESCRIPTION
+
+The descriptions of the pins are listed in Table 3-1.
+
+TABLE 3-1:   PIN FUNCTION TABLE
+
+   DFN      MSOP        Symbol                            Pin Function
+
+      1           1          SDA         Serial Data Line
+      2           2          SCL         Serial Clock Line
+      3           3                Alert        Temperature Alert Output
+      4           4         GND       Ground
+      5           5           A2         Slave Address
+      6           6           A1         Slave Address
+      7           7           A0         Slave Address
+      8           8           VDD       Power Pin
+      9      —          EP       Exposed Thermal Pad (EP); must be connected to GND
+
+3.1    Serial Data Line (SDA)                    3.5   Address Pins (A0, A1, A2)
+
+SDA is a bidirectional input/output pin, used to serially       These pins are device address input pins.
+transmit data to/from the host  controller. This pin                                                 The address pins correspond to the Least Significant
+requires a pull-up resistor. (See Section 4.0 “Serial                                                                        bits (LSbs) of the address bits and the Most Significant
+Communication”.)                                                                        bits (MSbs): A6, A5, A4, A3. This  is  illustrated  in
+                                                           Table 3-2.
+3.2    Serial Clock Line (SCL)
+                                       TABLE 3-2:   MCP9808 ADDRESS BYTE
+The SCL is a clock input pin. All communication and
+                                                        Device      Address Code       Slavetiming is relative to the signal on this pin. The clock is
+                                                                                 Addressgenerated by the host or master controller on the bus.
+(See Section 4.0 “Serial Communication”.)                        A6  A5  A4  A3  A2  A1  A0
+                                             MCP9808      0   0   1   1   x(1)  x   x
+3.3   Temperature Alert, Open-Drain            MCP9808(2)    1   0   0   1   x   x   x
+      Output (Alert)                                                   Note 1:  User-selectable address is shown by ‘x’.
+The MCP9808 temperature  Alert  output  pin  is an                  A2, A1 and A0 must match the
+open-drain output. The device outputs a signal when the                   corresponding device pin configuration.
+ambient temperature goes beyond the user-programmed                2:  Contact factory for this address code.
+temperature  limit. (See Section 5.2.3 “Alert Output
+Configuration”).                                    3.6   Power Pin (VDD)
+                                              VDD is the power pin. The operating voltage range, as3.4   Ground Pin (GND)                                                                specified in the DC electrical specification table,  is
+The GND pin is the system ground pin.                       applied on this pin.
+
+                                                 3.7   Exposed Thermal Pad (EP)
+
+                                                      There is an internal electrical connection between the
+                                                  Exposed Thermal Pad (EP) and the GND pin. The EP
+                                            may be connected to the system ground on the Printed
+                                                                     Circuit Board (PCB).
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 11
+
+--- PDF page 12 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 12                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 13 ---
+                           MCP9808
+
+
+4.0   SERIAL COMMUNICATION              4.1.1    DATA TRANSFER
+                                                     Data  transfers  are  initiated by a  Start  condition
+4.1    2-Wire Standard Mode I2C                 (START), followed by a 7-bit device address and a
+      Protocol Compatible Interface               read/write bit. An Acknowledge (ACK) from the slave
+                                                           confirms the reception of each byte. Each access must
+The MCP9808  Serial Clock (SCL)  input and  the       be terminated by a Stop condition (STOP).
+bidirectional Serial Data (SDA)  line form a 2-wire
+                                                    Repeated communication is initiated after tB-FREE.bidirectional,   Standard  mode,   I2C   compatible
+communication port (refer to the Digital Input/Output        This  device does  not  support  sequential  register
+Pin Characteristics and Sensor Serial Interface         read/write. Each register needs to be addressed using
+Timing Specifications tables).                              the Register Pointer.
+The following bus protocol has been defined:                 This device supports the receive protocol. The register
+                                                    can be specified using the pointer for the initial read.
+TABLE 4-1:   MCP9808 SERIAL BUS              Each repeated read or receive begins with a Start
+          PROTOCOL DESCRIPTIONS           condition and address byte. The MCP9808 retains the
+                                                              previously selected register. Therefore, it outputs data   Term                Description
+                                                        from the previously specified register (repeated pointer
+ Master     The device that controls the serial bus,           specification is not necessary).
+                typically a microcontroller.
+                                                         4.1.2    MASTER/SLAVE Slave      The device addressed by the master,
+            such as the MCP9808.                    The bus is controlled by a master device (typically a
+ Transmitter  Device sending data to the bus.                  microcontroller)  that  controls the bus access and
+                                                         generates the Start and Stop conditions. The MCP9808 Receiver    Device receiving data from the bus.
+                                                                              is a slave device and does not control other devices in
+ START    A unique signal from the master to              the bus. Both master and slave devices can operate as
+                 initiate serial interface with a slave.               either transmitter or receiver. However, the master
+ STOP     A unique signal from the master to              device determines which mode is activated.
+              terminate serial interface from a slave.
+                                                         4.1.3    START/STOP CONDITION Read/Write A read or write to the MCP9808
+               registers.                          A high-to-low transition of the SDA line (while SCL is
+                                                               high) is the Start condition. All data transfers must beACK      A receiver Acknowledges (ACK) the
+                                                      preceded by a Start condition from the master. A              reception of each byte by polling the bus.
+                                                               low-to-high transition of the SDA line (while SCL is
+ NAK      A receiver Not-Acknowledges (NAK) or                                                               high) signifies a Stop condition.
+             releases the bus to show End-of-Data
+            (EOD).                                                                   If a Start or Stop condition is introduced during data
+                                                              transmission, the MCP9808 releases the bus. All data Busy       Communication is not possible
+                                                                 transfers are ended by a Stop condition from the            because the bus is in use.
+                                                            master.
+ Not Busy   The bus is in the Idle state; both SDA
+           and SCL remain high.
+ Data Valid  SDA must remain stable before SCL
+           becomes high in order for a data bit to
+           be considered valid. During normal
+             data transfers, SDA only changes state
+              while SCL is low.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 13
+
+--- PDF page 14 ---
+MCP9808
+
+
+4.1.4    ADDRESS BYTE                             4.1.5    DATA VALID
+
+Following the Start condition, the host must transmit an         After the  Start  condition, each  bit  of data  in the
+8-bit address byte to the MCP9808. The address for the         transmission needs to be settled for a time specified by
+MCP9808 temperature sensor is ‘0011,A2,A1,A0’ in         tSU-DATA before SCL toggles from low-to-high (see the
+binary, where the A2, A1 and A0 bits are set externally        Sensor Serial Interface Timing Specifications section).
+by connecting the corresponding pins to VDD ‘1’ or GND
+‘0’. The 7-bit address, transmitted in the serial bit stream,        4.1.6   ACKNOWLEDGE (ACK/NAK)
+must match the selected address for the MCP9808 to                                                 Each  receiving  device,  when  addressed,  must
+respond with an ACK. Bit 8 in the address byte is a                                                         generate an ACK bit after the reception of each byte.
+read/write bit. Setting this bit to ‘1’ commands a read       The master device must generate an extra clock pulse
+operation, while ‘0’ commands a write operation (see          for ACK to be recognized.
+Figure 4-1).
+                                                 The Acknowledging device pulls down the SDA line for
+                                                             tSU-DATA before the low-to-high transition of SCL from
+                      Address Byte                           the master. SDA also needs to remain pulled down for
+                                                               tH-DATA after a high-to-low transition of SCL.
+  SCL         1  2  3  4  5  6  7  8  9                   During read, the master must signal an End-of-Data
+                                                 (EOD) to the slave, by not generating an ACK  bit
+                                                        (NAK), once the last bit has been clocked out of the                                                                               ACK SDA         0  0  1  1 A2 A1 A0                                                                slave. In this case, the slave will leave the data line
+          Start                                               released to enable the master to generate the Stop
+                             Slave                Address                             R/W                       condition.               Code     Address
+
+                          MCP9808 Response           4.1.7    TIME-OUT
+ See Table 3-2.                                                                             If the SCL stays low or high for the time specified by
+                                                                  tOUT, the MCP9808 temperature sensor resets the
+FIGURE 4-1:      Device Addressing.                     serial interface. This dictates the minimum clock speed
+                                                     as outlined in the specification.
+
+
+
+
+
+DS20005095B-page 14                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 15 ---
+                           MCP9808
+
+
+5.0  FUNCTIONAL DESCRIPTION
+
+The MCP9808 temperature sensors consist of a band-
+gap-type temperature sensor, a Delta-Sigma Analog-to-
+Digital  Converter  (ADC),  user-programmable
+registers and a 2-wire SMBus/I2C protocol compatible
+serial interface. Figure 5-1 shows a block diagram of
+the register structure.
+
+
+
+
+
+                                          Hysteresis
+
+                                    Shutdown
+
+                                                    Critical Trip Lock
+
+                                      Alarm Win. Lock
+
+                                         Clear Alert
+
+                                                Alert Status
+
+                                        Output Control
+
+                                                   Critical Alert Only
+                                                             Band Gap
+                                                Alert Polarity                                                                     Temperature
+                                                Alert Comp/Int                    Sensor
+
+                                      Configuration
+
+                                  Temperature
+                                                             ADC
+                               TUPPER Limit
+                                TLOWER Limit
+                                                                       +0.5°C
+                                     TCRITICAL Limit                                                                      +0.25°C
+                                        Manufacturer ID                       +0.125°C
+                                                                    +0.0625°C
+                                  Device ID/Rev
+
+                                     Resolution
+
+
+
+
+
+                            Register
+                              Pointer
+
+
+
+                                              SMBus/Standard I2C
+                                                                Interface
+
+
+
+              A0   A1   A2         Alert     SDA      SCL        VDD  GND
+
+FIGURE 5-1:       Functional Block Diagram.
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 15
+
+--- PDF page 16 ---
+MCP9808
+
+
+5.1    Registers                                    Section 5.2.3  “Alert  Output  Configuration”).  In
+                                                                    addition, the Critical Temperature Limit register is used
+The  MCP9808  has  several  registers  that  are          to provide an additional critical temperature limit.
+user-accessible. These registers include the Tempera-
+                                                 The  Configuration   register  provides  access   toture register, Configuration register, Temperature Alert
+                                                             configure the MCP9808 device’s various  features.Upper Boundary and Lower Boundary Limit registers,
+                                                  These registers are described in further detail in theCritical  Temperature  Limit  register,  Manufacturer
+                                                                 following sections.Identification register and Device Identification register.
+                                                 The registers are accessed by sending a RegisterThe Temperature register is read-only, used to access
+                                                              Pointer to the MCP9808, using the serial interface. Thisthe ambient temperature data. This register is double-
+                                                                              is an 8-bit write-only pointer. However, the four Leastbuffered and it is updated every tCONV. The Temperature
+                                                                   Significant bits are used as pointers and all unused bitsAlert Upper Boundary and Lower Boundary  Limit
+                                                              (Register Pointer<7:4>) need to be cleared or set to ‘0’.registers  are  read/write  registers.   If  the  ambient
+                                                            Register 5-1 describes the pointer or the address oftemperature drifts beyond the user-specified limits, the
+                                                    each register.MCP9808 outputs a signal using the Alert pin (refer to
+
+REGISTER 5-1:   REGISTER POINTER (WRITE-ONLY)
+    W-0        W-0        W-0       W-0       W-0        W-0        W-0        W-0
+   —      —     —     —                             Pointer bits
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+ R = Readable bit      W = Writable bit        U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                ‘1’ = Bit is set                    ‘0’ = Bit is cleared           x = Bit is unknown
+
+
+ bit 7-4       W: Writable bits
+                Write ‘0’.
+                  Bits 7-4 must always be cleared or written to ‘0’. This device has additional registers that are reserved
+                   for test and calibration. If these registers are accessed, the device may not perform according to the
+                  specification.
+ bit 3-0         Pointer bits
+            0000 =RFU, Reserved for Future Use (Read-Only register)
+            0001 =Configuration register (CONFIG)
+            0010 =Alert Temperature Upper Boundary Trip register (TUPPER)
+            0011 =Alert Temperature Lower Boundary Trip register (TLOWER)
+            0100 =Critical Temperature Trip register (TCRIT)
+            0101 =Temperature register (TA)
+            0110 =Manufacturer ID register
+            0111 =Device ID/Revision register
+            1000 =Resolution register
+            1xxx =Reserved(1)
+
+ Note 1:  Some registers contain calibration codes and should not be accessed.
+
+
+
+
+
+DS20005095B-page 16                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 17 ---
+                          MCP9808
+
+
+TABLE 5-1:    BIT ASSIGNMENT SUMMARY FOR ALL REGISTERS
+              (See Section 5.3, Summary of Power-on Default for Power-on Defaults)
+
+ Register                                                          Bit Assignment
+         MSB/
+ Pointer
+         LSB  (Hex)              7           6            5           4          3          2          1         0
+
+   0x00   MSB      0          0           0          0         0         0         0         0
+         LSB      0          0           0          1         1         1         1         1
+   0x01   MSB      0          0           0          0         0             Hysteresis       SHDN
+         LSB      Crt Loc     Win Loc          Int Clr         Alt Stat       Alt Cnt        Alt Sel        Alt Pol       Alt Mod
+   0x02   MSB      0          0           0        SIGN       27°C       26°C       25°C       24°C
+         LSB      23°C        22°C         21°C         20°C        2-1°C        2-2°C       0         0
+   0x03   MSB      0          0           0        SIGN       27°C       26°C       25°C       24°C
+         LSB      23°C        22°C         21°C         20°C        2-1°C        2-2°C       0         0
+   0x04   MSB      0          0           0        SIGN       27°C       26°C       25°C       24°C
+         LSB      23°C        22°C         21°C         20°C        2-1°C        2-2°C       0         0
+   0x05   MSB   TA TCRIT   TA TUPPER   TA TLOWER    SIGN       27°C       26°C       25°C       24°C
+         LSB      23°C        22°C         21°C         20°C        2-1°C        2-2°C       2-3°C       2-4°C
+   0x06   MSB      0          0           0          0         0         0         0         0
+         LSB      0          1           0          1         0         1         0         0
+   0x07   MSB      0          0           0          0         0         1         0         0
+         LSB      0          0           0          0         0         0         0         0
+   0x08    LSB      0          0           0          0         0         0         1         1
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 17
+
+--- PDF page 18 ---
+MCP9808
+
+
+5.1.1   SENSOR CONFIGURATION                   user-specified    temperature    boundary    (see
+       REGISTER (CONFIG)                       Section 5.2.2 “Temperature Hysteresis  (THYST)”.
+                                                 The Continuous Conversion or Shutdown mode  is
+The MCP9808 has a  16-bit  Configuration  register                                                            selected using bit 8. In Shutdown mode, the band gap
+(CONFIG) that allows the user to set various functions for                                                         temperature   sensor    circuit   stops   converting
+a robust temperature monitoring system. Bits 10 through                                                         temperature and the Ambient Temperature register
+0 are used  to  select the temperature  alert output
+                                                                (TA)  holds  the  previous  temperature  data  (seehysteresis,  device  shutdown  or Low-Power mode,                                                      Section 5.2.1 “Shutdown Mode”). Bits 7 and 6 are
+temperature boundary and critical temperature lock, and
+                                                    used to lock the user-specified boundaries TUPPER,temperature Alert output enable/disable. In addition, Alert
+                                               TLOWER and TCRIT to prevent an accidental rewrite.
+output condition (output set for TUPPER and TLOWER                                                 The Lock bits are cleared by resetting the power. Bits 5
+temperature boundary or TCRIT only), Alert output status                                                          through 0 are used to configure the temperature Alert
+and Alert output polarity and mode (Comparator Output                                                            output pin. All functions are described in Register 5-2
+or Interrupt Output mode) are user-configurable.                                                          (see Section 5.2.3 “Alert Output Configuration”).
+The temperature hysteresis bits 10 and 9 can be used
+to  prevent  output   chatter  when  the  ambient
+temperature   gradually   changes   beyond   the
+
+REGISTER 5-2:   CONFIG: CONFIGURATION REGISTER ( ADDRESS ‘0000 0001’b)
+
+     U-0          U-0         U-0         U-0        U-0        R/W-0       R/W-0      R/W-0
+   —      —     —     —     —              THYST          SHDN
+ bit 15                                                                                                                                      bit 8
+
+
+    R/W-0       R/W-0      R/W-0        R-0       R/W-0       R/W-0       R/W-0      R/W-0
+    Crit. Lock     Win. Lock      Int. Clear     Alert Stat.     Alert Cnt.      Alert Sel.      Alert Pol.     Alert Mod.
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+R = Readable bit      W = Writable bit        U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                ‘1’ = Bit is set                    ‘0’ = Bit is cleared           x = Bit is unknown
+
+
+ bit 15-11      Unimplemented: Read as ‘0’
+ bit 10-9        THYST: TUPPER and TLOWER Limit Hysteresis bits
+            00 =0°C (power-up default)
+            01 =+1.5°C
+            10 =+3.0°C
+            11 =+6.0°C
+                (Refer to Section 5.2.3 “Alert Output Configuration”.)
+               This bit can not be altered when either of the Lock bits are set (bit 6 and bit 7).
+               This bit can be programmed in Shutdown mode.
+ bit 8        SHDN: Shutdown Mode bit
+            0 = Continuous conversion (power-up default)
+            1 = Shutdown (Low-Power mode)
+                  In shutdown, all power-consuming activities are disabled, though all registers can be written to or read.
+               This bit cannot be set to ‘1’ when either of the Lock bits is set (bit 6 and bit 7). However, it can be
+                cleared to ‘0’ for continuous conversion while locked (refer to Section 5.2.1 “Shutdown Mode”).
+
+
+
+
+
+DS20005095B-page 18                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 19 ---
+                          MCP9808
+
+
+REGISTER 5-2:   CONFIG: CONFIGURATION REGISTER ( ADDRESS ‘0000 0001’b)
+
+ bit 7             Crit. Lock: TCRIT Lock bit
+            0 = Unlocked. TCRIT register can be written (power-up default)
+            1 = Locked. TCRIT register can not be written
+           When enabled, this bit remains set to ‘1’ or locked until cleared by an internal Reset (Section 5.3
+            “Summary of Power-on Default”).
+                This bit can be programmed in Shutdown mode.
+ bit 6          Win. Lock: TUPPER and TLOWER Window Lock bit
+            0 = Unlocked; TUPPER and TLOWER registers can be written (power-up default)
+            1 = Locked; TUPPER and TLOWER registers can not be written
+           When enabled, this bit remains set to ‘1’ or locked until cleared by a Power-on Reset (Section 5.3
+            “Summary of Power-on Default”).
+               This bit can be programmed in Shutdown mode.
+ bit 5              Int. Clear: Interrupt Clear bit
+            0 = No effect (power-up default)
+            1 = Clear interrupt output; when read, this bit returns to ‘0’
+               This bit can not be set to ‘1’ in Shutdown mode, but it can be cleared after the device enters Shutdown
+             mode.
+ bit 4           Alert Stat.: Alert Output Status bit
+            0 = Alert output is not asserted by the device (power-up default)
+            1 = Alert output is asserted as a comparator/Interrupt or critical temperature output
+               This bit can not be set to ‘1’ or cleared to ‘0’ in Shutdown mode. However, if the Alert output is config-
+               ured as Interrupt mode, and if the host controller clears to ‘0’, the interrupt, using bit 5 while the device
+                    is in Shutdown mode, then this bit will also be cleared ‘0’.
+ bit 3           Alert Cnt.: Alert Output Control bit
+            0 = Disabled (power-up default)
+            1 = Enabled
+               This bit can not be altered when either of the Lock bits are set (bit 6 and bit 7).
+               This bit can be programmed in Shutdown mode, but the Alert output will not assert or deassert.
+ bit 2           Alert Sel.: Alert Output Select bit
+            0 = Alert output for TUPPER, TLOWER and TCRIT (power-up default)
+            1 = TA > TCRIT only (TUPPER and TLOWER temperature boundaries are disabled)
+           When the Alarm Window Lock bit is set, this bit cannot be altered until unlocked (bit 6).
+               This bit can be programmed in Shutdown mode, but the Alert output will not assert or deassert.
+ bit 1           Alert Pol.: Alert Output Polarity bit
+            0 = Active-low (power-up default; pull-up resistor required)
+            1 = Active-high
+               This bit cannot be altered when either of the Lock bits are set (bit 6 and bit 7).
+               This bit can be programmed in Shutdown mode, but the Alert output will not assert or deassert.
+ bit 0           Alert Mod.: Alert Output Mode bit
+            0 = Comparator output (power-up default)
+            1 = Interrupt output
+               This bit cannot be altered when either of the Lock bits are set (bit 6 and bit 7).
+               This bit can be programmed in Shutdown mode, but the Alert output will not assert or deassert.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 19
+
+--- PDF page 20 ---
+MCP9808
+
+
+
+
+         Writing to the CONFIG Register to Enable the Event Output Pin <0000 0000 0000 1000>b:
+
+
+                         1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+       SCL
+
+
+                                           A                        A
+      SDA     S  0  0  1  1  A  A  A W C  0  0  0  0  0  0  0  1  C                                      2  1  0     K                        K
+
+
+                         Address Byte           Configuration Pointer
+
+                                MCP9808             MCP9808
+
+
+
+
+
+                                          1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+
+
+
+
+                                                         A                        A
+                                          0  0  0  0  0  0   0  0  C  0  0  0  0  1  0   0  0  C  P
+                                                         K                        K
+
+                             MSB Data              LSB Data
+
+                                           MCP9808             MCP9808
+
+
+
+        Note: This is an example routine (see Appendix A: “Source Code”).
+
+        i2c_start();                      // send START command
+        i2c_write(AddressByte & 0xFE);     //WRITE Command (see Section 4.1.4 “Address Byte”)
+                   //also, make sure bit 0 is cleared ‘0’
+        i2c_write(0x01);                  // Write CONFIG Register
+        i2c_write(0x00);                  // Write data
+        i2c_write(0x08);                  // Write data
+        i2c_stop();                       // send STOP command
+
+
+
+
+FIGURE 5-2:      Timing Diagram for Writing to the Configuration Register (see Section 4.0 “Serial
+Communication”).
+
+
+
+
+
+DS20005095B-page 20                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 21 ---
+                          MCP9808
+
+
+
+
+
+   Reading the CONFIG Register:
+
+
+
+                  1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL                                                                Note:      It is not necessary to
+                                                                                              select  the  Register
+                                                                                          Pointer  if  it was set
+                                     A                        A
+   SDA    S  0  0  1  1  A  A  A W C  0  0  0  0  0  0   0  1  C                from  the  previous                               2  1  0     K                        K
+                                                                                                read/write.
+
+                   Address Byte            Configuration Pointer
+
+                           MCP9808             MCP9808
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL
+
+
+                                      A                                                               A                                                                                  N
+                                   C                                                           C                                                 0  0  0  0  0  0   0  0                                                                                           P                                                                                0  0  0  0  1  0   0  0  A   SDA      S  0  0  1  1  A2  A1  A0  R                                      K                                                               K                                                                                        K
+
+
+                    Address Byte           MSB Data             LSB Data
+
+                                                              Master                   Master                            MCP9808
+
+
+
+   Note: This is an example routine (see Appendix A: “Source Code”).
+
+   i2c_start();                     // send START command
+   i2c_write(AddressByte & 0xFE);    //WRITE Command (see Section 4.1.4 “Address Byte”)
+               //also, make sure bit 0 is cleared ‘0’
+   i2c_write(0x01);                 // Write CONFIG Register
+   i2c_start();                     // send Repeat START command
+   i2c_write(AddressByte | 0x01);    //READ Command
+               //also, make sure bit 0 is set ‘1’
+   UpperByte = i2c_read(ACK);       // READ 8 bits
+               //and Send ACK bit
+   LowerByte = i2c_read(NAK);       // READ 8 bits
+               //and Send NAK bit
+   i2c_stop();                      // send STOP command
+
+
+
+
+FIGURE 5-3:      Timing Diagram for Reading from the Configuration Register (see Section 4.0 “Serial
+Communication”).
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 21
+
+--- PDF page 22 ---
+MCP9808
+
+
+5.1.2    UPPER/LOWER/CRITICAL                    the maximum and minimum temperature boundary or
+       TEMPERATURE LIMIT REGISTERS          temperature window  that can be used  to monitor
+         (TUPPER/TLOWER/TCRIT)                      ambient  temperature.   If  this  feature   is  enabled
+                                                          (Section 5.1.1  “Sensor  Configuration  Register
+The MCP9808 has a 16-bit read/write Alert Output                                                     (CONFIG)”) and the ambient temperature exceeds the
+Temperature Upper Boundary register (TUPPER), a 16-bit         specified boundary or window, the MCP9808 asserts an
+Lower Boundary register (TLOWER) and a 16-bit Critical          Alert output. (Refer to Section 5.2.3 “Alert Output
+Boundary register (TCRIT) that contain 11-bit data in        Configuration”).
+two’s complement format (0.25°C). This data represents
+
+REGISTER 5-3:    TUPPER/TLOWER/TCRIT UPPER/LOWER/CRITICAL TEMPERATURE LIMIT REGISTER
+              ( ADDRESS ‘0000 0010’b/‘0000 0011’b/‘0000 0100’b)(1)
+     U-0          U-0         U-0       R/W-0      R/W-0       R/W-0       R/W-0      R/W-0
+   —      —     —          Sign        27°C        26°C         25°C        24°C
+ bit 15                                                                                                                                      bit 8
+
+
+    R/W-0       R/W-0      R/W-0      R/W-0      R/W-0       R/W-0        U-0         U-0
+     23°C         22°C        21°C        20°C        2-1°C         2-2°C     —     —
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+R = Readable bit      W = Writable bit        U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                ‘1’ = Bit is set                    ‘0’ = Bit is cleared           x = Bit is unknown
+
+
+ bit 15-13      Unimplemented: Read as ‘0’
+ bit 12         Sign: Sign bit
+            0 = TA 0°C
+            1 = TA  0°C
+ bit 11-2       TUPPER/TLOWER/TCRIT: Temperature Boundary bits
+              Temperature boundary trip data in two’s complement format.
+ bit 1-0        Unimplemented: Read as ‘0’
+
+ Note 1:  This table shows two 16-bit registers for TUPPER, TLOWER and TCRIT, located at ‘0000 0010b’,
+          ‘0000 0011b’ and ‘0000 0100b’, respectively.
+
+
+
+
+
+DS20005095B-page 22                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 23 ---
+                          MCP9808
+
+
+
+
+           Writing +90°C to the TUPPER Register <0000 0101 1010 0000>b:
+                            1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+         SCL
+
+
+                                             A                        A
+        SDA     S  0  0  1  1  A  A  A W C  0  0  0  0  0  0  1  0  C                                         2  1  0     K                        K
+
+
+                           Address Byte            TUPPER Pointer
+
+                                 MCP9808             MCP9808
+
+
+
+
+
+                                             1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+
+
+
+
+                                                           A                        A
+                                             0  0  0  0  0  1   0  1  C  1  0  1  0  0  0   0  0  C  P
+                                                            K                        K
+
+                               MSB Data              LSB Data
+
+                                            MCP9808             MCP9808
+
+
+
+    Reading from the TUPPER Register:
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL                                                                Note:      It is not necessary to
+                                                                                              select the Register
+                                                                                          Pointer  if  it was set
+                                      A                        A
+   SDA     S  0  0  1  1  A  A  A W C  0  0  0  0  0  0   1  0  C               from  the  previous                                2  1  0     K                        K
+                                                                                                read/write.
+
+                    Address Byte           TUPPER Pointer
+
+                           MCP9808              MCP9808
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL
+
+
+                                      A                                                               A                                                                                 N
+                                   C                                                          C                                                 0  0  0  0  0  1   0  1                                                                                           P                                                                               1  0  1  0  0  0   0  0  A   SDA     S  0  0  1  1  A2  A1  A0  R                                      K                                                               K                                                                                        K
+
+
+                    Address Byte           MSB Data             LSB Data
+
+                            MCP9808                  Master                    Master
+
+
+FIGURE 5-4:      Timing Diagram for Writing and Reading from the TUPPER Register (see Section 4.0
+“Serial Communication”).
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 23
+
+--- PDF page 24 ---
+MCP9808
+
+
+5.1.3    AMBIENT TEMPERATURE                      In addition, the TA register uses three bits (TA<15:13>)
+       REGISTER (TA)                                    to reflect the Alert pin state. This allows the user to
+                                                                       identify the cause of the Alert output  trigger (see
+The MCP9808 uses a band gap temperature sensor                                                      Section 5.2.3 “Alert Output Configuration”); bit 15 is
+circuit to output analog voltage proportional to absolute
+                                                               set to ‘1’ if TA is greater than or equal to TCRIT, bit 14 istemperature. An internal  ADC is used to convert the
+                                                               set to ‘1’ if TA is greater than TUPPER and bit 13 is set toanalog voltage to a digital word. The digital word is
+                                                                                 ‘1’ if TA is less than TLOWER.loaded to a 16-bit read-only Ambient Temperature
+register (TA) that contains 13-bit temperature data in       The  TA  register   bit  assignment  and  boundary
+two’s complement format.                                     conditions are described in Register 5-4.
+The TA register bits (TA<12:0>) are double-buffered.
+Therefore, the user can access the register, while in the
+background, the MCP9808 performs an Analog-to-
+Digital conversion. The temperature data from the 
+ADC is loaded in parallel to the TA register at tCONV
+refresh rate.
+
+REGISTER 5-4:    TA: AMBIENT TEMPERATURE REGISTER ( ADDRESS ‘0000 0101’b)(1)
+     R-0           R-0            R-0          R-0        R-0        R-0        R-0        R-0
+ TA vs. TCRIT(1)  TA vs. TUPPER(1)  TA vs. TLOWER(1)   SIGN       27 °C       26 °C       25 °C       24 °C
+ bit 15                                                                                                                                      bit 8
+
+
+     R-0           R-0            R-0          R-0        R-0        R-0        R-0        R-0
+     23 °C          22 °C           21 °C         20 °C        2-1 °C       2-2 °C(2)      2-3 °C(2)     2-4 °C(2)
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+ R = Readable bit        W = Writable bit         U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                     ‘1’ = Bit is set                       ‘0’ = Bit is cleared        x = Bit is unknown
+
+ bit 15        TA vs. TCRIT bit(1)
+            0 = TA TCRIT
+            1 = TA TCRIT
+ bit 14        TA vs. TUPPER bit(1)
+              0 = TA TUPPER
+            1 = TA TUPPER
+ bit 13        TA vs. TLOWER bit(1)
+            0 = TA TLOWER
+            1 = TA TLOWER
+ bit 12       SIGN bit
+            0 = TA 0°C
+            1 = TA  0°C
+ bit 11-0       TA: Ambient Temperature bits(2)
+                 12-bit ambient temperature data in two’s complement format.
+ Note 1:   Bits 15, 14 and 13 are not affected by the status of the Alert Output Configuration (CONFIG<5:0> bits,
+           Register 5-2).
+       2:   Bits 2, 1 and 0 may remain clear at ‘0’ depending on the status of the Resolution register (Register 5-7).
+         The power-up default is 0.25°C/bit; bits 1 and 0 remain clear ‘0’.
+
+
+
+
+
+DS20005095B-page 24                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 25 ---
+                           MCP9808
+
+
+5.1.3.1    TA Bits to Temperature Conversion            instruction code, outlined in Example 5-1, shows the
+                                                      communication flow; also see Figure 5-5 for the timing
+To convert the TA bits to decimal temperature, the                                                          diagram.
+upper  three  boundary  bits  (TA<15:13>) must be
+masked out. Then, determine the SIGN bit (bit 12) to
+                                       EQUATION 5-1:   BYTES TOcheck positive or negative temperature, shift the bits
+accordingly, and combine the upper and lower bytes of                  TEMPERATURE
+the 16-bit register. The upper byte contains data for                   CONVERSION
+temperatures greater than +32°C while the lower byte
+                                                         Temperature TA  0°C
+contains data for temperature less than +32°C, includ-                                                      – 4                                                         T  =  UpperByte  24 + LowerByte  2ing fractional data. When combining the upper and             A                                          
+lower bytes, the upper byte must be right-shifted by          Temperature  0°C
+4 bits (or multiply by 24) and the lower byte must be left-                                                         – 4                                                       T  = 256 – UpperByte  24 + LowerByte  2
+shifted by 4 bits (or multiply by 2-4). Adding the results           A                                                 
+of the shifted values provides the temperature data in         Where:
+decimal format (see Equation 5-1).                                  TA = Ambient Temperature (°C)
+The temperature bits are in two’s compliment format,            UpperByte = TA bit 15 to bit 8
+therefore, positive temperature data and negative tem-            LowerByte = TA bit 7 to bit 0
+perature data are computed differently. Equation 5-1
+shows the temperature computation. The example
+
+EXAMPLE 5-1:   SAMPLE INSTRUCTION CODE
+
+          This example routine assumes the variables and I2C communication subroutines are predefined
+           (see Appendix A: “Source Code”):
+
+         i2c_start();                         // send START command
+         i2c_write (AddressByte & 0xFE);     //WRITE Command (see Section 4.1.4 “Address Byte”)
+                    //also, make sure bit 0 is cleared ‘0’
+         i2c_write(0x05);                    // Write TA Register Address
+         i2c_start();                        //Repeat START
+         i2c_write(AddressByte | 0x01);      // READ Command (see Section 4.1.4 “Address Byte”)
+                    //also, make sure bit 0 is Set ‘1’
+         UpperByte = i2c_read(ACK);          // READ 8 bits
+                    //and Send ACK bit
+         LowerByte = i2c_read(NAK);          // READ 8 bits
+                    //and Send NAK bit
+         i2c_stop();                         // send STOP command
+         //Convert the temperature data
+         //First Check flag bits
+         if ((UpperByte & 0x80) == 0x80){    //TA ≥ TCRIT
+         }
+         if ((UpperByte & 0x40) == 0x40){    //TA > TUPPER
+         }
+         if ((UpperByte & 0x20) == 0x20){    //TA < TLOWER
+         }
+         UpperByte = UpperByte & 0x1F;       //Clear flag bits
+         if ((UpperByte & 0x10) == 0x10){    //TA < 0°C
+             UpperByte = UpperByte & 0x0F;//Clear SIGN
+             Temperature = 256 - (UpperByte x 16 + LowerByte / 16);
+         }else                                 //TA  ≥ 0°C
+             Temperature = (UpperByte x 16 + LowerByte / 16);
+                                             //Temperature = Ambient Temperature (°C)
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 25
+
+--- PDF page 26 ---
+MCP9808
+
+
+
+
+
+                  1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL                                                               Note:      It is not necessary to
+                                                                                         select  the  Register
+                                                                                          Pointer if it was set from
+                                     A                        A
+   SDA    S  0  0  1  1  A  A  A W C  0  0  0  0  0  1   0  1  C              the previous read/write.                                2  1  0     K                        K
+
+
+                   Address Byte              TA Pointer
+
+                           MCP9808             MCP9808
+
+
+
+                  1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL
+
+
+                                      A                                                               A                                                                                 N
+                                   C                                                          C                                                 0  0  0  0  0  0   0  1                                                                                          P                                                                               1  0  0  1  0  1   0  0  A   SDA     S  0  0  1  1  A2  A1  A0  R                                      K                                                               K                                                                                        K
+
+
+                    Address Byte           MSB Data             LSB Data
+
+                            MCP9808                  Master                    Master
+
+
+
+FIGURE 5-5:      Timing Diagram for Reading +25.25°C Temperature from the TA Register
+(see Section 4.0 “Serial Communication”).
+
+
+
+
+
+DS20005095B-page 26                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 27 ---
+                           MCP9808
+
+
+5.1.4    MANUFACTURER ID REGISTER
+
+This register is used to identify the manufacturer of the
+device  in  order  to  perform  manufacturer-specific
+operation. The Manufacturer ID for the MCP9808 is
+0x0054 (hexadecimal).
+
+REGISTER 5-5:   MANUFACTURER ID REGISTER – READ-ONLY ( ADDRESS ‘0000 0110’b)
+     R-0          R-0         R-0         R-0        R-0         R-0         R-0         R-0
+                                              Manufacturer ID
+ bit 15                                                                                                                                      bit 8
+
+
+     R-0          R-1         R-0         R-1        R-0         R-1         R-0         R-0
+                                              Manufacturer ID
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+R = Readable bit      W = Writable bit        U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                ‘1’ = Bit is set                    ‘0’ = Bit is cleared           x = Bit is unknown
+
+
+ bit 15-0       Device Manufacturer Identification bits
+
+
+
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+                                                                        Note:      It is not necessary to
+   SCL                                                                                              select the Register
+                                                                                          Pointer  if  it was set
+                                      A                        A               from  the  previous                             A                                A                                                 0  0  0  0  0  1   1  0  C   SDA     S  0  0  1  1  A                     W C                                2                                   1                                       0                                      K                                                               K                  read/write.
+
+
+                    Address Byte          Manufacturer ID Pointer
+
+                            MCP9808             MCP9808
+
+
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL
+
+
+                                      A                                                               A                                                                                 N
+                                   C                                                          C                                                 0  0  0  0  0  0   0  0                                                                                           P                                                                               0  1  0  1  0  1   0  0  A   SDA     S  0  0  1  1  A2  A1  A0  R                                      K                                                               K                                                                                        K
+
+
+                    Address Byte           MSB Data             LSB Data
+
+                            MCP9808                  Master                    Master
+
+
+
+FIGURE 5-6:      Timing Diagram for Reading the Manufacturer ID Register (see Section 4.0 “Serial
+Communication”).
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 27
+
+--- PDF page 28 ---
+MCP9808
+
+
+5.1.5    DEVICE ID AND REVISION
+       REGISTER
+
+The upper byte of this register is used to specify the
+device identification and the lower byte  is used to
+specify the device revision. The Device ID for the
+MCP9808 is 0x04 (hex).
+The revision begins with 0x00 (hex) for the first release,
+with the number being incremented as revised versions
+are released.
+
+REGISTER 5-6:   DEVICE ID AND DEVICE REVISION – READ-ONLY ( ADDRESS ‘0000 0111’b)
+     R-0          R-0         R-0         R-0        R-0         R-1         R-0         R-0
+                                               Device ID
+ bit 15                                                                                                                                      bit 8
+
+
+     R-0          R-0         R-0         R-0        R-0         R-0         R-0         R-0
+                                            Device Revision
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+R = Readable bit      W = Writable bit        U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                ‘1’ = Bit is set                    ‘0’ = Bit is cleared           x = Bit is unknown
+
+
+ bit 15-8       Device ID: Bit 15 to bit 8 are used for device ID
+ bit 7-0        Device Revision: Bit 7 to bit 0 are used for device revision
+
+
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+                                                                       Note:      It is not necessary to   SCL
+                                                                                             select  the  Register
+                                                                                         Pointer  if  it was set
+                                      A                        A
+   SDA     S  0  0  1  1  A  A  A W C  0  0  0  0  0  1   1  1  C              from  the  previous
+                                2  1  0     K                        K                 read/write.
+
+
+                    Address Byte            Device ID Pointer
+
+                            MCP9808              MCP9808
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL
+
+
+                                      A                                                               A                                                                                 N
+                                   C                                                          C                                                 0  0  0  0  0  1   0  0                                                                                           P                                                                               0  0  0  0  0  0   0  0  A   SDA     S  0  0  1  1  A2  A1  A0  R                                      K                                                               K                                                                                        K
+
+
+                    Address Byte           MSB Data              LSB Data
+
+                                                              Master                   Master                            MCP9808
+
+FIGURE 5-7:      Timing Diagram for Reading Device ID and Device Revision Register (see
+Section 4.0 “Serial Communication”).
+
+
+
+
+DS20005095B-page 28                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 29 ---
+                           MCP9808
+
+
+5.1.6    RESOLUTION REGISTER
+
+This register allows the user to change the sensor
+resolution    (see   Section 5.2.4   “Temperature
+Resolution”).  The  POR   default   resolution   is
++0.0625°C. The selected resolution is also reflected in
+the Capability register (see Register 5-2).
+
+REGISTER 5-7:   RESOLUTION REGISTER ( ADDRESS ‘0000 1000’b)
+     U-0          U-0         U-0         U-0        U-0         U-0        R/W-1      R/W-1
+   —      —     —     —     —      —               Resolution
+ bit 7                                                                                                                                       bit 0
+
+
+ Legend:
+R = Readable bit      W = Writable bit        U = Unimplemented bit, read as ‘0’
+ -n = Value at POR                ‘1’ = Bit is set                    ‘0’ = Bit is cleared           x = Bit is unknown
+
+
+ bit 7-2        Unimplemented: Read as ‘0’
+ bit 1-0        Resolution bits
+            00 = +0.5°C (tCONV = 30 ms typical)
+            01 = +0.25°C (tCONV = 65 ms typical)
+            10 = +0.125°C (tCONV = 130 ms typical)
+            11 = +0.0625°C (power-up default, tCONV = 250 ms typical)
+
+
+
+
+                   1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8      1  2  3  4  5  6  7  8
+   SCL
+
+
+                                      A                                                               A                                                                                         A
+                                    C  0  0  0  0  1  0   0  0                                                                                  C  P                                                           C  0  0  0  0  0  0   1  1   SDA     S  0  0  1  1  A  A  A W
+                                 2  1  0     K                        K                        K
+
+
+                    Address Byte            Resolution Pointer               Data
+
+                            MCP9808             MCP9808              MCP9808
+
+
+FIGURE 5-8:      Timing Diagram for Changing TA Resolution to +0.0625°C <0000 0011>b (see
+Section 4.0 “Serial Communication”).
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 29
+
+--- PDF page 30 ---
+MCP9808
+
+
+5.2   SENSOR FEATURE DESCRIPTION
+5.2.1   SHUTDOWN MODE                                  VDD                                                                    MCP9808
+Shutdown  mode  disables   all  power  consuming
+                                                              RPUactivities (including temperature sampling operations)
+while leaving the serial interface active. This mode is
+selected by setting bit 8 of CONFIG to ‘1’. In this mode,                 Alert Output
+the device consumes ISHDN.  It remains in this mode
+until  bit 8  is cleared  to  ‘0’  to enable Continuous
+Conversion mode or until power is recycled.
+The Shutdown bit (bit 8) cannot be set to ‘1’ while the                                        FIGURE 5-9:      Active-Low Alert Output
+CONFIG<7:6> bits (Lock bits) are set to ‘1’. However, it                                                         Configuration.
+can be cleared  to  ‘0’  or  returned  to Continuous
+Conversion mode while locked.                         The status of the Alert output can be read using
+                                             CONFIG<4> (Alert Output Status bit). This bit can not
+In Shutdown mode, all registers can be read or written.
+                                                  be set to ‘1’ in Shutdown mode.
+However, the serial bus activity increases the shutdown
+                                                                   Bits 7 and 6 of the CONFIG register can be used to lockcurrent. In addition, if the device is in shutdown while
+                                                             the TUPPER, TLOWER and TCRIT registers. These bitsthe Alert pin is asserted, the device will retain the active
+                                                           prevent false triggers at the Alert output due to anstate during shutdown. This increases the shutdown
+                                                              accidental rewrite to these registers.current due to the additional Alert output current.
+                                                 The Alert output can also be used as a critical tempera-
+5.2.2    TEMPERATURE HYSTERESIS                 ture output using bit 2 of CONFIG (Alert Output Select
+          (THYST)                                                         bit). When this feature is selected, the Alert output
+                                                becomes a comparator  output.  In  this mode, theA hysteresis of 0°C, +1.5°C, +3°C or +6°C can be
+                                                                     interrupt output configuration (Alert Output Mode bit,
+selected for the TUPPER, TLOWER and TCRIT temperate                                               CONFIG<0>) is ignored.boundaries, using  bits 10 and 9 of CONFIG. The
+hysteresis applies for decreasing temperature only (hot
+                                                          5.2.3.1    Comparator Mode
+to cold) or as temperature drifts below the specified
+limit.                                                 Comparator mode is selected using bit 0 of CONFIG. In
+                                                                        this mode, the Alert output is asserted as active-high or
+The Hysteresis bits can not be changed if either of the
+                                                                  active-low, using bit 1 of CONFIG. Figure 5-10 shows
+Lock bits (CONFIG<7:6) are set to ‘1’.                                                             the conditions that toggle the Alert output.
+The TUPPER, TLOWER and TCRIT boundary conditions                                                                                                     If the device enters Shutdown mode with asserted Alert
+are described graphically in Figure 5-10.
+                                                                output, the output remains asserted during Shutdown
+                                                  mode. The device must be operating in Continuous5.2.3    ALERT OUTPUT CONFIGURATION
+                                                       Conversion mode  for tCONV. The TA  vs. TUPPER,
+The Alert output can be enabled by using bit 3 of the       TLOWER and TCRIT boundary conditions need to be
+CONFIG register (Alert Output Control bit) and can be          satisfied in order for the Alert output to deassert.
+configured as either a comparator output or as an
+                                                     Comparator mode  is  useful  for  thermostat  typeInterrupt Output mode using bit 0 of CONFIG (Alert
+                                                                  applications, such as turning on a cooling fan orOutput Mode bit). The polarity can also be specified as
+                                                                   triggering a system shutdown when the temperatureactive-high or active-low using bit 1 of CONFIG (Alert
+                                                     exceeds a safe operating range.Polarity bit). This is an open-drain output and requires
+a pull-up resistor.
+When the ambient temperature increases above the
+critical temperature limit, the Alert output is forced to a
+comparator output (regardless of CONFIG<0>). When
+the temperature drifts below the critical temperature
+limit minus hysteresis, the Alert output automatically
+returns to the state specified by CONFIG<0> bit.
+
+
+
+
+
+DS20005095B-page 30                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 31 ---
+                           MCP9808
+
+
+5.2.3.2      Interrupt Mode                              5.2.4    TEMPERATURE RESOLUTION
+
+In Interrupt mode, the Alert output is asserted as active-       The MCP9808  is capable of providing temperature
+high  or  active-low  (depending  on  the   polarity        data with +0.5°C to +0.0625°C resolution. The resolu-
+configuration) when TA drifts above or below TUPPER          tion can be selected using the Resolution register
+and TLOWER limits. The output is deasserted by setting         (Register 5-7). It is located at address, ‘00001000’b,
+bit 5 (Interrupt Clear bit) of CONFIG. Shutting down the       and  it provides measurement flexibility. A +0.0625°C
+device will not reset or deassert the Alert output. This         resolution is set as a POR default by the factory.
+mode can not be selected when the Alert output is used
+as a  critical temperature output only, using  bit 2 of      TABLE 5-2:   TEMPERATURE
+CONFIG.                                           CONVERSION TIME
+This  mode    is   designed   for   interrupt   driven                              tCONV     Samples/sec                                                           Resolution
+microcontroller-based  systems.  The  microcontroller                              (ms)         (typical)
+receiving the interrupt  will have to Acknowledge the                                                             +0.5°C           30           33
+interrupt by setting bit 5 of the CONFIG register from the
+MCP9808.                                                   +0.25°C          65           15
+                                                           +0.125°C         130           7
+                                                          +0.0625°C         250           4
+                                                        (Power-up Default)
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 31
+
+--- PDF page 32 ---
+MCP9808
+
+
+
+                                                                                    TCRIT – THYST
+      TCRIT
+                                             TUPPER – THYST
+                                                                             TUPPER – THYST
+    TUPPER
+                TA
+
+                                                                            TLOWER – THYST
+   TLOWER
+
+
+                            TLOWER – THYST
+
+
+           Comparator
+
+
+                  Interrupt     Output
+         S/w Int. Clear    Alert(Active-Low)
+
+               Critical Only
+
+
+
+           Comparator
+
+
+                  Interrupt     Output
+         S/w Int. Clear    Alert(Active-High)
+
+               Critical Only
+
+
+
+
+                  Notes: 1                   2      1  3        4   3 5  6  7  4   2
+
+                                      Comparator   Interrupt     Critical         TA Bits                  Alert Output Boundary
+     Notes
+                     Conditions                                                  Alert Output (Active-Low/High)      15     14     13
+       1    TA  TLOWER                   High/Low    Low/High   High/Low    0     0     0
+       2    TA  TLOWER – THYST            Low/High    Low/High   High/Low    0     0     1
+       3    TA  TUPPER                   Low/High    Low/High   High/Low    0     1     0
+       4    TA  TUPPER – THYST           High/Low    Low/High   High/Low    0     0     0
+       5    TA  TCRIT                    Low/High    Low/High   Low/High    1     1     0
+       6   When TA  TCRIT, the Alert output is forced to Comparator mode and the CONFIG<0> (Alert Output
+          Mode bit) is ignored until TA  TCRIT – THYST. In the Interrupt mode, if the interrupt is not cleared
+                  (bit 5 of CONFIG), as shown in the diagram at Note 6, then Alert will remain asserted at Note 7
+                 until the interrupt is cleared by the controller.
+       7    TA  TCRIT – THYST              Low/High    High/Low   High/Low    0     1     0
+
+
+FIGURE 5-10:      Alert Output Conditions.
+
+
+
+
+DS20005095B-page 32                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 33 ---
+                           MCP9808
+
+
+5.3   Summary of Power-on Default
+
+The MCP9808 has an internal Power-on Reset (POR)
+circuit. If the power supply voltage, VDD, glitches below
+the VPOR threshold, the device resets the registers to
+the power-on default settings.
+Table 5-3 shows the power-on default summary for the
+Temperature Sensor registers.
+
+TABLE 5-3:   POWER-ON RESET DEFAULTS
+
+                     Registers
+                                                       Default Register         Power-Up Default
+     Address                                   Data (Hexadecimal)        Register Description                            Register Name
+   (Hexadecimal)
+
+       0x01      CONFIG                           0x0000       Comparator Mode
+                                                                         Active-Low Output
+                                                                                      Alert and Critical Output
+                                                                       Output Disabled
+                                                                                      Alert Not Asserted
+                                                                                      Interrupt Cleared
+                                                                                      Alert Limits Unlocked
+                                                                                             Critical Limit Unlocked
+                                                                      Continuous Conversion
+                                                                0°C Hysteresis
+       0x02       TUPPER                            0x0000      0°C
+       0x03       TLOWER                            0x0000      0°C
+       0x04        TCRIT                              0x0000      0°C
+       0x05       TA                                0x0000      0°C
+       0x06        Manufacturer ID                     0x0054       0x0054 (hex)
+       0x07        Device ID/Device Revision             0x0400       0x0400 (hex)
+       0x08         Resolution                           0x03        0x03 (hex)
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 33
+
+--- PDF page 34 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 34                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 35 ---
+                           MCP9808
+
+
+6.0   APPLICATIONS INFORMATION         perature accuracy error of approximately +0.5°C could
+                                                                     result from  self-heating   if the communication pins
+                                                             sink/source the maximum current specified.6.1   Layout Considerations
+                                                        For example, if the event output is loaded to maximum
+The MCP9808  does  not  require  any  additional          IOL, Equation 6-1 can be used to determine the effect
+components besides the master controller in order to          of self-heating.
+measure temperature. However,  it is recommended
+that a decoupling capacitor of 0.1 μF to 1 μF be used                                       EQUATION 6-1:   EFFECT OF
+between the VDD and GND pins. A high-frequency                                                        SELF-HEATING
+ceramic capacitor is recommended. It is necessary for
+the capacitor to be located as close as possible to the         T = JA  V DD  IDD + VOL_Alert  IOL_Alert + V OL_SDA  IOL_SDA 
+power and ground pins of the device in order to provide         Where:
+effective noise protection.
+                                           T= TJ – TA
+In addition, good PCB layout is key for better thermal                                                                   TJ = Junction Temperature
+conduction from the PCB temperature to the sensor
+die. For good temperature sensitivity, add a ground                  TA = Ambient Temperature
+layer under the device pins, as shown in Figure 6-1.                      JA = Package Thermal Resistance
+                                                                        VOL_Alert, SDA = Alert and SDA Output VOL
+6.2   Thermal Considerations                                            (0.4 Vmax)
+A  potential  for self-heating errors can  exist   if the               IOL_Alert, SDA = Alert and SDA Output IOL
+                                                                                   (3 mAmax)MCP9808 SDA, SCL and Event  lines are heavily
+loaded  with  pull-ups  (high  current).  Typically,  the
+self-heating error is negligible because of the relatively        At room temperature  (TA = +25°C)  with maximum
+small current consumption of the MCP9808. A tem-        IDD = 500 μA and VDD = 3.6V, the self-heating due to
+                                                    power dissipation T is +0.2°C for the DFN-8 package
+                                                  and +0.5°C for the TSSOP-8 package.
+
+
+
+
+
+                         SDA                       VDD
+
+                          SCL                     A0
+                                        EP9
+                                      Alert                     A1
+
+                       GND                     A2
+
+
+
+
+
+FIGURE 6-1:     DFN Package Layout (Top View).
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 35
+
+--- PDF page 36 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 36                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 37 ---
+                          MCP9808
+
+
+7.0  PACKAGING INFORMATION
+
+7.1   Package Marking Information
+
+         8-Lead DFN (2x3x0.9 mm)                                       Example:
+
+
+
+
+                                                                   ALP
+                                                                            141
+                                                                            25
+
+
+
+
+
+            8-Lead MSOP (3x3 mm)                                  Example:
+
+
+
+
+
+                                                                   9808E
+                                                                      141256
+
+
+
+
+
+            Legend:  XX...X  Customer-specific information
+                  Y       Year code (last digit of calendar year)
+                  YY     Year code (last 2 digits of calendar year)
+            WW   Week code (week of January 1 is week ‘01’)
+                NNN   Alphanumeric traceability code
+                    e 3     Pb-free JEDEC designator for Matte Tin (Sn)
+                              *        This package is Pb-free. The Pb-free JEDEC designator ( e 3 )
+                             can be found on the outer packaging for this package.
+
+              Note:   In the event the full Microchip part number cannot be marked on one line, it will
+                   be carried over  to the next  line, thus  limiting the number  of available
+                       characters for customer-specific information.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 37
+
+--- PDF page 38 ---
+MCP9808
+
+
+                                                 ! "" #  $ %      &
+
+          '  2    %  &    % !      %    *   " )       '                   %               *                   $     %            % "   %
+                    %% 133))) &         &3   *
+
+
+                       D                                              e
+                                                                  b
+                 N                                            N
+
+                                                       L
+
+
+
+                                                K
+
+                                    E                                     E2
+
+
+
+                                      EXPOSED PAD
+
+         NOTE 1
+                                                                     NOTE 1
+                        1   2                                             2   1
+
+                                                               D2
+                     TOP VIEW                         BOTTOM VIEW
+
+
+
+
+
+                                    A
+
+
+
+                                      NOTE 2          A3                     A1
+
+
+                                        4   %               55  , ,
+
+                             &      5 & %      6      67          8
+
+             6!&(      $                      6                   9
+
+                                  %                                                     . / 0
+
+           7    :       %                                   9
+
+                                 %  "  $$                                                               .
+
+            0    %    %    *                           +                  ,2
+
+           7     5      %                                       / 0
+
+           7   ; "%                       ,                +   / 0
+
+               ,#    "   " 5      %                              +          <           ..
+
+               ,#    "   " ; "%                  ,        .          <            .
+
+            0    %    % ; "%                           (                     .         +
+
+            0    %    % 5      %                          5        +                      .
+
+            0    %    % %  ,#    "   "              =                   <          <
+         '
+          !   " # $   %! &           ' (!% &!  % (          % " ) %      %         %   "
+       *  &        &     #    " %  (        %   "
++     *      )    !   % "
+   &          " %             , -   .
+     / 01 /    &                        %      #    %   !   ) ) %   !% %
+        ,21      $     &           ' ! !   ) %   !% %              ' $       $ &  %    !
+
+                                                                        )  0    +0
+
+
+
+
+
+DS20005095B-page 38                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 39 ---
+                          MCP9808
+
+
+
+
+
+  Note:   For the most current package drawings, please see the Microchip Packaging Specification located at
+           http://www.microchip.com/packaging
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 39
+
+--- PDF page 40 ---
+MCP9808
+
+
+
+
+
+  Note:   For the most current package drawings, please see the Microchip Packaging Specification located at
+           http://www.microchip.com/packaging
+
+
+
+
+
+DS20005095B-page 40                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 41 ---
+                          MCP9808
+
+
+
+
+
+   Note:   For the most current package drawings, please see the Microchip Packaging Specification located at
+           http://www.microchip.com/packaging
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 41
+
+--- PDF page 42 ---
+MCP9808
+
+
+
+
+
+   Note:   For the most current package drawings, please see the Microchip Packaging Specification located at
+            http://www.microchip.com/packaging
+
+
+
+
+
+DS20005095B-page 42                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 43 ---
+                           MCP9808
+
+
+
+                                    Software License Agreement
+
+ The software supplied herewith by Microchip Technology Incorporated (the “Company”) is intended and supplied to you, the
+ Company’s customer, for use solely and exclusively with products manufactured by the Company.
+ The software is owned by the Company and/or its supplier, and is protected under applicable copyright laws. All rights are reserved.
+ Any use in violation of the foregoing restrictions may subject the user to criminal sanctions under applicable laws, as well as to civil
+ liability for the breach of the terms and conditions of this license.
+ THIS SOFTWARE IS PROVIDED IN AN “AS IS” CONDITION. NO WARRANTIES, WHETHER EXPRESS, IMPLIED OR STATU-
+ TORY, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICU-
+ LAR PURPOSE APPLY TO THIS SOFTWARE. THE COMPANY SHALL NOT, IN ANY CIRCUMSTANCES, BE LIABLE FOR
+ SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES, FOR ANY REASON WHATSOEVER.
+
+APPENDIX A:  SOURCE CODE
+
+/********************************************************************
+ FileName:     I2C.c
+ Processor:   PIC18 Microcontrollers
+ Complier:    Microchip C18 (for PIC18) or C30 (for PIC24)
+ Company:     Microchip Technology, Inc.
+
+#include <p18cxxx.h> // This code is developed for PIC18F2550
+//It can be modified to be used with any PICmicro with MSSP module
+
+/** PRIVATE PROTOTYPES *********************************************/
+void i2c_init(void);
+void i2c_start(void);
+void i2c_repStart(void);
+void i2c_stop(void);
+unsigned char i2c_write( unsigned char i2cWriteData );
+unsigned char i2c_read( unsigned char ack );
+
+
+/********************************************************************
+*   Function Name:  i2c_init
+*   Return Value:   void
+*   Parameters:     Enable SSP
+*   Description:    This function sets up the SSP1 module on a
+*                   PIC18CXXX device for use with a Microchip I2C
+********************************************************************/
+void i2c_init(void) {
+
+    TRISBbits.TRISB0 = 1;         // Digital Output (make it input only when reading data)
+    TRISBbits.TRISB1 = 1;         // Digital Output
+
+    SSPCON1 = 0x28;               // enable I2C Master mode
+    SSPCON2 = 0x00;               // clear control bits
+    SSPSTAT = 0x80;               // disable slew rate control; disable SMBus
+
+    SSPADD = 19;                  // set baud rate to 100 kHz (Fosc = 48 MHz)
+
+    PIR1bits.SSPIF = 0;
+    PIR2bits.BCLIF = 0;
+
+    SSPCON2bits.SEN = 0;          // force idle condition
+
+}
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 43
+
+--- PDF page 44 ---
+MCP9808
+
+
+
+/********************************************************************
+*     Function Name:    i2c_start
+*     Return Value:     void
+*     Parameters:       void
+*     Description:      Send I2C Start Command
+********************************************************************/
+void i2c_start(void) {
+
+    PIR1bits.SSPIF = 0;  //clear flag
+    while (SSPSTATbits.BF );   // wait for idle condition
+
+    SSPCON2bits.SEN = 1;        // initiate START condition
+
+    while (!PIR1bits.SSPIF) ;   // wait for a flag to be set
+    PIR1bits.SSPIF = 0;  // clear flag
+}
+
+/********************************************************************
+*     Function Name:    i2c_repStart
+*     Return Value:     void
+*     Parameters:       void
+*     Description:      Resend I2C Start Command
+*
+********************************************************************/
+void i2c_repStart(void) {
+
+    PIR1bits.SSPIF = 0; // clear flag
+    while ( SSPSTATbits.BF ) ;  // wait for idle condition
+
+    SSPCON2bits.RSEN = 1;        // initiate Repeated START condition
+
+    while (!PIR1bits.SSPIF) ;  // wait for a flag to be set
+    PIR1bits.SSPIF = 0; // clear flag
+
+}
+
+/********************************************************************
+*     Function Name:    i2c_stop
+*     Return Value:     void
+*     Parameters:       void
+*     Description:      Send I2C Stop command
+*
+********************************************************************/
+void i2c_stop(void) {
+
+    PIR1bits.SSPIF = 0; // clear flag
+    while ( SSPSTATbits.BF ) ;  // wait for idle condition
+
+    SSPCON2bits.PEN = 1;         // Initiate STOP condition
+
+    while (!PIR1bits.SSPIF) ;  // wait for a flag to be set
+    PIR1bits.SSPIF = 0; // clear flag
+
+}
+
+
+
+
+
+DS20005095B-page 44                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 45 ---
+                          MCP9808
+
+
+
+/********************************************************************
+*     Function Name:    i2c_write
+*     Return Value:     Status byte for WCOL detection.
+*     Parameters:       Single data byte for I2C2 bus.
+*     Description:      This routine writes a single byte to the
+*                       I2C2 bus.
+********************************************************************/
+unsigned char i2c_write( unsigned char i2cWriteData ) {
+
+    PIR1bits.SSPIF = 0; // clear interrupt
+    while ( SSPSTATbits.BF ) ;  // wait for idle condition
+
+    SSPBUF = i2cWriteData;       // Load SSPBUF with i2cWriteData (the value to be transmit-
+ted)
+
+    while (!PIR1bits.SSPIF) ;  // wait for a flag to be set
+    PIR1bits.SSPIF = 0; // clear flag
+
+    return ( !SSPCON2bits.ACKSTAT ); // function returns '1' if transmission is acknowledged
+
+}
+
+
+/********************************************************************
+*     Function Name:    i2c_read
+*     Return Value:     contents of SSP2BUF register
+*     Parameters:       ack = 1 and nak = 0
+*     Description:      Read a byte from I2C bus and ACK/NAK device
+********************************************************************/
+unsigned char i2c_read( unsigned char ack ) {
+
+    unsigned char i2cReadData;
+
+    PIR1bits.SSPIF = 0;// clear interrupt
+
+    while ( SSPSTATbits.BF ) ; // wait for idle condition
+    SSPCON2bits.RCEN = 1;       // enable receive mode
+
+    while (!PIR1bits.SSPIF) ; // wait for a flag to be set
+    PIR1bits.SSPIF = 0;// clear flag
+
+    i2cReadData = SSPBUF;       // Read SSPBUF and put it in i2cReadData
+
+    if ( ack ) {                // if ack=1
+        SSPCON2bits.ACKDT = 0;  //   then transmit an Acknowledge
+    } else {
+        SSPCON2bits.ACKDT = 1;  //   otherwise transmit a Not Acknowledge
+    }
+
+    SSPCON2bits.ACKEN = 1;      // send acknowledge sequence
+
+    while (!PIR1bits.SSPIF) ; // wait for a flag to be set
+    PIR1bits.SSPIF = 0;// clear flag
+
+    return( i2cReadData );      // return the value read from SSPBUF
+
+}
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 45
+
+--- PDF page 46 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 46                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 47 ---
+                           MCP9808
+
+
+APPENDIX B:  REVISION HISTORY
+
+Revision B (May 2018)
+
+The following is the list of modifications:
+1.  Updated “Features”.
+2.  Updated the “Temperature Sensor DC Char-
+     acteristics” table.
+3.  Various typographical edits.
+
+Revision A (October 2011)
+
+•  Original Release of this Document.
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 47
+
+--- PDF page 48 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 48                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 49 ---
+                           MCP9808
+
+
+PRODUCT IDENTIFICATION SYSTEM
+
+To order or obtain information, e.g., on pricing or delivery, refer to the factory or the listed sales office.
+ PART NO.      X              -X         /XX                     Examples:
+                                                                                 a) MCP9808-E/MC:   Extended Temperature
+   Device   Tape and Reel   Temperature Package                                                                            8LD DFN package.
+                 and/or        Range
+             Alternate Pinout                                                  b) MCP9808-E/MS:   Extended Temperature
+                                                                            8LD MSOP package.
+   Device:             MCP9808:    Digital Temperature Sensor                       c) MCP9808T-E/MC:  Tape and Reel,
+                     MCP9808T:  Digital Temperature Sensor (Tape and Reel)                          Extended Temperature
+                                                                            8LD DFN package.
+  Temperature Range:  E   = -40°C to +125°C                                    d) MCP9808T-E/MS:  Tape and Reel,
+                                                                                        Extended Temperature
+                                                                            8LD MSOP package.
+  Package:        MC =  Plastic Dual Flat No-Lead (DFN) 2x3, 8-lead
+                MS =  Plastic Micro Small Outline (MSOP), 8-lead
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 49
+
+--- PDF page 50 ---
+MCP9808
+
+
+NOTES:
+
+
+
+
+
+DS20005095B-page 50                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 51 ---
+                          MCP9808
+
+
+
+
+Note the following details of the code protection feature on Microchip devices:
+•    Microchip products meet the specification contained in their particular Microchip Data Sheet.
+
+•    Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+     intended manner and under normal conditions.
+
+•    There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+     knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip’s Data
+     Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+
+•    Microchip is willing to work with the customer who is concerned about the integrity of their code.
+
+•    Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+    mean that we are guaranteeing the product as “unbreakable.”
+
+Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+products. Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+
+
+
+Information contained  in  this  publication regarding device        Trademarks
+applications and the like is provided only for your convenience        The Microchip name and logo, the Microchip logo, AnyRate, AVR,
+and may be superseded by updates. It is your responsibility to       AVR logo, AVR Freaks, BeaconThings, BitCloud, CryptoMemory,
+ensure that your application meets with your specifications.          CryptoRF, dsPIC, FlashFlex, flexPWR, Heldo, JukeBlox, KEELOQ,
+MICROCHIP  MAKES  NO  REPRESENTATIONS  OR        KEELOQ logo, Kleer, LANCheck, LINK MD, maXStylus,
+WARRANTIES OF ANY KIND WHETHER EXPRESS OR         maXTouch, MediaLB, megaAVR, MOST, MOST logo, MPLAB,
+IMPLIED,  WRITTEN  OR  ORAL,  STATUTORY  OR          OptoLyzer, PIC, picoPower, PICSTART, PIC32 logo, Prochip
+OTHERWISE,  RELATED  TO  THE  INFORMATION,          Designer, QTouch, RightTouch, SAM-BA, SpyNIC, SST, SST
+INCLUDING BUT NOT LIMITED TO  ITS CONDITION,          Logo, SuperFlash, tinyAVR, UNI/O, and XMEGA are registered
+QUALITY,  PERFORMANCE,  MERCHANTABILITY  OR          trademarks of Microchip Technology Incorporated in the U.S.A.
+FITNESS FOR PURPOSE. Microchip disclaims  all  liability         and other countries.
+arising from this information and  its use. Use of Microchip         ClockWorks, The Embedded Control Solutions Company,
+devices in life support and/or safety applications is entirely at          EtherSynch, Hyper Speed Control, HyperLight Load, IntelliMOS,
+the buyer’s risk, and the buyer agrees to defend, indemnify and         mTouch, Precision Edge, and Quiet-Wire are registered
+hold harmless Microchip from any and all damages, claims,          trademarks of Microchip Technology Incorporated in the U.S.A.
+suits, or expenses resulting from such use. No licenses are          Adjacent Key Suppression, AKS, Analog-for-the-Digital Age, Any
+conveyed,  implicitly  or  otherwise,  under  any  Microchip           Capacitor, AnyIn, AnyOut, BodyCom, chipKIT, chipKIT logo,
+intellectual property rights unless otherwise stated.                   CodeGuard, CryptoAuthentication, CryptoCompanion,
+                                                                            CryptoController, dsPICDEM, dsPICDEM.net, Dynamic Average
+                                                                      Matching, DAM, ECAN, EtherGREEN, In-Circuit Serial
+                                                                Programming, ICSP, Inter-Chip Connectivity, JitterBlocker,
+                                                                         KleerNet, KleerNet logo, Mindi, MiWi, motorBench, MPASM, MPF,
+                                                  MPLAB Certified logo, MPLIB, MPLINK, MultiTRAK, NetDetach,
+                                                                   Omniscient Code Generation, PICDEM, PICDEM.net, PICkit,
+                                                                                   PICtail, PureSilicon, QMatrix, RightTouch logo, REAL ICE, Ripple
+                                                                            Blocker, SAM-ICE, Serial Quad I/O, SMART-I.S., SQI,
+                                                                      SuperSwitcher, SuperSwitcher II, Total Endurance, TSHARC,
+                                                           USBCheck, VariSense, ViewSpan, WiperLock, Wireless DNA, and
+                                                  ZENA are trademarks of Microchip Technology Incorporated in the
+                                                                      U.S.A. and other countries.
+                                                 SQTP is a service mark of Microchip Technology Incorporated in
+Microchip received ISO/TS-16949:2009 certification for its worldwide           the U.S.A.
+headquarters, design and wafer fabrication facilities in Chandler and
+Tempe, Arizona; Gresham, Oregon and design centers in California              Silicon Storage Technology is a registered trademark of Microchip
+and India. The Company’s quality system processes and procedures          Technology Inc. in other countries.
+are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping
+devices, Serial EEPROMs, microperipherals, nonvolatile memory and          GestIC is a registered trademark of Microchip Technology
+analog products. In addition, Microchip’s quality system for the design        Germany II GmbH & Co. KG, a subsidiary of Microchip Technology
+and manufacture of development systems is ISO 9001:2000 certified.
+                                                                                         Inc., in other countries.
+                                                                                           All other trademarks mentioned herein are property of their
+                                                                          respective companies.
+                                              © 2011-2018, Microchip Technology Incorporated, All Rights
+                                                                  Reserved.
+                                                                ISBN: 978-1-5224-2851-0
+
+
+
+
+
+ 2011-2018 Microchip Technology Inc.                                                     DS20005095B-page 51
+
+--- PDF page 52 ---
+MCP9808
+
+
+
+
+
+DS20005095B-page 52                                       2011-2018 Microchip Technology Inc.
+
+--- PDF page 53 ---
+             Worldwide Sales and Service
+
+
+AMERICAS            ASIA/PACIFIC          ASIA/PACIFIC        EUROPE
+Corporate Office              Asia Pacific Office            China - Xiamen                Austria - Wels
+2355 West Chandler Blvd.        Suites 3707-14, 37th Floor         Tel: 86-592-2388138               Tel: 43-7242-2244-39
+Chandler, AZ 85224-6199       Tower 6, The Gateway           Fax: 86-592-2388130            Fax: 43-7242-2244-393
+Tel: 480-792-7200              Harbour City, Kowloon         China - Zhuhai             Denmark - Copenhagen
+Fax: 480-792-7277           Hong Kong                         Tel: 86-756-3210040               Tel: 45-4450-2828
+Technical Support:                  Tel: 852-2943-5100              Fax: 86-756-3210049            Fax: 45-4485-2829
+http://www.microchip.com/       Fax: 852-2401-3431             India - Bangalore              Finland - Espoo
+support
+                                Australia - Sydney                 Tel: 91-80-3090-4444               Tel: 358-9-4520-820
+Web Address:
+                                       Tel: 61-2-9868-6733             Fax: 91-80-3090-4123          France - Pariswww.microchip.com
+                               Fax: 61-2-9868-6755             India - New Delhi                  Tel: 33-1-69-53-63-20
+Atlanta                           China - Beijing                     Tel: 91-11-4160-8631            Fax: 33-1-69-30-90-79
+Duluth, GA
+                                       Tel: 86-10-8569-7000            Fax: 91-11-4160-8632          France - Saint CloudTel: 678-957-9614
+                               Fax: 86-10-8528-2104           India - Pune                        Tel: 33-1-30-60-70-00Fax: 678-957-1455
+                           China - Chengdu                  Tel: 91-20-3019-1500         Germany - GarchingAustin,      TX                          Tel: 86-28-8665-5511          Japan - Osaka                      Tel: 49-8931-9700Tel: 512-257-3370
+                               Fax: 86-28-8665-7889              Tel: 81-6-6152-7160          Germany - Haan
+Boston                           China - Chongqing             Fax: 81-6-6152-9310               Tel: 49-2129-3766400
+Westborough, MA
+                                       Tel: 86-23-8980-9588          Japan - Tokyo              Germany - HeilbronnTel: 774-760-0087
+                               Fax: 86-23-8980-9500              Tel: 81-3-6880- 3770               Tel: 49-7131-67-3636Fax: 774-760-0088
+                           China - Dongguan              Fax: 81-3-6880-3771         Germany - KarlsruheChicago
+                                       Tel: 86-769-8702-9880         Korea - Daegu                      Tel: 49-721-625370Itasca, IL
+Tel: 630-285-0071             China - Guangzhou               Tel: 82-53-744-4301          Germany - Munich
+                                       Tel: 86-20-8755-8029            Fax: 82-53-744-4302               Tel: 49-89-627-144-0Fax: 630-285-0075
+                           China - Hangzhou            Korea - Seoul                  Fax: 49-89-627-144-44Dallas
+                                       Tel: 86-571-8792-8115             Tel: 82-2-554-7200           Germany - RosenheimAddison, TX
+                               Fax: 86-571-8792-8116          Fax: 82-2-558-5932 or             Tel: 49-8031-354-560Tel: 972-818-7423
+Fax: 972-818-2924            China - Hong Kong SAR       82-2-558-5934                    Israel - Ra’anana
+                                       Tel: 852-2943-5100             Malaysia - Kuala Lumpur         Tel: 972-9-744-7705Detroit
+                               Fax: 852-2401-3431                Tel: 60-3-6201-9857
+Novi, MI                                                                                                         Italy - Milan
+Tel: 248-848-4000             China - Nanjing                Fax: 60-3-6201-9859               Tel: 39-0331-742611
+                                       Tel: 86-25-8473-2460           Malaysia - Penang             Fax: 39-0331-466781Houston, TX
+                               Fax: 86-25-8473-2470              Tel: 60-4-227-8870
+Tel: 281-894-5983                                                                                              Italy - Padova
+                           China - Qingdao               Fax: 60-4-227-4068                Tel: 39-049-7625286Indianapolis
+                                       Tel: 86-532-8502-7355           Philippines - ManilaNoblesville, IN                                                                                       Netherlands - Drunen
+                               Fax: 86-532-8502-7205            Tel: 63-2-634-9065Tel: 317-773-8323                                                                                                Tel: 31-416-690399
+Fax: 317-773-5453            China - Shanghai              Fax: 63-2-634-9069             Fax: 31-416-690340
+Tel: 317-536-2380                  Tel: 86-21-3326-8000          Singapore                 Norway - Trondheim
+                               Fax: 86-21-3326-8021              Tel: 65-6334-8870
+Los Angeles                                                                                                      Tel: 47-7289-7561
+Mission Viejo, CA             China - Shenyang              Fax: 65-6334-8850            Poland - Warsaw
+Tel: 949-462-9523                  Tel: 86-24-2334-2829          Taiwan - Hsin Chu                 Tel: 48-22-3325737
+Fax: 949-462-9608              Fax: 86-24-2334-2393              Tel: 886-3-5778-366
+Tel: 951-273-7800             China - Shenzhen              Fax: 886-3-5770-955          Romania - Bucharest
+                                                                                                                     Tel: 40-21-407-87-50
+Raleigh, NC                         Tel: 86-755-8864-2200         Taiwan - Kaohsiung
+Tel: 919-844-7510               Fax: 86-755-8203-1760            Tel: 886-7-213-7830           Spain - Madrid
+                                                                                                                     Tel: 34-91-708-08-90
+New York, NY                China - Wuhan               Taiwan - Taipei                 Fax: 34-91-708-08-91
+Tel: 631-435-6000                  Tel: 86-27-5980-5300               Tel: 886-2-2508-8600
+                               Fax: 86-27-5980-5118           Fax: 886-2-2508-0102        Sweden - Gothenberg
+San Jose, CA                                                                                                     Tel: 46-31-704-60-40
+Tel: 408-735-9110             China - Xian                  Thailand - Bangkok
+Tel: 408-436-4270                  Tel: 86-29-8833-7252               Tel: 66-2-694-1351           Sweden - Stockholm
+                               Fax: 86-29-8833-7256           Fax: 66-2-694-1350                Tel: 46-8-5090-4654
+Canada - Toronto
+Tel: 905-695-1980                                                    UK - Wokingham
+Fax: 905-695-2078                                                                                               Tel: 44-118-921-5800
+                                                                                              Fax: 44-118-921-5820
+
+
+DS20005095B-page 53                                       2011-2018 Microchip Technology Inc.
+
+                                                                                                                                    11/07/16

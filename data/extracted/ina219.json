@@ -1,0 +1,193 @@
+[
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nOperating supply voltage\nMIN: 3 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating supply voltage",
+        "operator": ">=",
+        "value": 3,
+        "unit": "V",
+        "condition": "TA = 25 °C; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B"
+      },
+      {
+        "parameter": "Operating supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = 25 °C; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nQuiescent current\nMAX: 1 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 1,
+        "unit": "mA",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; power-down mode; INA219A or INA219B\nQuiescent current\nMAX: 15 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 15,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; power-down mode; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A\nInput-referred offset voltage\nMIN: -100 | MAX: 100 | UNIT: µV\nThe source specifies MAX ±100 µV; represented as signed lower and upper bounds.",
+    "requirements": [
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": ">=",
+        "value": -100,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      },
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": "<=",
+        "value": 100,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B\nInput-referred offset voltage\nMIN: -50 | MAX: 50 | UNIT: µV\nThe source specifies MAX ±50 µV; represented as signed lower and upper bounds.",
+    "requirements": [
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": ">=",
+        "value": -50,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      },
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": "<=",
+        "value": 50,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 12-bit resolution; INA219A or INA219B\nADC conversion time\nMAX: 586 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "ADC conversion time",
+        "operator": "<=",
+        "value": 586,
+        "unit": "µs",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 12-bit resolution; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 9-bit resolution; INA219A or INA219B\nADC conversion time\nMAX: 93 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "ADC conversion time",
+        "operator": "<=",
+        "value": 93,
+        "unit": "µs",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 9-bit resolution; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; sink current = 3 mA; INA219A or INA219B\nLogic-low SDA output voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Logic-low SDA output voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; sink current = 3 mA; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A\nCurrent measurement error\nMIN: -0.5 | MAX: 0.5 | UNIT: %\nThe source MAX is a signed ± error bound.",
+    "requirements": [
+      {
+        "parameter": "Current measurement error",
+        "operator": ">=",
+        "value": -0.5,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      },
+      {
+        "parameter": "Current measurement error",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B\nCurrent measurement error\nMIN: -0.3 | MAX: 0.3 | UNIT: %\nThe source MAX is a signed ± error bound.",
+    "requirements": [
+      {
+        "parameter": "Current measurement error",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      },
+      {
+        "parameter": "Current measurement error",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 0 ≤ VIN ≤ VS; SDA as input, SCL, A0, A1; INA219A or INA219B\nDigital input leakage current\nMAX: 1 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Digital input leakage current",
+        "operator": "<=",
+        "value": 1,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 0 ≤ VIN ≤ VS; SDA as input, SCL, A0, A1; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics, footnote 2\nThe bus-voltage range field specifies ADC scaling only. Never apply more than 26 V to the device, even if the ADC full-scale setting is 32 V.",
+    "requirements": [
+      {
+        "parameter": "Applied bus voltage",
+        "operator": "<=",
+        "value": 26,
+        "unit": "V",
+        "condition": "Any ADC bus-voltage scaling setting"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nDigital input capacitance\nTYP: 3 | UNIT: pF",
+    "requirements": []
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nPower-on-reset threshold\nTYP: 2 | UNIT: V",
+    "requirements": []
+  },
+  {
+    "passage": "7.5 Electrical characteristics, footnote 3\nRTI means referred-to-input.",
+    "requirements": []
+  }
+]

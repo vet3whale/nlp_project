@@ -1,0 +1,200 @@
+[
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; temperature -40 to 125 °C\nSupply voltage VDD\nMIN: 2.15 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 2.15,
+        "unit": "V",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; single-shot idle state; T = 25 °C\nSupply current\nMAX: 2 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 2,
+        "unit": "µA",
+        "condition": "SHT31-DIS; single-shot idle state; T = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; single-shot idle state; T = 125 °C\nSupply current\nMAX: 6 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 6,
+        "unit": "µA",
+        "condition": "SHT31-DIS; single-shot idle state; T = 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; temperature -40 to 125 °C; measuring\nSupply current\nMAX: 1500 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 1500,
+        "unit": "µA",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; measuring"
+      }
+    ]
+  },
+  {
+    "passage": "2.2 Timing specification, Table 4\nSHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V; high repeatability\nMeasurement duration\nMAX: 15 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Measurement duration",
+        "operator": "<=",
+        "value": 15,
+        "unit": "ms",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V; high repeatability"
+      }
+    ]
+  },
+  {
+    "passage": "2.2 Timing specification, Table 5\nSHT31-DIS; temperature -40 to 125 °C; 2.15 V ≤ VDD < 2.4 V; high repeatability\nMeasurement duration\nMAX: 15.5 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Measurement duration",
+        "operator": "<=",
+        "value": 15.5,
+        "unit": "ms",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; 2.15 V ≤ VDD < 2.4 V; high repeatability"
+      }
+    ]
+  },
+  {
+    "passage": "2.2 Timing specification, Table 4\nSHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V\nReset pulse duration\nMIN: 1 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Reset pulse duration",
+        "operator": ">=",
+        "value": 1,
+        "unit": "µs",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V"
+      }
+    ]
+  },
+  {
+    "passage": "2.3 Absolute minimum and maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; short exposure only; ratings tested individually\nSupply voltage VDD\nMIN: -0.3 | MAX: 6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; short exposure only; ratings tested individually"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; short exposure only; ratings tested individually"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 Recommended operating condition\nRecommended normal operation is within 5 to 60 °C and 20 to 80 %RH. Extended exposure outside this range can temporarily offset the humidity signal.",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": 5,
+        "unit": "°C",
+        "condition": "Recommended normal operation"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 60,
+        "unit": "°C",
+        "condition": "Recommended normal operation"
+      },
+      {
+        "parameter": "Relative humidity",
+        "operator": ">=",
+        "value": 20,
+        "unit": "%RH",
+        "condition": "Recommended normal operation"
+      },
+      {
+        "parameter": "Relative humidity",
+        "operator": "<=",
+        "value": 80,
+        "unit": "%RH",
+        "condition": "Recommended normal operation"
+      }
+    ]
+  },
+  {
+    "passage": "3.1 Power pins\nDecouple the power supply pins with a 100 nF capacitor as close to the sensor as possible.",
+    "requirements": [
+      {
+        "parameter": "Decoupling capacitance",
+        "operator": "=",
+        "value": 100,
+        "unit": "nF",
+        "condition": "Power supply pins; capacitor placed close to the sensor"
+      }
+    ]
+  },
+  {
+    "passage": "3 Pin assignment, Table 7\nIf nRESET is connected to VDD, use a series resistor of R ≥ 2 kΩ. If unused, leaving nRESET floating is recommended.",
+    "requirements": [
+      {
+        "parameter": "Series resistance",
+        "operator": ">=",
+        "value": 2,
+        "unit": "kΩ",
+        "condition": "nRESET connected to VDD"
+      }
+    ]
+  },
+  {
+    "passage": "3.2 Serial clock and serial data\nSCL clock frequency can be selected from 0 to 1000 kHz. Communication up to 400 kHz must meet I2C Fast Mode; higher frequencies must follow Table 21.",
+    "requirements": [
+      {
+        "parameter": "SCL clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "I2C Fast Mode up to 400 kHz, Table 21 for higher frequencies"
+      },
+      {
+        "parameter": "SCL clock frequency",
+        "operator": "<=",
+        "value": 1000,
+        "unit": "kHz",
+        "condition": "I2C Fast Mode up to 400 kHz, Table 21 for higher frequencies"
+      }
+    ]
+  },
+  {
+    "passage": "1 Sensor performance, Table 1\nSHT31; typical value only\nRelative humidity accuracy tolerance\nTYP: ±2 | UNIT: %RH",
+    "requirements": []
+  },
+  {
+    "passage": "1 Sensor performance, Table 2\nSHT31; 0 to 90 °C; typical value only\nTemperature accuracy tolerance\nTYP: ±0.2 | UNIT: °C",
+    "requirements": []
+  },
+  {
+    "passage": "3.4 ADDR pin\nThe ADDR pin selects the I2C address. Its logic level must remain constant from the I2C start condition until communication finishes.",
+    "requirements": []
+  }
+]

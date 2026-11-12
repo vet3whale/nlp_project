@@ -1,0 +1,2755 @@
+--- PDF page 1 ---
+                                 Product        Order         Technical            Tools &          Support &
+                                  Folder       Now        Documents         Software        Community
+
+
+                                                                           OPT3001
+
+                                                                         SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+                     OPT3001 Ambient Light Sensor (ALS)
+
+1  Features                              3  Description
+1•  Precision Optical Filtering to Match Human Eye:      The OPT3001 is a sensor that measures the intensity
+                                                               of visible light. The spectral response of the sensor
+   –  Rejects > 99% (typ) of IR                                                                       tightly matches the photopic response of the human
+•  Automatic Full-Scale Setting Feature Simplifies       eye and includes significant infrared rejection.
+   Software and Ensures Proper Configuration
+                                              The OPT3001 is a single-chip lux meter, measuring
+•  Measurements: 0.01 lux to 83 k lux                                                         the intensity of light as visible by the human eye. The
+•   23-Bit Effective Dynamic Range With                   precision spectral response and strong IR rejection of
+   Automatic Gain Ranging                              the device enables the OPT3001 to accurately meter
+                                                         the  intensity  of  light as seen by the human eye•  12 Binary-Weighted Full-Scale Range Settings:
+                                                         regardless of  light source. The strong IR rejection
+   < 0.2% (typ) Matching Between Ranges
+                                                          also aids in maintaining high accuracy when industrial
+•  Low Operating Current: 1.8 µA (typ)                  design calls for mounting the sensor under dark glass
+•  Operating Temperature Range: –40°C to +85°C         for aesthetics. The OPT3001 is designed for systems
+                                                               that create light-based experiences for humans, and•  Wide Power-Supply Range: 1.6 V to 3.6 V
+                                               an  ideal  preferred  replacement  for  photodiodes,
+•  5.5-V Tolerant I/O                                                            photoresistors, or other ambient  light sensors with
+•   Flexible Interrupt System                               less human eye matching and IR rejection.
+•  Small-Form Factor: 2.0 mm × 2.0 mm × 0.65 mm                                                Measurements can be made from 0.01 lux up to
+                                                 83k lux without manually selecting full-scale ranges
+2  Applications                                 by using the built-in, full-scale setting feature. This
+                                                               capability allows  light measurement over a  23-bit•  Display Backlight Controls
+                                                                effective dynamic range.
+•   Lighting Control Systems
+                                              The digital operation is flexible for system integration.•  Tablet and Notebook Computers
+                                                Measurements can be either continuous or single-
+•  Thermostats and Home Automation Appliances                                                             shot. The  control and  interrupt  system  features
+•   Point-of-Sale Terminals                          autonomous  operation,  allowing  the  processor  to
+•  Outdoor Traffic and Street Lights                      sleep  while  the  sensor  searches  for  appropriate
+                                                 wake-up events to report via the interrupt pin. The
+•  Cameras                                                                       digital output is reported over an I2C- and SMBus-
+                                                         compatible, two-wire serial interface.
+
+                                              The low power consumption and low power-supply
+                                                         voltage  capability  of  the OPT3001 enhance  the
+                                                            battery life of battery-powered systems.
+
+                                                               Device Information(1)
+Spectral Response: The OPT3001 and Human Eye       PART NUMBER    PACKAGE    BODY SIZE (NOM)
+                                                       OPT3001         USON (6)      2.00 mm x 2.00 mm
+      1
+                                           OPT3001                                                                                  (1) For all available packages, see the package option addendum      0.9                                         Human Eye                                                                                     at the end of the datasheet.
+      0.8
+      0.7                                                           Block Diagram
+      0.6                                                                                                                 VDD    Response
+      0.5
+      0.4                                                                                                          VDD
+      0.3                                                                          OPT3001                                         SCL     Normalized
+                                                                                                                                 SDA
+      0.2                                                                                      Ambient                                                             I2C
+                                                                                                                      Light          Optical                   ADC         Interface        INT
+      0.1                                                                                                                                               Filter                                        ADDR
+      0
+       300    400    500    600    700    800    900    1000                                                     GND
+                           Wavelength (nm)                      D001
+
+
+
+
+
+1
+
+
+
+     An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+        intellectual property matters and other important disclaimers. PRODUCTION DATA.
+
+--- PDF page 2 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+                                Table of Contents
+
+  1    Features.................................................................. 1               7.6  Register Maps......................................................... 19
+  2   Applications ........................................................... 1       8   Application and Implementation ........................ 27
+  3   Description ............................................................. 1               8.1  Application Information............................................ 27
+  4   Revision History..................................................... 2               8.2  Typical Application .................................................. 28
+                                                                               8.3  Do's and Don'ts ...................................................... 31  5   Pin Configuration and Functions......................... 3
+                                                       9  Power-Supply Recommendations...................... 32  6    Specifications......................................................... 4
+        6.1  Absolute Maximum Ratings ...................................... 4       10   Layout................................................................... 33
+        6.2 ESD Ratings.............................................................. 4              10.1  Layout Guidelines ................................................. 33
+        6.3  Recommended Operating Conditions....................... 4              10.2  Layout Example .................................................... 33
+        6.4  Thermal Information.................................................. 4       11  Device and Documentation Support ................. 34
+        6.5  Electrical Characteristics........................................... 5              11.1  Documentation Support ........................................ 34
+        6.6  Timing Requirements................................................ 6              11.2  Receiving Notification of Documentation Updates 34
+        6.7  Typical Characteristics.............................................. 7              11.3  Community Resources.......................................... 34
+  7   Detailed Description ............................................ 10              11.4   Trademarks........................................................... 34
+        7.1  Overview ................................................................. 10              11.5  Electrostatic Discharge Caution............................ 34
+        7.2  Functional Block Diagram  ...................................... 10              11.6   Glossary................................................................ 34
+        7.3  Feature Description................................................. 11       12  Mechanical, Packaging, and Orderable
+        7.4  Device Functional Modes........................................ 13            Information ........................................................... 34
+                                                                            12.1  Soldering and Handling Recommendations.......... 34        7.5   Programming........................................................... 16
+                                                                            12.2 DNP (S-PDSO-N6) Mechanical Drawings ............ 35
+
+
+4  Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+
+
+Changes from Revision B (December 2014) to Revision C                                            Page
+
+•  Added Receiving Notification of Documentation Updates and Community Resources  ...................................................... 34
+
+
+
+Changes from Revision A (October 2014) to Revision B                                              Page
+
+•  Changed Handling Ratings table to ESD Ratings table ......................................................................................................... 4
+
+•  Added missing link to Electrical Interface section in Serial Interface section....................................................................... 12
+
+•  Added application information to Application and Implementation section .......................................................................... 27
+
+•  Added new documents to Related Documentation section ................................................................................................. 34
+
+•  Added Soldering and Handling Recommendations section ................................................................................................. 34
+
+
+
+Changes from Original (July 2014) to Revision A                                                   Page
+
+•  Changed data sheet from product preview to production data .............................................................................................. 1
+
+
+
+
+
+2      Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 3 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+5  Pin Configuration and Functions
+
+
+                                        DNP Package
+                                                           6-Pin USON
+                                                Top View
+
+
+
+                                      VDD   1                6   SDA
+
+
+                                     ADDR   2                5   INT
+
+
+                                    GND   3                4   SCL
+
+
+
+                                          Pin Functions
+
+           PIN
+                                                              DESCRIPTION
+    NO.      NAME           I/O
+
+      1        VDD        Power     Device power. Connect to a 1.6-V to 3.6-V supply.
+      2       ADDR       Digital input  Address pin. This pin sets the LSBs of the I2C address.
+
+      3       GND        Power    Ground
+      4         SCL        Digital input   I2C clock. Connect with a 10-kΩ resistor to a 1.6-V to 5.5-V supply.
+
+      5           INT        Digital output  Interrupt output open-drain. Connect with a 10-kΩ resistor to a 1.6-V to 5.5-V supply.
+
+                                        Digital      6        SDA                     I2C data. Connect with a 10-kΩ resistor to a 1.6-V to 5.5-V supply.
+                                  input/output
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback      3
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 4 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+6  Specifications
+
+6.1  Absolute Maximum Ratings
+See(1)
+
+                                                                         MIN       MAX        UNIT
+
+                    VDD to GND                                                  –0.5          6          V
+ Voltage
+                         SDA, SCL, INT, and ADDR to GND                              –0.5          6          V
+
+ Current into any pin                                                                             10        mA
+
+                               Junction                                                            150          °C
+ Temperature
+                              Storage, Tstg                                            –65          +150(2)         °C
+
+(1)  Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+     only, and do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+     Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+(2)  Long exposure to temperatures higher than 105°C can cause package discoloration, spectral distortion, and measurement inaccuracy.
+
+6.2 ESD Ratings
+
+                                                                            VALUE      UNIT
+             Electrostatic        Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001(1)                ±2000
+ V(ESD)                                                                                     V
+           discharge           Charged-device model (CDM), per JEDEC specification JESD22-C101(2)        ±500
+
+(1)  JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2)  JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+
+6.3 Recommended Operating Conditions
+
+                                                                     MIN     NOM      MAX    UNIT
+
+ Operating temperature                                                         –40                     85     °C
+
+ Operating power-supply voltage                                                            1.6                        3.6     V
+
+6.4  Thermal Information
+
+                                                                                OPT3001
+                          THERMAL METRIC(1)                            DNP (USON)       UNIT
+
+                                                                                         6 PINS
+
+ RθJA            Junction-to-ambient thermal resistance                                                   71.2           °C/W
+ RθJC(top)         Junction-to-case (top) thermal resistance                                                 45.7           °C/W
+ RθJB            Junction-to-board thermal resistance                                                     42.2           °C/W
+ ψJT              Junction-to-top characterization parameter                                                   2.4           °C/W
+ ψJB             Junction-to-board characterization parameter                                             42.8           °C/W
+ RθJC(bot)         Junction-to-case (bottom) thermal resistance                                              17.0           °C/W
+
+(1)  For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+     report.
+
+
+
+
+
+4      Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 5 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+6.5  Electrical Characteristics
+At TA = 25°C, VDD = 3.3 V, 800-ms conversion time (CT = 1)(1), automatic full-scale range (RN[3:0] = 1100b(1)), white LED,
+and normal-angle incidence of light, unless otherwise specified.
+
+             PARAMETER                        TEST CONDITIONS                 MIN       TYP      MAX    UNIT
+
+ OPTICAL
+
+            Peak irradiance spectral responsivity                                                             550             nm
+              Resolution (LSB)                    Lowest full-scale range, RN[3:0] = 0000b(1)                          0.01                      lux
+
+                Full-scale illuminance                                                                           83865.6                      lux
+
+                                                    0.64 lux per ADC code, 2620.80 lux full-scale         2812       3125       3437  ADC codes
+            Measurement output result
+                                                      (RN[3:0] = 0110)(1), 2000 lux input(2)                1800       2000       2200       lux
+
+               Relative accuracy between gain
+               ranges(3)                                                                                0.2%
+                Infrared response (850 nm)(2)                                                                0.2%
+
+                Light source variation
+                                                Bare device, no cover glass                            4%
+               (incandescent, halogen, fluorescent)
+
+                                                         Input illuminance > 40 lux                             2%
+                Linearity
+                                                         Input illuminance < 40 lux                             5%
+
+            Measurement drift across temperature   Input illuminance = 2000 lux                                        0.01               %/°C
+
+                                                                                                         0          3  ADC codes
+             Dark condition, ADC output             0.01 lux per ADC code
+                                                                                                         0         0.03       lux
+
+              Half-power angle                50% of full-power reading                                      47                degrees
+ PSRR       Power-supply rejection ratio           VDD at 3.6 V and 1.6 V                                                0.1                  %/V(4)
+
+ POWER SUPPLY
+
+ VDD          Operating range                                                                                1.6                        3.6     V
+ VI²C          Operating range of I2C pull-up resistor   I2C pull-up resistor, VDD ≤VI²C                           1.6                        5.5     V
+
+                                                                             Active, VDD = 3.6 V                                   1.8           2.5     µA
+                                                Dark          Shutdown (M[1:0] = 00)(1),
+                                                                                                                            0.3         0.47     µA
+                                                          VDD = 3.6 V
+ IQ           Quiescent current
+                                                                             Active, VDD = 3.6 V                                   3.7               µA
+                                                           Full-scale lux    Shutdown,
+                                                                                                                            0.4               µA                                                                          (M[1:0] = 00)(1)
+
+ POR         Power-on-reset threshold             TA = 25°C                                                            0.8              V
+
+ DIGITAL
+
+               I/O pin capacitance                                                                             3                pF
+                                             (CT = 1)(1), 800-ms mode, fixed lux range             720        800        880    ms
+               Total integration time(5)
+                                             (CT = 0)(1), 100-ms mode, fixed lux range              90        100        110    ms
+
+              Low-level input voltage
+ VIL                                                                                          0                  0.3 × VDD     V             (SDA, SCL, and ADDR)
+
+               High-level input voltage
+ VIH                                                                                                    0.7 × VDD                        5.5     V             (SDA, SCL, and ADDR)
+
+              Low-level input current
+ IIL                                                                                                                  0.01        0.25(6)     µA             (SDA, SCL, and ADDR)
+
+              Low-level output voltage
+ VOL                                                   IOL= 3 mA                                                                     0.32     V           (SDA and INT)
+
+              Output logic high, high-Z leakage
+ IZH                                                 Pin at VDD                                                        0.01        0.25(6)     µA               current (SDA, INT)
+
+ TEMPERATURE
+
+               Specified temperature range                                                         –40                     85     °C
+
+(1)  Refers to a control field within the configuration register.
+(2)  Tested with the white LED calibrated to 2k lux and an 850-nm LED.
+(3)  Characterized by measuring fixed near-full-scale light levels on the higher adjacent full-scale range setting.
+(4) PSRR is the percent change of the measured lux output from its current value, divided by the change in power supply voltage, as
+     characterized by results from 3.6-V and 1.6-V power supplies.
+(5)  The conversion time, from start of conversion until the data are ready to be read, is the integration time plus 3 ms.
+(6)  The specified leakage current is dominated by the production test equipment limitations. Typical values are much smaller.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback      5
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 6 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+6.6  Timing Requirements(1)
+
+                                                                              MIN    TYP   MAX  UNIT
+ I2C FAST MODE
+
+ fSCL           SCL operating frequency                                                        0.01                0.4  MHz
+ tBUF            Bus free time between stop and start                                       1300                    ns
+ tHDSTA           Hold time after repeated start                                              600                    ns
+ tSUSTA           Setup time for repeated start                                               600                    ns
+ tSUSTO           Setup time for stop                                                      600                    ns
+ tHDDAT           Data hold time                                                           20             900    ns
+ tSUDAT           Data setup time                                                         100                    ns
+ tLOW          SCL clock low period                                                    1300                    ns
+ tHIGH          SCL clock high period                                                    600                    ns
+ tRC and tFC        Clock rise and fall time                                                                   300    ns
+ tRD and tFD       Data rise and fall time                                                                    300    ns
+
+                Bus timeout period. If the SCL line is held low for this duration of time, the bus
+ tTIMEO                                                                                         28         ms                     state machine is reset.
+ I2C HIGH-SPEED MODE
+
+ fSCL           SCL operating frequency                                                        0.01                2.6  MHz
+ tBUF            Bus free time between stop and start                                        160                    ns
+ tHDSTA           Hold time after repeated start                                              160                    ns
+ tSUSTA           Setup time for repeated start                                               160                    ns
+ tSUSTO           Setup time for stop                                                      160                    ns
+ tHDDAT           Data hold time                                                           20             140    ns
+ tSUDAT           Data setup time                                                          20                    ns
+ tLOW          SCL clock low period                                                     240                    ns
+ tHIGH          SCL clock high period                                                     60                    ns
+ tRC and tFC        Clock rise and fall time                                                                    40    ns
+ tRD and tFD       Data rise and fall time                                                                     80    ns
+
+                Bus timeout period. If the SCL line is held low for this duration of time, the bus
+ tTIMEO                                                                                         28         ms                     state machine is reset.
+
+(1)   All timing parameters are referenced to low and high voltage thresholds of 30% and 70%, respectively, of final settled value.
+
+                                                  1/fSCL
+                                                tRC                    tFC
+                                                                                       70%     SCL                                                                                       30%
+                                 tLOW                                                 tHDDAT   tHIGH   tSUDAT         tSUSTA     tHDSTA                           tSUSTO
+
+                                                                                       70%    SDA                                                                                       30%
+                      tBUF                                                 tRD                                                tFD
+             Stop    Start                                                        Start                                Stop
+
+                                Figure 1. I2C Detailed Timing Diagram
+
+
+
+
+
+6      Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 7 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+6.7  Typical Characteristics
+
+At TA = 25°C, VDD = 3.3 V, 800-ms conversion time (CT = 1), automatic full-scale range (RN[3:0] = 1100b), white LED, and
+normal-angle incidence of light, unless otherwise specified.
+
+
+          1                                                                 500
+                                              OPT3001                                Fluorescent
+          0.9                                  Human Eye                450      Halogen
+          0.8                                                                 400       Incandescent
+          0.7                                                                                                                            (Lux) 350
+          0.6                                                                 300              Response
+          0.5                                                                 250                                                                                                                                                                                                                                         Response          0.4                                                                 200
+                                                                            150                  Normalized 0.3                                                                                                                                                     Output
+          0.2                                                                 100
+          0.1                                                                  50
+          0                                                                   0
+          300    400    500    600    700    800    900    1000                 0   50  100  150  200  250  300  350  400  450  500
+                               Wavelength (nm)                      D001                                       Input Illuminance (Lux)                    D002
+
+
+             Figure 2. Spectral Response vs Wavelength               Figure 3. Output Response vs Input Illuminance, Multiple
+                                                                          Light Sources (Fluorescent, Halogen, Incandescent)
+       80000                                                                100
+                800ms                                                         800ms
+       70000      100ms                                                         100ms
+                                                                             80
+      (Lux) 60000                                                                                                                          (Lux)
+       50000                                                                             60
+       40000          Response                                                                                                                                                                                                                       Response                                                                             40       30000
+       Output 20000                                                                                                                                                  Output
+                                                                             20
+       10000
+
+           0                                                                  0
+            0   10000 20000 30000 40000 50000 60000 70000 80000               0        20        40        60        80       100
+                                   Input Illuminance (Lux)                    D003                                     Input Illuminance (Lux)                    D004
+
+
+           Figure 4. Output Response vs Input Illuminance                 Figure 5. Output Response vs Input Illuminance
+                     (Entire Range = 0 lux to 83k lux)                                 (Mid Range = 0 lux to 100 lux)
+         5                                                                         1.020
+               800ms
+               100ms
+         4
+          (Lux)                                                                           1.010
+         3                                                                                                                                  1.002   1.002
+                                                                                           1.000   1.001   1.001                                                                                                                                                                                                                                       Response 1.000                Response                                                                                                          0.997   0.997
+         2                                                                                                                                                                                                        Relative            Output                                                                                    0.990         1
+
+         0                                                                         0.980
+          0         1         2         3         4         5                        40.95   81.9   163.8   327.6   655.2  1310.4  2620.8
+                                Input Illuminance (Lux)                   D005                                         Full-Scale Range (Lux)                   D006
+                                                                                              Input illuminance = 33 lux,
+                                                                            normalized to response of 40.95 lux full-scale
+
+           Figure 6. Output Response vs Input Illuminance              Figure 7. Full-Scale-Range Matching (Lowest 7 Ranges)
+                  (Low Range = 0 lux to 5 lux)
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback      7
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 8 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+Typical Characteristics (continued)
+
+At TA = 25°C, VDD = 3.3 V, 800-ms conversion time (CT = 1), automatic full-scale range (RN[3:0] = 1100b), white LED, and
+normal-angle incidence of light, unless otherwise specified.
+       1.020                                                                            0.1
+                                                                                   0.09
+       1.010                                                                                                                       (Lux) 0.08                                                                                   0.07
+                                                            1.004                                 1.003                                          1.002                                   0.06                        1.002
+              1.000                               1.000       Response 1.000                                                                                                                                                                                              Response 0.05
+       Relative                                                                                                                                                            Output 0.040.03
+       0.990                                                                                               Dark 0.02
+                                                                                   0.01
+       0.980                                                                 0
+              2620.8   5241.6  10483.2  20966.4  41932.8  83865.6                   -40     -20     0      20     40     60     80     100
+                                                                                                     Temperature (qC)                     D0016                                 Full-Scale Range (Lux)                   D007
+                                                                                Average of 30 devices                     Input illuminance = 2490 lux,
+            normalized to response of 2560 lux full-scale
+
+       Figure 8. Full-Scale-Range Matching (Highest 6 Ranges)                Figure 9. Dark Response vs Temperature
+       1.02                                                               1000
+
+
+       1.01
+                                                                          900
+                                                                                                                (ms)
+         1        Response                                                                                                       Time
+                                                                          800
+       0.99           Normalized                                                                                                                                                                                                                                                                   Conversion                                                                          700
+       0.98
+
+
+       0.97                                                                600
+           -40    -20    0     20    40    60    80    100   120                  1.6        2          2.4         2.8         3.2         3.6
+                              Temperature ( qC)                      D008                               Power Supply (V)                     D017
+
+
+           Figure 10. Normalized Response vs Temperature                  Figure 11. Conversion Time vs Power Supply
+       1.002                                                                1
+                                                                                        0.9
+                                                                                        0.8
+       1.001
+                                                                                        0.7
+                                                                                        0.6       Response                                                                                                                                                                                                                 Response
+         1                                                                            0.5
+                                                                                        0.4         Normalized                                                                                                                                                                                                                                                                      Normalized 0.3       0.999
+                                                                                        0.2
+                                                                                        0.1
+       0.998                                                                0
+            1.6        2          2.4         2.8         3.2         3.6                -90   -70   -50   -30   -10   10   30   50   70   90
+                            Power Supply (V)                      D009                               Illuminance Angle (Degrees)                 D010
+
+
+      Figure 12. Normalized Response vs Power-Supply Voltage         Figure 13. Normalized Response vs Illuminance Angle
+
+
+
+
+
+8      Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 9 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+Typical Characteristics (continued)
+
+At TA = 25°C, VDD = 3.3 V, 800-ms conversion time (CT = 1), automatic full-scale range (RN[3:0] = 1100b), white LED, and
+normal-angle incidence of light, unless otherwise specified.
+         4                                                                             0.5
+
+        3.5                                                                        0.45
+
+      (PA)   3                                                                                                (PA)   0.4
+
+                                                                                   0.35        2.5                                                                                                                                                                       Current          Current
+
+         2                                                                             0.3        Supply                                                                                                                                                        Supply
+
+        1.5                                                                        0.25
+
+         1                                                                             0.2
+         100             1000            10000           100000              0        20000      40000      60000      80000
+                                Input Illuminance (Lux)                   D011                                     Input Illuminance (Lux)                    D011D012
+                            M[1:0] = 10b                                                        M[1:0] = 00b
+
+            Figure 14. Supply Current vs Input Illuminance                 Figure 15. Shutdown Current vs Input Illuminance
+        3.5                                                                             1.6
+              Vdd = 3.3V                                                      Vdd = 3.3V
+              Vdd = 1.6V                                                      Vdd = 1.6V                                                                                        1.4
+        3                                                                                                 (PA)
+                                                                                        1.2
+     (PA)        2.5                                                                                                                                                                          Current
+         Current                                                                     1                                                                                                                                                                         Supply 0.8
+        Supply   2                                                                             0.6        1.5                                                                                                                                                                                                  Shutdown
+                                                                                        0.4
+
+        1                                                                             0.2
+          -40     -20     0      20     40     60     80     100                 -40     -20     0      20     40     60     80     100
+                              Temperature (qC)                      D013                                 Temperature (qC)                      D014
+                            M[1:0] = 10b                                            M[1:0] = 00b, input illuminance = 0 lux
+
+              Figure 16. Supply Current vs Temperature                     Figure 17. Shutdown Current vs Temperature
+                                        100
+                                             Vdd = 3.3V
+                                             Vdd = 1.6V
+
+                                                          (PA)                                        10
+                                                                                                     Current
+
+
+                                         1                                                                                                                    Shutdown
+
+
+
+                                                0.1
+                                                0.01      0.1      1       10      100     1000    10000
+                                                            Continuous I2C Frequency (KHz)               D015
+                                                    Input illuminance = 80 lux, SCL = SDA,
+                                                  continuously toggled at I2C frequency
+                         Note: A typical application runs at a lower duty cycle and thus consumes a lower current.
+
+                                      Figure 18. Supply Current vs Continuous I2C Frequency
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback      9
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 10 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+7  Detailed Description
+
+7.1  Overview
+
+The OPT3001 measures the ambient light that illuminates the device. This device measures light with a spectral
+response very closely matched to the human eye, and with very good infrared rejection.
+
+Matching the sensor spectral response to that of the human eye response is vital because ambient light sensors
+are used to measure and help create ideal human lighting experiences. Strong rejection of infrared light, which a
+human does not see, is a crucial component of this matching. This matching makes the OPT3001 especially
+good for operation underneath windows that are visibly dark, but infrared transmissive.
+The OPT3001 is fully self-contained to measure the ambient light and report the result in lux digitally over the I2C
+bus. The result can also be used to alert a system and interrupt a processor with the INT pin. The result can also
+be summarized with a programmable window comparison and communicated with the INT pin.
+
+The OPT3001 can be configured into an automatic full-scale, range-setting mode that always selects the optimal
+full-scale range setting for the lighting conditions. This mode frees the user from having to program their software
+for potential iterative cycles of measurement and readjustment of the full-scale range until optimal for any given
+measurement. The device can be commanded to operate continuously or in single-shot measurement modes.
+
+The device integrates its result over either 100 ms or 800 ms, so the effects of 50-Hz and 60-Hz noise sources
+from typical light bulbs are nominally reduced to a minimum.
+
+The device starts up in a low-power shutdown state, such that the OPT3001 only consumes active-operation
+power after being programmed into an active state.
+
+The OPT3001 optical filtering system is not excessively sensitive to non-ideal particles and micro-shadows on
+the optical surface. This reduced sensitivity is a result of the relatively minor device dependency on uniform-
+density optical illumination of the sensor area for infrared rejection. Proper optical surface cleanliness is always
+recommended for best results on all optical devices.
+
+7.2  Functional Block Diagram
+
+
+                                                                   VDD
+
+
+                                                            VDD
+                            OPT3001                                         SCL
+                                                                          SDA
+                         Ambient                                                             I2C
+                                Light          Optical                   ADC         Interface        INT
+                                                        Filter                                        ADDR
+
+
+                                                             GND
+
+
+
+
+
+10     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 11 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+7.3  Feature Description
+
+7.3.1 Human Eye Matching
+
+The OPT3001  spectral response  closely matches  that  of  the human  eye.   If  the ambient  light sensor
+measurement is used to help create a good human experience, or create optical conditions that are optimal for a
+human, the sensor must measure the same spectrum of light that a human sees.
+
+The device also has excellent infrared light (IR) rejection. This IR rejection is especially important because many
+real-world lighting sources have significant infrared content that humans do not see.  If the sensor measures
+infrared light that the human eye does not see, then a true human experience is not accurately represented.
+
+Furthermore,  if the ambient light sensor is hidden underneath a dark window (such that the end-product user
+cannot see the sensor) the infrared rejection of the OPT3001 becomes significantly more important because
+many dark windows attenuate visible light but transmit infrared light. This attenuation of visible light and lack of
+attenuation of IR light amplifies the ratio of the infrared light to visible light that illuminates the sensor. Results
+can  still be well matched to the human eye under this condition because of the high infrared rejection of the
+OPT3001.
+
+7.3.2  Automatic Full-Scale Range Setting
+
+The OPT3001 has an automatic full-scale range setting feature that eliminates the need to predict and set the
+optimal range for the device. In this mode, the OPT3001 automatically selects the optimal full-scale range for the
+given lighting condition. The OPT3001 has a high degree of result matching between the full-scale range
+settings. This matching eliminates the problem of varying results or the need for range-specific, user-calibrated
+gain factors when different full-scale ranges are chosen. For further details, see the Automatic Full-Scale Setting
+Mode section.
+
+7.3.3  Interrupt Operation, INT Pin, and Interrupt Reporting Mechanisms
+The device has an interrupt reporting system that allows the processor connected to the I2C bus to go to sleep,
+or otherwise ignore the device  results,  until a user-defined event occurs  that  requires  possible  action.
+Alternatively, this same mechanism can also be used with any system that can take advantage of a single digital
+signal that indicates whether the light is above or below levels of interest.
+
+The interrupt event conditions are controlled by the high-limit and low-limit registers, as well as the configuration
+register latch and fault count fields. The results of comparing the result register with the high-limit register and
+low-limit register are referred to as fault events. The fault count register dictates how many consecutive same-
+result fault events are required to trigger an interrupt event and subsequently change the state of the interrupt
+reporting mechanisms, which are the INT pin, the flag high field, and the flag low field. The latch field allows a
+choice between a latched window-style comparison and a transparent hysteresis-style comparison.
+
+The INT pin has an open-drain output, which requires the use of a pull-up resistor. This open-drain output allows
+multiple devices with open-drain INT pins to be connected to the same line, thus creating a logical NOR or AND
+function between the devices. The polarity of the INT pin can be controlled with the polarity of interrupt field in
+the configuration register. When the POL field is set to 0, the pin operates in an active low behavior that pulls the
+pin low when the INT pin becomes active. When the POL field is set to 1, the pin operates in an active high
+behavior and becomes high impedance, thus allowing the pin to go high when the INT pin becomes active.
+
+Additional details of the interrupt reporting registers are described in the Interrupt Reporting Mechanism Modes
+and Internal Registers sections.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     11
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 12 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+Feature Description (continued)
+
+7.3.4  I2C Bus Overview
+The OPT3001 offers compatibility with both I2C and SMBus interfaces. The I2C and SMBus protocols are
+essentially compatible with one another. The I2C interface is used throughout this document as the primary
+example with the SMBus protocol specified only when a difference between the two protocols is discussed.
+
+The OPT3001 is connected to the bus with two pins: an SCL clock input pin and an SDA open-drain bidirectional
+data pin. The bus must be controlled by a master device that generates the serial clock (SCL), controls the bus
+access, and generates start and stop conditions. To address a specific device, the master initiates a start
+condition by pulling the data signal line (SDA) from a high logic level to a low logic level while SCL is high. All
+slaves on the bus shift in the slave address byte on the SCL rising edge, with the last bit indicating whether a
+read or write operation is intended. During the ninth clock pulse, the slave being addressed responds to the
+master by generating an acknowledge bit by pulling SDA low.
+
+Data transfer is then initiated and eight bits of data are sent, followed by an acknowledge  bit. During data
+transfer, SDA must remain stable while SCL is high. Any change in SDA while SCL is high is interpreted as a
+start or stop condition. When all data are transferred, the master generates a stop condition, indicated by pulling
+SDA from low to high while SCL is high. The OPT3001 includes a 28-ms timeout on the I2C interface to prevent
+locking up the bus. If the SCL line is held low for this duration of time, the bus state machine is reset.
+
+7.3.4.1  Serial Bus Address
+To communicate with the OPT3001, the master must first initiate an I2C start command. Then, the master must
+address slave devices via a slave address byte. The slave address byte consists of seven address bits and a
+direction bit that indicates whether the action is to be a read or write operation.
+Four I2C addresses are possible by connecting the ADDR pin to one of four pins: GND, VDD, SDA, or SCL.
+Table 1 summarizes the possible addresses with the corresponding ADDR pin configuration. The state of the
+ADDR pin is sampled on every bus communication and must be driven or connected to the desired level before
+any activity on the interface occurs.
+
+               Table 1. Possible I2C Addresses with Corresponding ADDR Configuration
+
+                 DEVICE I2C ADDRESS                                 ADDR PIN
+
+                         1000100                                      GND
+
+                         1000101                                         VDD
+
+                         1000110                                          SDA
+
+                         1000111                                            SCL
+
+
+7.3.4.2  Serial Interface
+The OPT3001 operates as a slave device on both the I2C bus and SMBus. Connections to the bus are made via
+the SCL clock input line and the SDA open-drain I/O line. The OPT3001 supports the transmission protocol for
+standard mode (up to 100 kHz), fast mode (up to 400 kHz), and high-speed mode (up to 2.6 MHz). All data bytes
+are transmitted most-significant bits first.
+
+The SDA and SCL pins feature integrated spike-suppression filters and Schmitt triggers to minimize the effects of
+input spikes and bus noise. See the Electrical Interface section for further details of the I2C bus noise immunity.
+
+
+
+
+
+12     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 13 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+7.4  Device Functional Modes
+
+7.4.1  Automatic Full-Scale Setting Mode
+
+The OPT3001 has an automatic full-scale-range setting mode that eliminates the need for a user to predict and
+set the optimal range for the device. This mode is entered when the configuration register range number field
+(RN[3:0]) is set to 1100b.
+
+The first measurement that the device takes in auto-range mode is a 10-ms range assessment measurement.
+The device then determines the appropriate full-scale range to take its first full measurement.
+
+For subsequent measurements, the full-scale range is set by the result of the previous measurement.  If a
+measurement is towards the low side of full-scale, the full-scale range is decreased by one or two settings for the
+next measurement. If a measurement is towards the upper side of full-scale, the full-scale range is increased by
+one setting for the next measurement.
+
+If the measurement exceeds the full-scale range, resulting from a fast increasing optical transient event, the
+current measurement is aborted. This invalid measurement is not reported. A 10-ms measurement is taken to
+assess and properly reset the full-scale range. Then, a new measurement is taken with this proper full-scale
+range. Therefore, during a fast increasing optical transient in this mode, a measurement can possibly take longer
+to complete and report than indicated by the configuration register conversion time field (CT).
+
+7.4.2  Interrupt Reporting Mechanism Modes
+
+There are two major types of interrupt reporting mechanism modes: latched window-style comparison mode and
+transparent hysteresis-style comparison mode. The configuration register latch field (L) (see the configuration
+register, bit 4) controls which of these two modes is used. An end-of-conversion mode is also associated with
+each major mode type. The end-of-conversion mode is active when the two most significant bits of the threshold
+low register are set to 11b. The mechanisms report via the flag high and flag low fields, the conversion ready
+field, and the INT pin.
+
+7.4.2.1  Latched Window-Style Comparison Mode
+
+The latched window-style comparison mode  is typically selected when using the OPT3001 to interrupt an
+external processor. In this mode, a fault is recognized when the input signal is above the high-limit register or
+below the low-limit register. When the consecutive fault events trigger the interrupt reporting mechanisms, these
+mechanisms are latched, thus reporting whether the fault is the result of a high or low comparison. These
+mechanisms remain latched until the configuration register is read, which clears the INT pin and flag high and
+flag low fields. The SMBus alert response protocol, described in detail in the SMBus Alert Response section,
+clears the pin but does not clear the flag high and flag low fields. The behavior of this mode, along with the
+conversion ready flag, is summarized in Table 2. Note that Table 2 does not apply when the two threshold low
+register MSBs (see the Transparent Hysteresis-Style Comparison Mode section for clarification on the MSBs) are
+set to 11b.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     13
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 14 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+Device Functional Modes (continued)
+
+        Table 2. Latched Window-Style Comparison Mode: Flag Setting and Clearing Summary(1)(2)
+
+                                                  FLAG HIGH   FLAG LOW             CONVERSION                     OPERATION                                                        INT PIN(3)
+                                                             FIELD        FIELD               READY FIELD
+
+ The result register is above the high-limit register for fault count times.
+                                                                  1          X             Active           1
+ See the Result Register and the High-Limit Register for further details.
+
+ The result register is below the low-limit register for fault count times.
+                                                       X            1             Active           1
+ See the Result Register and the Low-Limit Register for further details.
+
+ The conversion is complete with fault count criterion not met              X          X          X            1
+ Configuration register read(4)                                          0            0             Inactive          0
+
+ Configuration register write, M[1:0] = 00b (shutdown)                   X          X          X          X
+
+ Configuration register write, M[1:0] > 00b (not shutdown)                X          X          X            0
+
+ SMBus alert response protocol                                  X          X             Inactive        X
+
+(1)  X = no change from the previous state.
+(2)  The high-limit register is assumed to be greater than the low-limit register. If this assumption is incorrect, the flag high field and flag low
+      field can take on different behaviors.
+(3)  The INT pin depends on the setting of the polarity field (POL). The INT pin is low when the pin state is active and POL = 0 (active low)
+     or when the pin state is inactive and POL = 1 (active high).
+(4)  Immediately after the configuration register is read, the device automatically resets the conversion ready field to its 0 state. Thus, if two
+     configuration register reads are performed immediately after a conversion completion, the first reads 1 and the second reads 0.
+
+7.4.2.2  Transparent Hysteresis-Style Comparison Mode
+
+The transparent hysteresis-style comparison mode is typically used when a single digital signal is desired that
+indicates whether the input light is higher than or lower than a light level of interest. If the result register is higher
+than the high-limit register for a consecutive number of events set by the fault count field, the INT line is set to
+active, the flag high field is set to 1, and the flag low field is set to 0. If the result register is lower than the low-
+limit register for a consecutive number of events set by the fault count field, the INT line is set to inactive, the flag
+low field is set to 1, and the flag high field is set to 0. The INT pin and flag high and flag low fields do not change
+state with configuration reads and  writes. The INT pin and  flag  fields continually report the appropriate
+comparison of the light to the low-limit and high-limit registers. The device does not respond to the SMBus alert
+response protocol while in either of the two transparent comparison modes (configuration register, latch field =
+0). The behavior of this mode, along with the conversion ready is summarized in Table 3. Note that Table 3 does
+not apply when the two threshold low register MSBs (LE[3:2] from Table 11) are set to 11.
+
+     Table 3. Transparent Hysteresis-Style Comparison Mode: Flag Setting and Clearing Summary(1)(2)
+
+                                                  FLAG HIGH   FLAG LOW             CONVERSION                     OPERATION                                                        INT PIN(3)
+                                                             FIELD        FIELD               READY FIELD
+
+ The result register is above the high-limit register for fault count times.
+                                                                  1            0             Active           1
+ See the Result Register and the High-Limit Register for further details.
+
+ The result register is below the low-limit register for fault count times.
+                                                                  0            1             Inactive          1
+ See the Result Register and the Low-Limit Register for further details.
+
+ The conversion is complete with fault count criterion not met              X          X          X            1
+ Configuration register read(4)                                   X          X          X            0
+
+ Configuration register write, M[1:0] = 00b (shutdown)                   X          X          X          X
+
+ Configuration register write, M[1:0] > 00b (not shutdown)                X          X          X            0
+
+ SMBus alert response protocol                                  X          X          X          X
+
+(1)  X = no change from the previous state.
+(2)  The high-limit register is assumed to be greater than the low-limit register. If this assumption is incorrect, the flag high field and flag low
+      field can take on different behaviors.
+(3)  The INT pin depends on the setting of the polarity field (POL). The INT pin is low when the pin state is active and POL = 0 (active low)
+     or when the pin state is inactive and POL = 1 (active high).
+(4)  Immediately after the configuration register is read, the device automatically resets the conversion ready field to its 0 state. Thus, if two
+     configuration register reads are performed immediately after a conversion completion, the first reads 1 and the second reads 0.
+
+
+
+
+
+14     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 15 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+7.4.2.3  End-of-Conversion Mode
+
+An end-of-conversion indicator mode can be used when every measurement is desired to be read by the
+processor, prompted by the INT pin going active on every measurement completion. This mode is entered by
+setting the most significant two bits of the low-limit register (LE[3:2] from the Low-Limit Register) to 11b. This
+end-of-conversion mode is typically used in conjunction with the latched window-style comparison mode. The INT
+pin becomes inactive when the configuration register is read or the configuration register is written with a non-
+shutdown parameter or in response to an SMBus alert response. Table 4 summarizes the interrupt reporting
+mechanisms as a result of various operations.
+
+          Table 4. End-of-Conversion Mode while in Latched Window-Style Comparison Mode:
+                                Flag Setting and Clearing Summary(1)
+
+                                                  FLAG HIGH   FLAG LOW             CONVERSION                     OPERATION                                                        INT PIN(2)
+                                                             FIELD        FIELD               READY FIELD
+
+ The result register is above the high-limit register for fault count times.
+                                                                  1          X             Active           1
+ See the Result Register and the High-Limit Register for further details.
+
+ The result register is below the low-limit register for fault count times.
+                                                       X            1             Active           1
+ See the Result Register and the Low-Limit Register for further details.
+
+ The conversion is complete with fault count criterion not met              X          X             Active           1
+ Configuration register read(3)                                          0            0             Inactive          0
+
+ Configuration register write, M[1:0] = 00b (shutdown)                   X          X          X          X
+
+ Configuration register write, M[1:0] > 00b (not shutdown)                X          X          X            0
+
+ SMBus alert response protocol                                  X          X             Inactive        X
+
+(1)  X = no change from the previous state.
+(2)  The INT pin depends on the setting of the polarity field (POL). The INT pin is low when the pin state is active and POL = 0 (active low)
+     or when the pin state is inactive and POL = 1 (active high).
+(3)  Immediately after the configuration register is read, the device automatically resets the conversion ready field to its 0 state. Thus, if two
+     configuration register reads are performed immediately after a conversion completion, the first reads 1 and the second reads 0.
+
+Note  that when  transitioning from end-of-conversion mode  to the standard comparison modes  (that  is,
+programming LE[3:2] from 11b to 00b) while the configuration register latch field (L) is 1, a subsequent write to
+the configuration register latch field (L) to 0 is necessary in order to properly clear the INT pin. The latch field can
+then be set back to 1 if desired.
+
+7.4.2.4  End-of-Conversion and Transparent Hysteresis-Style Comparison Mode
+
+The combination of end-of-conversion mode and transparent hysteresis-style comparison mode can also be
+programmed simultaneously. The behavior of this combination is shown in Table 5.
+
+       Table 5. End-Of-Conversion Mode while in Transparent Hysteresis-Style Comparison Mode:
+                                Flag Setting and Clearing Summary(1)
+
+                                                  FLAG HIGH   FLAG LOW             CONVERSION                     OPERATION                                                        INT PIN(2)
+                                                             FIELD        FIELD               READY FIELD
+
+ The result register is above the high-limit register for fault count times.
+                                                                  1            0             Active           1
+ See the Result Register and the High-Limit Register for further details.
+
+ The result register is below the low-limit register for fault count times.
+                                                                  0            1             Active           1
+ See the Result Register and the Low-Limit Register for further details.
+
+ The conversion is complete with fault count criterion not met              X          X             Active           1
+ Configuration register read(3)                                   X          X             Inactive          0
+
+ Configuration register write, M[1:0] = 00b (shutdown)                   X          X          X          X
+
+ Configuration register write, M[1:0] > 00b (not shutdown)                X          X             Inactive          0
+
+ SMBus alert response protocol                                  X          X          X          X
+
+(1)  X = no change from the previous state.
+(2)  The INT pin depends on the setting of the polarity field (POL). The INT pin is low when the pin state is active and POL = 0 (active low)
+     or when the pin state is inactive and POL = 1 (active high).
+(3)  Immediately after the configuration register is read, the device automatically resets the conversion ready field to its 0 state. Thus, if two
+     configuration register reads are performed immediately after a conversion completion, the first reads 1 and the second reads 0.
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     15
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 16 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+7.5  Programming
+
+The OPT3001 supports the transmission protocol for standard mode (up to 100 kHz), fast mode (up to 400 kHz),
+and high-speed mode (up to 2.6 MHz). Fast and standard modes are described as the default protocol, referred
+to as F/S. High-speed mode is described in the High-Speed I2C Mode section.
+
+7.5.1  Writing and Reading
+
+Accessing a specific register on the OPT3001 is accomplished by writing the appropriate register address during
+the I2C transaction sequence. Refer to Table 6 for a complete list of registers and their corresponding register
+addresses. The value for the register address (as shown in Figure 19) is the first byte transferred after the slave
+address byte with the R/W bit low.
+
+               1                                      9    1                                      9
+
+SCL
+
+
+
+                                          RA  RA  RA RA  RA  RA  RA  RASDA         1   0   0   0   1   A1  A0  R/W                                                     7   6   5   4   3   2   1   0
+       Start by                         ACK by                        ACK by    Stop by
+      Master                            OPT3001                          OPT3001   Master
+                                                                                                                     (optional)
+           Frame 1: Two-Wire Slave Address Byte (1)       Frame 2: Register Address Byte
+
+
+(1) The value of the slave address byte is determined by the ADDR pin setting; see Table 1.
+                             Figure 19. Setting the I2C Register Address
+
+
+Writing to a register begins with the first byte transmitted by the master. This byte is the slave address with the
+R/W bit low. The OPT3001 then acknowledges receipt of a valid address. The next byte transmitted by the
+master is the address of the register that data are to be written to. The next two bytes are written to the register
+addressed by the register address. The OPT3001 acknowledges receipt of each data byte. The master may
+terminate the data transfer by generating a start or stop condition.
+
+When reading from the OPT3001, the last value stored in the register address by a write operation determines
+which register is read during a read operation. To change the register address for a read operation, a new partial
+I2C write transaction must be initiated. This partial write is accomplished by issuing a slave address byte with the
+R/W bit low, followed by the register address byte and a stop command. The master then generates a start
+condition and sends the slave address byte with the R/W bit high to initiate the read command. The next byte is
+transmitted by the slave and is the most significant byte of the register indicated by the register address. This
+byte is followed by an acknowledge from the master; then the slave transmits the least significant byte. The
+master acknowledges receipt of the data byte. The master may terminate the data transfer by generating a not-
+acknowledge after receiving any data byte, or by generating a start or stop condition. If repeated reads from the
+same register are desired, continually sending the register address bytes is not necessary; the OPT3001 retains
+the register address until that number is changed by the next write operation.
+
+
+
+
+
+16     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 17 ---
+                                                                            OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+Programming (continued)
+
+Figure 20 and Figure 21 show the write and read operation timing diagrams, respectively. Note that register
+bytes are sent most significant byte first, followed by the least significant byte.
+
+               1                                      9    1                                      9    1                                      9    1                                      9
+
+SCL
+
+
+SDA         1   0   0   0   1   A1  A0  R/W    RA7  RA6  RA5  RA4  RA3  RA2  RA1  RA0      D15 D14 D13 D12 D11 D10 D9  D8      D7  D6  D5  D4  D3  D2  D1  D0
+       Start by                         ACK by                         ACK by                         ACK by                        ACK by   Stop by
+      Master                            OPT3001                          OPT3001                           OPT3001                         OPT3001   Master
+
+          Frame 1 Two-Wire Slave Address Byte (1)        Frame 2 Register Address Byte               Frame 3 Data MSByte                   Frame 4 Data LSByte
+
+(1) The value of the slave address byte is determined by the setting of the ADDR pin; see Table 1.
+                                    Figure 20. I2C Write Example
+
+
+               1                                      9    1                                      9    1                                      9
+
+SCL
+
+
+
+SDA         1   0   0   0   1   A1  A0  R/W     D15 D14 D13 D12 D11 D10 D9  D8      D7  D6  D5  D4  D3  D2  D1  D0
+                                                                                                    No ACK     Start by                           ACK by             From          ACK by              From                      Stop by                                                                                                                           by    Master                              OPT3001          OPT3001            Master            OPT3001                    Master                                                                                                                                     Master(2)
+          Frame 1 Two-Wire Slave Address Byte (1)            Frame 2 Data MSByte                 Frame 3 Data LSByte
+
+
+(1) The value of the slave address byte is determined by the ADDR pin setting; see Table 1.
+
+(2) An ACK by the master can also be sent.
+                                    Figure 21. I2C Read Example
+
+7.5.1.1  High-Speed I2C Mode
+
+When the bus is idle, both the SDA and SCL lines are pulled high by the pull-up resistors or active pull-up
+devices. The master generates a start condition followed by a valid serial byte containing the high-speed (HS)
+master code 0000 1XXXb. This transmission is made in either standard mode or fast mode (up to 400 kHz). The
+OPT3001 does not acknowledge the HS master code but does recognize the code and switches its internal filters
+to support a 2.6-MHz operation.
+
+The master then generates a repeated start condition (a repeated start condition has the same timing as the start
+condition). After this repeated start condition, the protocol is the same as F/S mode, except that transmission
+speeds up to 2.6 MHz are allowed. Instead of using a stop condition, use repeated start conditions to secure the
+bus in HS mode. A stop condition ends the HS mode and switches all internal filters of the OPT3001 to support
+the F/S mode.
+
+7.5.1.2  General-Call Reset Command
+The I2C general-call reset allows the host controller in one command to reset all devices on the bus that respond
+to the general-call reset command. The general call is initiated by writing to the I2C address 0 (0000 0000b). The
+reset command is initiated when the subsequent second address byte is 06h (0000 0110b). With this transaction,
+the device issues an acknowledge bit and sets all of its registers to the power-on-reset default condition.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     17
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 18 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+Programming (continued)
+
+7.5.1.3 SMBus Alert Response
+
+The SMBus alert response provides a quick identification for which device issued the interrupt. Without this alert
+response capability, the processor does not know which device pulled the interrupt line when there are multiple
+slave devices connected.
+
+The OPT3001 is designed to respond to the SMBus alert response address, when in the latched window-style
+comparison mode (configuration register, latch field = 1). The OPT3001 does not respond to the SMBus alert
+response when in transparent mode (configuration register, latch field = 0).
+
+The response behavior of the OPT3001 to the SMBus alert response is shown in Figure 22. When the interrupt
+line to the processor is pulled to active, the master can broadcast the alert response slave address (0001
+1001b). Following  this  alert response, any slave devices  that generated an  alert  identify themselves by
+acknowledging the alert response and sending their respective I2C address on the bus. The alert response can
+activate several  different slave devices simultaneously.  If more than one slave attempts to respond, bus
+arbitration rules apply. The device with the lowest address wins the arbitration.  If the OPT3001 loses the
+arbitration, the device does not acknowledge the I2C transaction and its INT pin remains in an active state,
+prompting the I2C master processor to issue a subsequent SMBus alert response. When the OPT3001 wins the
+arbitration, the device acknowledges the transaction and sets its INT pin to inactive. The master can issue that
+same command again, as many times as necessary to clear the INT pin. See the Interrupt Reporting Mechanism
+Modes section for additional details of how the flags and INT pin are controlled. The master can obtain
+information about the source of the OPT3001 interrupt from the address broadcast in the above process. The
+flag high field (configuration register, bit 6) is sent as the final LSB of the address to provide the master additional
+information about the cause of the OPT3001 interrupt.  If the master requires additional information, the result
+register or the configuration register can be queried. The flag high and flag low fields are not cleared upon an
+SMBus alert response.
+
+      INT
+
+                       1                                        9     1                                         9
+
+     SCL
+
+
+
+    SDA              0    0    0    1    1    0    0   R/W         1    0    0    0    1   A1   A0    FH(1)
+
+                  Start By                                  ACK By                           From     NACK By   Stop By
+               Master                                              Device                               Device        Master    Master
+                      Frame 1 SMBus ALERT Response Address Byte                 Frame 2 Slave Address Byte(2)
+
+(1) FH is the flag high field (FH) in the configuration register (see Table 10).
+
+(2) A1 and A0 are determined by the ADDR pin; see Table 1.
+
+                        Figure 22. Timing Diagram for SMBus Alert Response
+
+
+
+
+
+18     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 19 ---
+                                                                                                         OPT3001
+
+www.ti.com                                                                                                        SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+7.6  Register Maps
+
+7.6.1  Internal Registers
+The device is operated over the I2C bus with registers that contain configuration, status, and result information. All registers are 16 bits long.
+
+There are four main registers: result, configuration, low-limit, and high-limit. There are also two ID registers: manufacturer ID and device ID. Table 6 lists
+these registers.
+
+                                                        Table 6. Register Map
+
+              ADDRESS
+   REGISTER        (Hex)(1)     BIT 15   BIT 14   BIT 13   BIT 12   BIT 11   BIT 10   BIT 9    BIT 8    BIT 7    BIT 6    BIT 5    BIT 4    BIT 3    BIT 2    BIT 1    BIT 0
+
+      Result          00h       E3     E2     E1     E0     R11    R10    R9     R8     R7     R6     R5     R4     R3     R2     R1     R0
+
+   Configuration       01h      RN3    RN2    RN1    RN0    CT    M1    M0    OVF   CRF    FH     FL      L     POL   ME    FC1    FC0
+
+    Low Limit         02h       LE3    LE2    LE1    LE0    TL11    TL10    TL9     TL8     TL7     TL6     TL5     TL4     TL3     TL2     TL1     TL0
+
+    High Limit         03h      HE3    HE2    HE1    HE0    TH11   TH10   TH9    TH8    TH7    TH6    TH5    TH4    TH3    TH2    TH1    TH0
+
+  Manufacturer ID      7Eh       ID15    ID14    ID13    ID12    ID11    ID10     ID9     ID8     ID7     ID6     ID5     ID4     ID3     ID2     ID1     ID0
+
+    Device ID        7Fh      DID15   DID14   DID13   DID12   DID11   DID10   DID9    DID8    DID7    DID6    DID5    DID4    DID3    DID2    DID1    DID0
+
+(1)  Register offset and register address are used interchangeably.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                                                                      Submit Documentation Feedback     19
+
+                                                                         Product Folder Links: OPT3001
+
+--- PDF page 20 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+7.6.1.1  Register Descriptions
+
+
+                                  NOTE
+           Register offset and register address are used interchangeably.
+
+
+7.6.1.1.1  Result Register (offset = 00h)
+
+This register contains the result of the most recent light to digital conversion. This 16-bit register has two fields: a
+4-bit exponent and a 12-bit mantissa.
+
+                               Figure 23. Result Register (Read-Only)
+
+      15            14            13            12            11            10             9             8
+     E3           E2           E1           E0          R11          R10          R9          R8
+     R          R          R          R          R          R          R          R
+
+       7             6             5             4             3             2             1             0
+     R7          R6          R5          R4          R3          R2          R1          R0
+     R          R          R          R          R          R          R          R
+
+ LEGEND: R = Read only
+
+                             Table 7. Result Register Field Descriptions
+
+      Bit      Field               Type      Reset        Description
+
+                                                         Exponent.
+    15:12     E[3:0]            R         0h
+                                                       These bits are the exponent bits. Table 8 provides further details.
+
+                                                               Fractional result.
+    11:0     R[11:0]           R         000h
+                                                       These bits are the result in straight binary coding (zero to full-scale).
+
+
+                Table 8. Full-Scale Range and LSB Size as a Function of Exponent Level
+
+      E3             E2             E1             E0          FULL-SCALE RANGE (lux)         LSB SIZE (lux per LSB)
+
+        0               0               0                0                        40.95                                0.01
+
+        0               0               0                1                        81.90                                0.02
+
+        0               0               1                0                       163.80                               0.04
+
+        0               0               1                1                       327.60                               0.08
+
+        0               1               0                0                       655.20                               0.16
+
+        0               1               0                1                      1310.40                               0.32
+
+        0               1               1                0                      2620.80                               0.64
+
+        0               1               1                1                      5241.60                               1.28
+
+        1               0               0                0                     10483.20                              2.56
+
+        1               0               0                1                     20966.40                              5.12
+
+        1               0               1                0                     41932.80                             10.24
+
+        1               0               1                1                     83865.60                             20.48
+
+The formula to translate this register into lux is given in Equation 1:
+      lux = LSB_Size × R[11:0]                                                                                                    (1)
+
+where:
+     LSB_Size = 0.01 × 2E[3:0]                                                                                                     (2)
+
+LSB_Size can also be taken from Table 8. The complete lux equation is shown in Equation 3:
+      lux = 0.01 × (2E[3:0]) × R[11:0]                                                                                                (3)
+
+A series of result register output examples with the corresponding LSB weight and resulting lux are given in
+Table 9. Note that many combinations of exponents (E[3:0]) and fractional results (R[11:0]) can map onto the
+same lux result, as shown in the examples of Table 9.
+
+
+
+
+
+20     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 21 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+                      Table 9. Examples of Decoding the Result Register into lux
+
+                                                FRACTIONAL
+      RESULT REGISTER          EXPONENT                          LSB WEIGHT       RESULTING LUX
+                                                 RESULT
+          (Bits 15:0, Binary)                 (E[3:0], Hex)                                         (lux, Decimal)            (Decimal)
+                                                                      (R[11:0], Hex)
+
+      0000 0000 0000 0001b               00h                 001h                   0.01                    0.01
+
+      0000 1111 1111 1111b               00h                FFFh                   0.01                  40.95
+
+      0011 0100 0101 0110b               03h                 456h                   0.08                  88.80
+
+      0111 1000 1001 1010b               07h                89Ah                   1.28                 2818.56
+
+      1000 1000 0000 0000b               08h                 800h                   2.56                 5242.88
+
+      1001 0100 0000 0000b               09h                 400h                   5.12                 5242.88
+
+      1010 0010 0000 0000b              0Ah                 200h                  10.24                5242.88
+
+      1011 0001 0000 0000b              0Bh                 100h                  20.48                5242.88
+
+      1011 0000 0000 0001b              0Bh                 001h                  20.48                  20.48
+
+      1011 1111 1111 1111b              0Bh                FFFh                  20.48                83865.60
+
+Note that the exponent field can be disabled (set to zero) by enabling the exponent mask (configuration register,
+ME field = 1) and manually programming the full-scale range (configuration register, RN[3:0] < 1100b (0Ch)),
+allowing for simpler operation in a manually-programmed, full-scale mode. Calculating lux from the result register
+contents only requires multiplying the result register by the LSB weight (in lux) associated with the specific
+programmed full-scale range (see Table 8). See the Low-Limit Register for details.
+
+See the configuration register conversion time field (CT, bit 11) description for more information on lux resolution
+as a function of conversion time.
+
+7.6.1.1.2  Configuration Register (offset = 01h) [reset = C810h]
+
+This register controls the major operational modes of the device. This register has 11  fields, which are
+documented below.  If a measurement conversion is in progress when the configuration register is written, the
+active measurement conversion immediately aborts. If the new configuration register directs a new conversion,
+that conversion is subsequently started.
+
+                                  Figure 24. Configuration Register
+
+      15            14            13            12            11            10             9             8
+    RN3         RN2         RN1         RN0         CT         M1         M0         OVF
+     R/W         R/W         R/W         R/W         R/W         R/W         R/W         R
+
+       7             6             5             4             3             2             1             0
+    CRF         FH           FL             L          POL        ME          FC1          FC0
+     R          R          R          R/W         R/W         R/W         R/W         R/W
+
+ LEGEND: R/W = Read/Write; R = Read only
+
+
+                         Table 10. Configuration Register Field Descriptions
+
+    Bit     Field     Type     Reset     Description
+
+                                 Range number field (read or write).
+                                   The range number field selects the full-scale lux range of the device. The format of this field is
+                                            the same as the result register exponent field (E[3:0]); see Table 8. When RN[3:0] is set to
+                                     1100b (0Ch), the device operates in automatic full-scale setting mode, as described in the
+  15:12   RN[3:0]  R/W     1100b
+                                         Automatic Full-Scale Setting Mode section. In this mode, the automatically chosen range is
+                                            reported in the result exponent (register 00h, E[3:0]).
+                                   The device powers up as 1100 in automatic full-scale setting mode. Codes 1101b, 1110b, and
+                                     1111b (0Dh, 0Eh, and 0Fh) are reserved for future use.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     21
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 22 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+                   Table 10. Configuration Register Field Descriptions (continued)
+
+    Bit     Field     Type     Reset     Description
+
+                                     Conversion time field (read or write).
+                                   The conversion time field determines the length of the light to digital conversion process. The
+                                          choices are 100 ms and 800 ms. A longer integration time allows for a lower noise
+                                      measurement.
+                                   The conversion time also relates to the effective resolution of the data conversion process. The
+                                     800-ms conversion time allows for the fully specified lux resolution. The 100-ms conversion
+                                           time with full-scale ranges above 0101b for E[3:0] in the result and configuration registers also
+   11   CT      R/W     1b        allows for the fully specified lux resolution. The 100-ms conversion time with full-scale ranges
+                                       below and including 0101b for E[3:0] can reduce the effective result resolution by up to three
+                                                       bits, as a function of the selected full-scale range. Range 0101b reduces by one bit. Ranges
+                                        0100b, 0011b, 0010b, and 0001b reduces by two bits. Range 0000b reduces by three bits.
+                                   The result register format and associated LSB weight does not change as a function of the
+                                          conversion time.
+                                     0 = 100 ms
+                                     1 = 800 ms
+
+                               Mode of conversion operation field (read or write).
+                                   The mode of conversion operation field controls whether the device is operating in continuous
+                                            conversion, single-shot, or low-power shutdown mode. The default is 00b (shutdown mode),
+                                      such that upon power-up, the device only consumes operational level power after appropriately
+                                      programming the device.
+                               When single-shot mode is selected by writing 01b to this field, the field continues to read 01b
+                                             while the device is actively converting. When the single-shot conversion is complete, the mode
+   10:9    M[1:0]   R/W     00b        of conversion operation field is automatically set to 00b and the device is shut down.
+                               When the device enters shutdown mode, either by completing a single-shot conversion or by a
+                                     manual write to the configuration register, there is no change to the state of the reporting flags
+                                           (conversion ready, flag high, flag low) or the INT pin. These signals are retained for
+                                       subsequent read operations while the device is in shutdown mode.
+                                     00 = Shutdown (default)
+                                     01 = Single-shot
+                                            10, 11 = Continuous conversions
+
+                                      Overflow flag field (read-only).
+                                   The overflow flag field indicates when an overflow condition occurs in the data conversion
+                                           process, typically because the light illuminating the device exceeds the programmed full-scale
+                                        range of the device. Under this condition OVF is set to 1, otherwise OVF remains at 0. The
+                                                       field is reevaluated on every measurement.
+                                                                         If the full-scale range is manually set (RN[3:0] field < 1100b), the overflow flag field can be set
+                                             while the result register reports a value less than full-scale. This result occurs if the input light
+                                      has a temporary high spike level that temporarily overloads the integrating ADC converter
+    8    OVF    R        0b          circuitry but returns to a level within range before the conversion is complete. Thus, the
+                                            overflow flag reports a possible error in the conversion process. This behavior is common to
+                                                 integrating-style converters.
+                                                                         If the full-scale range is automatically set (RN[3:0] field = 1100b), the only condition that sets
+                                            the overflow flag field is if the input light is beyond the full-scale level of the entire device.
+                               When there is an overflow condition and the full-scale range is not at maximum, the OPT3001
+                                            aborts its current conversion, sets the full-scale range to a higher level, and starts a new
+                                            conversion. The flag is set at the end of the process. This process repeats until there is either
+                                     no overflow condition or until the full-scale range is set to its maximum range.
+
+                                     Conversion ready field (read-only).
+                                   The conversion ready field indicates when a conversion completes. The field is set to 1 at the
+                                     end of a conversion and is cleared (set to 0) when the configuration register is subsequently
+    7    CRF    R        0b
+                                         read or written with any value except one containing the shutdown mode (mode of operation
+                                                          field, M[1:0] = 00b). Writing a shutdown mode does not affect the state of this field; see the
+                                                 Interrupt Reporting Mechanism Modes section for more details.
+
+                                        Flag high field (read-only).
+                                   The flag high field (FH) identifies that the result of a conversion is larger than a specified level
+                                                 of interest. FH is set to 1 when the result is larger than the level in the high-limit register
+    6    FH     R        0b
+                                                  (register address 03h) for a consecutive number of measurements defined by the fault count
+                                                       field (FC[1:0]). See the Interrupt Reporting Mechanism Modes section for more details on
+                                              clearing and other behaviors of this field.
+
+                                        Flag low field (read-only).
+                                   The flag low field (FL) identifies that the result of a conversion is smaller than a specified level
+                                                 of interest. FL is set to 1 when the result is smaller than the level in the low-limit register
+    5    FL     R        0b
+                                                  (register address 02h) for a consecutive number of measurements defined by the fault count
+                                                       field (FC[1:0]). See the Interrupt Reporting Mechanism Modes section for more details on
+                                              clearing and other behaviors of this field.
+
+
+
+
+22     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 23 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+                   Table 10. Configuration Register Field Descriptions (continued)
+
+    Bit     Field     Type     Reset     Description
+
+                                      Latch field (read or write).
+                                   The latch field controls the functionality of the interrupt reporting mechanisms: the INT pin, the
+                                                  flag high field (FH), and flag low field (FL). This bit selects the reporting style between a
+                                            latched window-style comparison and a transparent hysteresis-style comparison.
+                                     0 = The device functions in transparent hysteresis-style comparison operation, where the three
+    4     L       R/W     1b
+                                                  interrupt reporting mechanisms directly reflect the comparison of the result register with the
+                                              high- and low-limit registers with no user-controlled clearing event. See the Interrupt Operation,
+                                      INT Pin, and Interrupt Reporting Mechanisms section for further details.
+                                     1 = The device functions in latched window-style comparison operation, latching the interrupt
+                                              reporting mechanisms until a user-controlled clearing event.
+
+                                            Polarity field (read or write).
+                                   The polarity field controls the polarity or active state of the INT pin.
+    3    POL     R/W     0b       0 = The INT pin reports active low, pulling the pin low upon an interrupt event.
+                                     1 = Operation of the INT pin is inverted, where the INT pin reports active high, becoming high
+                                     impedance and allowing the INT pin to be pulled high upon an interrupt event.
+
+                                 Mask exponent field (read or write).
+                                   The mask exponent field forces the result register exponent field (register 00h, bits E[3:0]) to
+                                     0000b when the full-scale range is manually set, which can simplify the processing of the
+                                                  result register when the full-scale range is manually programmed. This behavior occurs when
+    2   ME     R/W     0b
+                                            the mask exponent field is set to 1 and the range number field (RN[3:0]) is set to less than
+                                        1100b. Note that the masking is only performed to the result register. When using the interrupt
+                                              reporting mechanisms, the result comparison with the low-limit and high-limit registers is
+                                            unaffected by the ME field.
+
+                                           Fault count field (read or write).
+                                   The fault count field instructs the device as to how many consecutive fault events are required
+                                                 to trigger the interrupt reporting mechanisms: the INT pin, the flag high field (FH), and flag low
+                                                       field (FL). The fault events are described in the latch field (L), flag high field (FH), and flag low
+    1:0     FC[1:0]   R/W     00b         field (FL) descriptions.
+                                     00 = One fault count (default)
+                                     01 = Two fault counts
+                                     10 = Four fault counts
+                                     11 = Eight fault counts
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     23
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 24 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+7.6.1.1.3  Low-Limit Register (offset = 02h) [reset = C0000h]
+
+This register sets the lower comparison limit for the interrupt reporting mechanisms: the INT pin, the flag high
+field (FH), and flag low field (FL), as described in the Interrupt Reporting Mechanism Modes section.
+
+                                   Figure 25. Low-Limit Register
+
+      15            14            13            12            11            10             9             8
+     LE3          LE2          LE1          LE0          TL11          TL10          TL9           TL8
+     R/W         R/W         R/W         R/W         R/W         R/W         R/W         R/W
+
+       7             6             5             4             3             2             1             0
+     TL7           TL6           TL5           TL4           TL3           TL2           TL1           TL0
+     R/W         R/W         R/W         R/W         R/W         R/W         R/W         R/W
+
+ LEGEND: R/W = Read/Write
+
+                           Table 11. Low-Limit Register Field Descriptions
+
+      Bit      Field               Type      Reset        Description
+
+                                                         Exponent.
+    15:12     LE[3:0]            R/W       0h
+                                                       These bits are the exponent bits. Table 12 provides further details.
+
+                                                                Result.
+    11:0      TL[11:0]            R/W       000h
+                                                       These bits are the result in straight binary coding (zero to full-scale).
+
+The format of this register is nearly identical to the format of the result register described in the Result Register.
+The low-limit register exponent (LE[3:0]) is similar to the result register exponent (E[3:0]). The low-limit register
+result (TL[11:0]) is similar to result register result (R[11:0]).
+
+The equation to translate this register into the lux threshold is given in Equation 4, which is similar to the
+equation for the result register, Equation 3.
+      lux = 0.01 × (2LE[3:0]) × TL[11:0]                                                                                              (4)
+
+Table 12 gives the full-scale range and LSB size as  it applies to the low-limit register. The detailed discussion
+and examples given in for the Result Register apply to the low-limit register as well.
+
+               Table 12. Full-Scale Range and LSB Size as a Function of Exponent Level
+
+     LE3          LE2          LE1          LE0       FULL-SCALE RANGE (lux)     LSB SIZE (lux per LSB)
+
+       0             0             0             0                    40.95                           0.01
+
+       0             0             0             1                    81.90                           0.02
+
+       0             0             1             0                   163.80                           0.04
+
+       0             0             1             1                   327.60                           0.08
+
+       0             1             0             0                   655.20                           0.16
+
+       0             1             0             1                   1310.40                          0.32
+
+       0             1             1             0                   2620.80                          0.64
+
+       0             1             1             1                   5241.60                          1.28
+
+       1             0             0             0                  10483.20                         2.56
+
+       1             0             0             1                  20966.40                         5.12
+
+       1             0             1             0                  41932.80                        10.24
+
+       1             0             1             1                  83865.60                        20.48
+
+
+
+                                  NOTE
+         The result and limit registers are all converted into lux values internally for comparison.
+         These registers can have different exponent fields. However, when using a manually-set
+             full-scale range  (configuration  register, RN < 0Ch,  with mask enable (ME)  active),
+         programming the manually-set full-scale range into the LE[3:0] and HE[3:0] fields can
+            simplify the choice of programming the register. This simplification results in the user only
+          having to think about the fractional result and not the exponent part of the result.
+
+
+
+
+24     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 25 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+7.6.1.1.4  High-Limit Register (offset = 03h) [reset = BFFFh]
+
+The high-limit register sets the upper comparison limit for the interrupt reporting mechanisms: the INT pin, the
+flag high field (FH), and flag low field (FL), as described in the Interrupt Operation, INT Pin, and Interrupt
+Reporting Mechanisms section. The format of this register is almost identical to the format of the low-limit register
+(described in the Low-Limit Register) and the result register (described in the Result Register). To explain the
+similarity in more detail, the high-limit register exponent (HE[3:0]) is similar to the low-limit register exponent
+(LE[3:0]) and the result register exponent (E[3:0]). The high-limit register result (TH[11:0]) is similar to the low-
+limit result (TH[11:0]) and the result register result (R[11:0]). Note that the comparison of the high-limit register
+with the result register is unaffected by the ME bit.
+
+When using a manually-set, full-scale range with the mask enable (ME) active, programming the manually-set,
+full-scale range into the HE[3:0] bits can simplify the choice of values required to program into this register. The
+formula to translate this register into lux is similar to Equation 4. The full-scale values are similar to Table 8.
+
+                                   Figure 26. High-Limit Register
+
+      15            14            13            12            11            10             9             8
+     HE3         HE2         HE1         HE0         TH11         TH10         TH9          TH8
+     R/W         R/W         R/W         R/W         R/W         R/W         R/W         R/W
+
+       7             6             5             4             3             2             1             0
+     TH7          TH6          TH5          TH4          TH3          TH2          TH1          TH0
+     R/W         R/W         R/W         R/W         R/W         R/W         R/W         R/W
+
+ LEGEND: R/W = Read/Write
+
+                          Table 13. High-Limit Register Field Descriptions
+
+      Bit      Field               Type      Reset        Description
+
+                                                         Exponent.
+    15:12     HE[3:0]            R/W      Bh
+                                                       These bits are the exponent bits.
+
+                                                                Result.
+    11:0     TH[11:0]           R/W      FFFh
+                                                       These bits are the result in straight binary coding (zero to full-scale).
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     25
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 26 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+7.6.1.1.5  Manufacturer ID Register (offset = 7Eh) [reset = 5449h]
+
+This register is intended to help uniquely identify the device.
+
+                                 Figure 27. Manufacturer ID Register
+
+      15            14            13            12            11            10             9             8
+     ID15           ID14           ID13           ID12           ID11           ID10            ID9            ID8
+     R          R          R          R          R          R          R          R
+
+       7             6             5             4             3             2             1             0
+      ID7            ID6            ID5            ID4            ID3            ID2            ID1            ID0
+     R          R          R          R          R          R          R          R
+
+ LEGEND: R = Read only
+
+                        Table 14. Manufacturer ID Register Field Descriptions
+
+      Bit      Field               Type      Reset        Description
+
+                                                         Manufacturer ID.
+    15:0      ID[15:0]           R         5449h
+                                                     The manufacturer ID reads 5449h. In ASCII code, this register reads TI.
+
+7.6.1.1.6  Device ID Register (offset = 7Fh) [reset = 3001h]
+
+This register is also intended to help uniquely identify the device.
+
+                                    Figure 28. Device ID Register
+
+      15            14            13            12            11            10             9             8
+    DID15         DID14         DID13         DID12         DID11         DID10         DID9          DID8
+     R          R          R          R          R          R          R          R
+
+       7             6             5             4             3             2             1             0
+     DID7          DID6          DID5          DID4          DID3          DID2          DID1          DID0
+     R          R          R          R          R          R          R          R
+
+ LEGEND: R = Read only
+
+
+                           Table 15. Device ID Register Field Descriptions
+
+      Bit      Field               Type      Reset        Description
+
+                                                        Device ID.
+    15:0     DID[15:0]          R         3001h
+                                                     The device ID reads 3001h.
+
+
+
+
+
+26     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 27 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+8  Application and Implementation
+
+
+                                  NOTE
+           Information  in  the  following  applications  sections  is  not  part  of  the  TI component
+            specification, and TI does not warrant its accuracy or completeness. TI’s customers are
+           responsible for determining suitability of components for their purposes. Customers should
+            validate and test their design implementation to confirm system functionality.
+
+
+8.1  Application Information
+
+Ambient light sensors are used in a wide variety of applications that require control as a function of ambient light.
+Because ambient  light sensors nominally match the human eye spectral response, they are superior  to
+photodiodes when the goal is to create an experience for human beings. Very common applications include
+display optical-intensity control and industrial or home lighting control.
+
+There are two categories of interface to the OPT3001: electrical and optical.
+
+8.1.1  Electrical Interface
+The electrical interface is quite simple, as illustrated in Figure 29. Connect the OPT3001 I2C SDA and SCL pins
+to the same pins of an applications processor, microcontroller, or other digital processor. If that digital processor
+requires an interrupt resulting from an event of interest from the OPT3001, then connect the INT pin to either an
+interrupt or general-purpose I/O pin of the processor. There are multiple uses for this interrupt, including signaling
+the system to wake up from low-power mode, processing other tasks while waiting for an ambient light event of
+interest, or alerting the processor that a sample is ready to be read. Connect pullup resistors between a power
+supply appropriate for digital communication and the SDA and SCL pins (because they have open-drain output
+structures).  If the INT pin is used, connect a pullup resistor to the INT pin. A typical value for these pullup
+resistors is 10 kΩ. The resistor choice can be optimized in conjunction to the bus capacitance to balance the
+system speed, power, noise immunity, and other requirements.
+
+The power supply and grounding considerations are discussed in the Power-Supply Recommendations section.
+
+Although spike suppression  is integrated in the SDA and SCL pin circuits, use proper layout practices to
+minimize the amount of coupling into the communication lines. One possible introduction of noise occurs from
+capacitively coupling signal edges between the two communication lines themselves. Another possible noise
+introduction comes from other switching noise sources present in the system, especially for long communication
+lines. In noisy environments, shield communication lines to reduce the possibility of unintended noise coupling
+into the digital I/O lines that could be incorrectly interpreted.
+
+8.1.2  Optical Interface
+
+The optical interface is physically located within the package, facing away from the PCB, as specified by the
+Sensor Area in Figure 37.
+
+Physical components, such as a plastic housing and a window that allows light from outside of the design to
+illuminate the sensor (see Figure 30), can help protect the OPT3001 and neighboring circuitry. Sometimes, a
+dark or opaque window is used to further enhance the visual appeal of the design by hiding the sensor from
+view. This window material is typically transparent plastic or glass.
+
+Any physical component that affects the light that illuminates the sensing area of a light sensor also affects the
+performance of that light sensor. Therefore, for optimal performance, make sure to understand and control the
+effect of these components. Design a window width and height to permit light from a sufficient field of view to
+illuminate the sensor. For best performance, use a field of view of at least ±35°, or ideally ±45° or more.
+Understanding and designing the field of view is discussed further in application report SBEA002, OPT3001:
+Ambient Light Sensor Application Guide.
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     27
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 28 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+Application Information (continued)
+
+The visible-spectrum transmission for dark windows typically ranges between 5% to 30%, but can be less than
+1%. Specify a visible-spectrum transmission as low as, but no more than, necessary to achieve sufficient visual
+appeal because decreased transmission decreases the available light for the sensor to measure. The windows
+are made dark by either applying an ink to a transparent window material, or including a dye or other optical
+substance within the window material itself. This attenuating transmission in the visible spectrum of the window
+creates a ratio between the light on the outside of the design and the light that is measured by the OPT3001. To
+accurately measure the light outside of the design, compensate the OPT3001 measurement for this ratio; an
+example is given in Dark Window Selection and Compensation.
+
+Ambient light sensors are used to help create ideal lighting experiences for humans; therefore, the matching of
+the sensor spectral response to that of the human eye response is vital. Infrared light is not visible to the human
+eye, and can interfere with the measurement of visible light when sensors lack infrared rejection. Therefore, the
+ratio of visible light to interfering infrared light affects the accuracy of any practical system that represents the
+human eye. The strong rejection of infrared light by the OPT3001 allows measurements consistent with human
+perception under high-infrared lighting conditions, such as from incandescent, halogen, or sunlight sources.
+
+Although the inks and dyes of dark windows serve their primary purpose of being minimally transmissive to
+visible light, some inks and dyes can also be very transmissive to infrared light. The use of these inks and dyes
+further decreases the ratio of visible to infrared  light, and thus decreases sensor measurement accuracy.
+However, because of the excellent infrared rejection of the OPT3001, this effect is minimized, and good results
+are achieved under a dark window with similar spectral responses to those shown in Figure 31.
+
+For best accuracy, avoid  grill-like window structures, unless the designer understands the  optical effects
+sufficiently. These grill-like window structures create a nonuniform illumination pattern at the sensor that make
+light measurement results vary with placement tolerances and angle of incidence of the  light.  If a  grill-like
+structure is desired, the OPT3001 is an excellent sensor choice because it is minimally sensitive to illumination
+uniformity issues disrupting the measurement process.
+
+Light pipes can appear attractive for aiding in the optomechanical design that brings light to the sensor; however,
+do not use  light pipes with any ambient  light sensor unless the system designer  fully understands the
+ramifications of the optical physics of light pipes within the full context of his design and objectives.
+
+8.2  Typical Application
+
+Measuring the ambient light with the OPT3001 in a product case and under a dark window is described in this
+section. The schematic for this design is shown in Figure 29.
+
+                                                      VDD
+
+
+                                               VDD
+                                                                                                                                                     Digital Processor
+              OPT3001                                         SCL                  SCL
+                                                            SDA                 SDA
+       Ambient                                                             I2C
+          Light          Optical                   ADC         Interface        INT                INT or GPIO
+                              Filter                                       ADDR
+
+
+                                                GND
+
+
+
+             Figure 29. Measuring Ambient Light in a Product Case Behind a Dark Window
+
+
+
+
+
+28     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 29 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+Typical Application (continued)
+
+8.2.1  Design Requirements
+
+The basic requirements of this design are:
+•  Sensor is hidden under dark glass so that sensor is not obviously visible. Note that this requirement is
+   subjective to designer preference.
+•  Accuracy of measurement of fluorescent light is 15%
+•   Variation in measurement between fluorescent, halogen, and incandescent bulbs (also known as light source
+    variation) is as small as possible.
+
+8.2.2  Detailed Design Procedure
+
+8.2.2.1  Optomechanical Design
+
+After completing the electrical design, the next task is the optomechancial design. Design a product case that
+includes a window to transmit the light from outside the product to the sensor, as shown in Figure 30. Design the
+window width and window height to give a ±45° field of view. A rigorous design of the field of view takes into
+account the location of the sensor area, as shown in Figure 37. The OPT3001 active sensor area is centered
+along one axis of the package top view, but has a minor offset on the other axis of the top view. Window sizing
+and placement is discussed in more rigorous detail in application report SBEA002, OPT3001: Ambient Light
+Sensor Application Guide.
+
+                                               Window Width
+
+                                                   Window
+                                                                                                                Product Case
+
+
+                                                                                   Field of View
+
+
+                                                                                       Window Height
+
+
+                                                       OPT3001
+
+                        Side View
+                                                                 Active Sensor Area
+
+                                                   PCB
+
+                       Figure 30. Product Case and Window Over the OPT3001
+
+8.2.2.2  Dark Window Selection and Compensation
+
+There are several approaches to selecting and compensating for a dark window. One of many approaches is the
+method described here.
+
+Sample several different windows with various levels of darkness. Choose a window that is dark enough to
+optimize the balance between the aesthetics of the device and sensor performance. Note that the aesthetic
+evaluation is the subjective opinion of the designer; therefore,  it is more important to see the window on the
+physical design rather than refer to window transmission specifications on paper. Make sure that the chosen
+window is not darker than absolutely necessary because a darker window allows less light to illuminate the
+sensor and therefore impedes sensor accuracy.
+
+The window chosen for this application example is dark and has less than 7% transmission at 550 nm.Figure 31
+shows the normalized response of the spectrum. Note that the equipment used to measure the transmission
+spectrum is not capable of measuring the absolute accuracy (non-normalized) of the dark window sample, but
+only the  relative normalized spectrum. Also note that the window  is much more transmissive to infrared
+wavelengths longer than 700 nm than to visible wavelengths between 400 nm and 650 nm. This imbalance
+between infrared and visible light decreases the ratio of visible light to infrared light at the sensor. Although it is
+preferable to have the window decrease this ratio as little as possible (by having a window with a close ratio of
+visible transmission to infrared transmission), the OPT3001 still performs well as shown in Figure 34.
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     29
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 30 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+Typical Application (continued)
+
+
+                                         1
+                                               0.9
+                                               0.8
+                                               0.7
+                                               0.6                                                                                                                                                                            Transmission 0.5
+                                               0.4
+                                               0.3                                                                                                                                                Normalized
+                                               0.2
+                                               0.1
+                                         0
+                                         300    400    500    600    700    800    900    1000
+                                                               Wavelength (nm)                     D018
+
+          Figure 31. Normalized Transmission Spectral Response of the Chosen Dark Window
+
+
+After choosing the dark window, measure the attenuating effect of the dark window for later compensation. In
+order to measure this attenuation, measure a fluorescent light source with a lux meter, then measure that same
+light with the OPT3001 under the dark window. To measure accurately,  it is important to use a fixture that can
+accommodate either the lux meter or the design containing the OPT3001 and dark window, with the center of
+each of the sensing areas being in exactly the same X, Y, Z location, as shown in Figure 32. The Z placement of
+the design (distance from the light source) is the top of the window, and not the OPT3001 itself.
+
+
+
+
+
+                                                 Light Source                                              Light Source
+
+
+
+
+
+                                            OPT3001
+                                                 and                                         Lux
+                                              Window                                      Meter
+
+
+Figure 32. Fixture with One Light Source Accommodating Either a Lux Meter or the Design (Window and
+                          OPT3001) in the Exact Same X,Y,Z Position
+
+
+The fluorescent light in this location measures 1000 lux with the lux meter, and 73 lux with the OPT3001 under
+the dark window within the application. Therefore, the window has an effective transmission of 7.3% for the
+fluorescent light. This 7.3% is the weighted average attenuation across the entire spectrum, weighted by the
+spectral response of the lux meter (or photopic response).
+
+For all subsequent OPT3001 measurements under this dark window, the following formula is applied.
+     Compensated Measurement = Uncompensated Measurement / (7.3%)                                                   (5)
+
+
+
+
+
+30     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 31 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+Typical Application (continued)
+
+8.2.3  Application Curves
+
+To validate that the design example now measures correctly, create a sequential number of different light
+intensities with the fluorescent light by using neutral density filters to attenuate the light. Different light intensities
+can also be created by changing the distance between the light source, and the measurement devices. However,
+these two methods for changing the light level have minor accuracy tradeoffs that are beyond the scope of this
+discussion. Measure each  intensity  with both the  lux meter and the OPT3001 under the window, and
+compensate using Equation 5. The results are displayed in Figure 33, and show that the application accurately
+reports results very similar to the lux meter.
+
+To validate that the design measures a variety of light sources correctly, despite the large ratio of infrared
+transmission to visible light transmission of the window, measure the application with a halogen bulb and an
+incandescent bulb. Use the physical location and light attenuation procedures that were used for the fluorescent
+light. The results are shown in Figure 34.
+
+The addition of the dark window changes the results as seen by comparing the results of the same measurement
+with a window (Figure 34) and without a window (Figure 3). Even after the expected change, the performance is
+still good. All data are both within 15% of the correct answer, and within 15% of the other bulb measurements.
+
+Results can vary at different angles of light because the OPT3001 does not match the lux meter at all angles of
+light.
+
+If the measurement variation between the light sources is not acceptable, choose a different window that has a
+closer ratio of visible light transmission to infrared light transmission.
+
+
+      1000                                                              1000
+                Compensated                                                                 Fluorescent
+       900      Uncompensated                                            900      Halogen
+       800                                                               800       Incandescent
+       700                                                               700      (Lux)                                                                                                                                 (Lux)
+       Output  600500                                                                                                                                              Output  600500
+       400                                                               400
+       300                                                               300        OPT3001                                                                                                                                                                                    OPT3001
+       200                                                               200
+       100                                                               100
+         0                                                                 0
+           0   100  200  300  400  500  600  700  800  900 1000               0   100  200  300  400  500  600  700  800  900 1000
+                               Lux Meter (Lux)                      D019D001                                  Lux Meter (Lux)                      D020
+       Figure 33. Uncompensated and Compensated Output of         Figure 34. Compensated Output of the OPT3001 Under a
+          the OPT3001 Under a Dark Window Illuminated by            Dark Window Illuminated by Fluorescent, Halogen, and
+                     Fluorescent Light Source                                   Incandescent Light Sources
+
+
+8.3  Do's and Don'ts
+
+As with any optical product, special care must be taken into consideration when handling the OPT3001. Although
+the OPT3001 has low sensitivity to dust and scratches, proper optical device handling procedures are  still
+recommended.
+
+The optical surface of the device must be kept clean for optimal performance in both prototyping with the device
+and mass  production  manufacturing  procedures. Tweezers  with  plastic  or  rubber  contact  surfaces  are
+recommended to avoid scratches on the optical surface. Avoid manipulation with metal tools when possible. The
+optical surface must be kept clean of fingerprints, dust, and other optical-inhibiting contaminants.
+
+If the device optical surface requires cleaning, the use of de-ionized water or isopropyl alcohol is recommended.
+A few gentle brushes with a soft swab are appropriate. Avoid potentially abrasive cleaning and manipulating tools
+and excessive force that can scratch the optical surface.
+
+If the OPT3001 performs less than optimally, inspect the optical surface for  dirt, scratches, or other optical
+artifacts.
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     31
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 32 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+9  Power-Supply Recommendations
+
+Although the OPT3001 has low sensitivity to power-supply issues, good practices are always recommended. For
+best performance, the OPT3001 VDD pin must have a stable, low-noise power supply with a 100-nF bypass
+capacitor close to the device and solid grounding. There are many options for powering the OPT3001 because
+the device current consumption levels are very low.
+
+
+
+
+
+32     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 33 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+10  Layout
+
+10.1  Layout Guidelines
+
+The PCB layout design for the OPT3001 requires a couple of considerations. Bypass the power supply with a
+capacitor placed close to the OPT3001. Note that optically reflective surfaces of components also affect the
+performance of the design. The three-dimensional geometry of all components and structures around the sensor
+must be taken into consideration to prevent unexpected results from secondary optical reflections. Placing
+capacitors and components at a distance of at least twice the height of the component is usually sufficient. The
+most optimal optical layout is to place all close components on the opposite side of the PCB from the OPT3001.
+However, this approach may not be practical for the constraints of every design.
+
+Electrically connecting the thermal pad to ground is recommended. This connection can be created either with a
+PCB trace or with vias to ground directly on the thermal pad itself.  If the thermal pad contains vias, they are
+recommended to be of a small diameter (< 0.2 mm) to prevent them from wicking the solder away from the
+appropriate surfaces.
+
+An example PCB layout with the OPT3001 is shown in Figure 35.
+
+10.2  Layout Example
+
+                  Bypass Capacitor
+                                                                         OPT3001
+   To VDD
+ Power Supply
+
+
+                                                                                                                                     To
+                                                                                                                                                        Processor
+
+
+
+
+
+                          Figure 35. Example PCB Layout With the OPT3001
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     33
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 34 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+11  Device and Documentation Support
+
+11.1  Documentation Support
+
+11.1.1  Related Documentation
+
+For related documentation see the following:
+•  OPT3001: Ambient Light Sensor Application Guide
+•  OPT3001EVM user's guide
+•  QFN/SON PCB Attachment application report
+
+11.2  Receiving Notification of Documentation Updates
+
+To receive notification of documentation updates, navigate to the device product folder on ti.com. In the upper
+right corner, click on Alert me to register and receive a weekly digest of any product information that has
+changed. For change details, review the revision history included in any revised document.
+
+11.3 Community Resources
+
+The following links connect to TI community resources. Linked contents are provided "AS IS" by the respective
+contributors. They do not constitute TI specifications and do not necessarily reflect TI's views; see TI's Terms of
+Use.
+
+TI E2E™Online Community TI's Engineer-to-Engineer (E2E) Community. Created to foster collaboration
+          among engineers. At e2e.ti.com, you can ask questions, share knowledge, explore ideas and help
+             solve problems with fellow engineers.
+
+Design Support TI's Design Support Quickly find helpful E2E forums along with design support tools and
+             contact information for technical support.
+
+11.4  Trademarks
+E2E is a trademark of Texas Instruments.
+All other trademarks are the property of their respective owners.
+
+11.5  Electrostatic Discharge Caution
+         This integrated circuit can be damaged by ESD. Texas Instruments recommends that  all integrated circuits be handled with
+          appropriate precautions. Failure to observe proper handling and installation procedures can cause damage.
+
+      ESD damage can range from subtle performance degradation to complete device failure. Precision integrated circuits may be more
+          susceptible to damage because very small parametric changes could cause the device not to meet its published specifications.
+
+11.6  Glossary
+
+SLYZ022 — TI Glossary.
+    This glossary lists and explains terms, acronyms, and definitions.
+
+
+12  Mechanical, Packaging, and Orderable Information
+
+The following pages include mechanical packaging and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+12.1  Soldering and Handling Recommendations
+
+The OPT3001 has been qualified for three soldering reflow operations per JEDEC JSTD-020.
+
+Note that excessive heat may discolor the device and affect optical performance.
+
+See application report SLUA271, QFN/SON PCB Attachment, for details on soldering thermal profile and other
+information. If the OPT3001 must be removed from a PCB, discard the device and do not reattach.
+
+
+
+
+
+34     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 35 ---
+                                                                           OPT3001
+
+www.ti.com                                                                SBOS681C –JULY 2014–REVISED NOVEMBER 2017
+
+Soldering and Handling Recommendations (continued)
+
+As with most optical devices, handle the OPT3001 with special care to ensure optical surfaces stay clean and
+free from damage. See the Do's and Don'ts section for more detailed recommendations. For best optical
+performance, solder flux and any other possible debris must be cleaned after soldering processes.
+
+12.2 DNP (S-PDSO-N6) Mechanical Drawings
+
+
+
+
+
+                       Figure 36. Package Orientation Visual Reference of Pin 1
+                                          (Top View)
+
+
+
+
+
+Copyright © 2014–2017, Texas Instruments Incorporated                                           Submit Documentation Feedback     35
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 36 ---
+OPT3001
+
+SBOS681C –JULY 2014–REVISED NOVEMBER 2017                                                                    www.ti.com
+
+DNP (S-PDSO-N6) Mechanical Drawings (continued)
+
+
+                                                    Top View
+
+                                                              0.49
+
+
+
+
+
+                                                                                              0.39
+
+
+
+
+
+                                                                         0.09
+
+
+
+
+
+                                                       Side View
+
+
+
+
+
+                    Figure 37. Mechanical Outline Showing Sensing Area Location
+                                     (Top and Side Views)
+
+
+
+
+
+36     Submit Documentation Feedback                                                     Copyright © 2014–2017, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPT3001
+
+--- PDF page 37 ---
+                                                         PACKAGE OPTION ADDENDUM
+
+
+    www.ti.com                                                                                                                                                                                   29-Jul-2026
+
+
+PACKAGING INFORMATION
+
+   Orderable part number     Status   Material type    Package | Pins    Package qty | Carrier    RoHS        Lead finish/       MSL rating/       Op temp (°C)           Part marking
+                                                      (1)                 (2)                                                                                          (3)            Ball material        Peak reflow                                                              (6)
+                                                                                                                                                                                                    (4)                                (5)
+     OPT3001DNPR           Active     Production    USON (DNP) | 6     3000 | LARGE T&R      Yes        NIPDAUAG      Level-3-260C-168 HR        -40 to 85             ED
+     OPT3001DNPR.A          Active     Production    USON (DNP) | 6     3000 | LARGE T&R      Yes        NIPDAUAG      Level-3-260C-168 HR        -40 to 85             ED
+
+(1) Status: For more details on status, see our product life cycle.
+
+(2) Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3) RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4) Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5) MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6) Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+OTHER QUALIFIED VERSIONS OF OPT3001 :
+• Automotive : OPT3001-Q1
+
+
+
+                                                                               Addendum-Page 1
+
+--- PDF page 38 ---
+                                                         PACKAGE OPTION ADDENDUM
+
+
+    www.ti.com                                                                                                                                                                                   29-Jul-2026
+
+
+
+NOTE: Qualified Version Definitions:
+       • Automotive - Q100 devices qualified for high-reliability automotive applications targeting zero defects
+
+
+
+
+
+                                                                               Addendum-Page 2
+
+--- PDF page 39 ---
+                         PACKAGE MATERIALS INFORMATION
+
+
+www.ti.com                                                                                                                          15-Jan-2026
+
+TAPE AND REEL INFORMATION
+
+     REEL DIMENSIONS                                  TAPE DIMENSIONS
+                                                       K0    P1
+
+
+                                                   W                                                                               B0
+                                      Reel
+                                    Diameter
+                                                                         Cavity       A0
+                                         A0  Dimension designed to accommodate the component width
+                                           B0  Dimension designed to accommodate the component length
+                                         K0  Dimension designed to accommodate the component thickness
+                           W   Overall width of the carrier tape
+                                               P1   Pitch between successive cavity centers
+
+                                      Reel Width (W1)
+                  QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+                                                                                         Sprocket Holes
+
+
+                                  Q1  Q2     Q1  Q2
+
+                                  Q3  Q4     Q3  Q4             User Direction of Feed
+
+
+                                                      Pocket Quadrants
+
+
+*All dimensions are nominal
+        Device        Package Package Pins  SPQ     Reel     Reel    A0    B0    K0    P1   W     Pin1
+                       Type   Drawing               Diameter  Width  (mm)  (mm)  (mm)  (mm)  (mm) Quadrant
+                                                 (mm)  W1 (mm)
+    OPT3001DNPR     USON   DNP    6    3000    330.0     12.4     2.3     2.3     0.9     8.0    12.0    Q1
+
+
+
+
+
+                                                  Pack Materials-Page 1
+
+--- PDF page 40 ---
+                         PACKAGE MATERIALS INFORMATION
+
+
+www.ti.com                                                                                                                          15-Jan-2026
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+
+                                                                                                   Width (mm)     H
+
+
+
+
+
+     W             L
+
+
+
+
+
+*All dimensions are nominal
+         Device          Package Type  Package Drawing  Pins   SPQ    Length (mm)  Width (mm)   Height (mm)
+    OPT3001DNPR        USON         DNP         6     3000        356.0         338.0          48.0
+
+
+
+
+
+                                                  Pack Materials-Page 2
+
+--- PDF page 41 ---
+                                 PACKAGE OUTLINE
+DNP0006A                          USON - 0.65 mm mm max height
+                                                         PLASTIC SMALL OUTLINE NO-LEAD
+
+                       B                      1.92.1                 A
+
+
+
+                              1                         6
+
+
+                                                                                         2.1
+                   PIN 1                                                          1.9
+           INDEX AREA
+
+                              3                         4
+
+
+
+
+
+                        0.65                                         C
+                        0.55
+                                                                       SEATING PLANE
+                                                                              0.08
+
+                           0.05
+                           0.00
+
+
+
+
+
+                                      0.65±0.1                                               EXPOSED THERMAL
+                                                                                                                                    (0.2) TYP                                                     PAD
+
+                               3                        4
+
+
+                2X 1.3
+                                                                              1.35±0.1
+
+                      4X 0.65
+
+                               1                                                        6
+                                                          6X 0.30.2                          PIN 1 ID
+                                                                                 0.1   C A   B
+                                        6X 0.350.25                     0.05   C
+
+
+                                                                                               4221434/C  01/2018
+
+NOTES:
+
+  1.    All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+      per ASME Y14.5M.
+  2.   This drawing is subject to change without notice.
+  3.  The package thermal pad must be soldered to the printed circuit board for thermal and mechanical performance.
+  4.   Optical package with clear mold compound.
+
+
+
+
+
+                                                    www.ti.com
+
+--- PDF page 42 ---
+                             EXAMPLE BOARD LAYOUT
+DNP0006A                          USON - 0.65 mm mm max height
+                                                         PLASTIC SMALL OUTLINE NO-LEAD
+
+
+
+
+                                                                      (0.65)                      SEE DETAILS
+
+                     6X (0.5)
+                                         SYMM
+                                                       ℄                6X (0.25)
+                                                                              6
+                             1
+
+
+            SYMM                                                                                                   (1.35)
+                  ℄
+                                                                                                                         (0.8)
+
+                       4X (0.65)
+
+
+                              3                                               4
+                                                 (Ø0.2) VIA
+                                        TYP
+
+                                                                           (1.9)
+
+
+                            LAND PATTERN EXAMPLE
+                                               SCALE: 30X
+
+
+
+
+                                       0.07 MAX                                        0.07 MIN
+                                ALL AROUND                             ALL AROUND
+
+                                  METAL                                 SOLDER MASK
+                                                                           OPENING
+
+                                     SOLDER MASK
+                                                                          METAL                                       OPENING
+
+
+                 NON SOLDER MASK                        SOLDER MASK
+                        DEFINED                                DEFINED
+                      (PREFERRED)
+                           SOLDER MASK DETAILS                                                                                               4221434/C  01/2018
+
+NOTES: (continued)
+
+  5.   This package is designed to be soldered to a thermal pad on the board. For more information, see Texas Instruments literature
+     number SLUA271 (www.ti.com/lit/slua271) .
+
+
+
+
+
+                                                    www.ti.com
+
+--- PDF page 43 ---
+                             EXAMPLE STENCIL DESIGN
+DNP0006A                          USON - 0.65 mm mm max height
+                                                         PLASTIC SMALL OUTLINE NO-LEAD
+
+
+
+
+
+                                                                       (0.62)
+
+              6X (0.5)
+                                         SYMM
+                                                        ℄         6X (0.25)
+                                                                                     6
+
+                      1
+
+
+
+
+
+        SYMM
+             ℄                                                                                                             (1.25)
+
+
+                 4X (0.65)
+
+
+
+
+                       3               METAL                                                                                      4                                      TYP
+
+
+                                                                            (1.9)
+
+
+
+                           SOLDER PASTE EXAMPLE
+                                 BASED ON 0.125mm THICK STENCIL
+
+                                        EXPOSED PAD
+                              88% PRINTED SOLDER COVERAGE BY AREA
+                                                SCALE: 40X
+
+
+
+
+
+                                                                                               4221434/C  01/2018
+
+NOTES: (continued)
+
+  6.   Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+      design recommendations.
+
+
+
+
+
+                                                    www.ti.com
+
+--- PDF page 44 ---
+                 IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+
+TI objects to and rejects any additional or different terms you may propose.
+
+IMPORTANT NOTICE
+
+                                         Copyright © 2026, Texas Instruments Incorporated
+
+                                                       Last updated 10/2025

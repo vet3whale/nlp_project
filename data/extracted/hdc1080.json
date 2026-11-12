@@ -1,0 +1,325 @@
+[
+  {
+    "passage": "7.1 Absolute Maximum Ratings\nInput voltage, VDD: MIN: -0.3 | MAX: 6 | UNIT: V. These are stress ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating Conditions.",
+    "requirements": [
+      {
+        "parameter": "VDD input voltage",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      },
+      {
+        "parameter": "VDD input voltage",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "7.2 ESD Ratings\nElectrostatic discharge: Human-body model (HBM): VALUE: ±2000 V. Charged-device model (CDM): VALUE: ±500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "7.4 Thermal Information\nPWSON (DMB), 6 pins. Junction-to-ambient thermal resistance: VALUE: 49.4 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted).\nSupply voltage\nMIN: 2.7 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage",
+        "operator": ">=",
+        "value": 2.7,
+        "unit": "V",
+        "condition": "Over operating range (unless otherwise noted)"
+      },
+      {
+        "parameter": "Supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "Over operating range (unless otherwise noted)"
+      }
+    ]
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted).\nTemperature sensor ambient operating temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature sensor ambient operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted)"
+      },
+      {
+        "parameter": "Temperature sensor ambient operating temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted)"
+      }
+    ]
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted). Humidity sensor: see Figure 2.\nHumidity sensor ambient operating temperature\nMIN: -20 | MAX: 70 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Humidity sensor ambient operating temperature",
+        "operator": ">=",
+        "value": -20,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      },
+      {
+        "parameter": "Humidity sensor ambient operating temperature",
+        "operator": "<=",
+        "value": 70,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      }
+    ]
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted). Humidity sensor: see Figure 2.\nHumidity sensor functional operating temperature\nMIN: -20 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Humidity sensor functional operating temperature",
+        "operator": ">=",
+        "value": -20,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      },
+      {
+        "parameter": "Humidity sensor functional operating temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; RH measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current\nSupply current\nTYP: 190 | MAX: 220 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 220,
+        "unit": "µA",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; RH measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; Temperature measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current\nSupply current\nTYP: 160 | MAX: 185 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 185,
+        "unit": "µA",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; Temperature measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; Sleep mode\nSupply current\nTYP: 100 | MAX: 200 | UNIT: nA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 200,
+        "unit": "nA",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; Sleep mode"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; non-condensing\nRelative humidity operating range\nMIN: 0 | MAX: 100 | UNIT: %RH",
+    "requirements": [
+      {
+        "parameter": "Relative humidity operating range",
+        "operator": ">=",
+        "value": 0,
+        "unit": "%RH",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; non-condensing"
+      },
+      {
+        "parameter": "Relative humidity operating range",
+        "operator": "<=",
+        "value": 100,
+        "unit": "%RH",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; non-condensing"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\n5 °C < TA < 60 °C; RH = 40%; VDD = 3 V\nTemperature accuracy error\nMIN: -0.4 | TYP: ±0.2 | MAX: 0.4 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.4,
+        "unit": "°C",
+        "condition": "5 °C < TA < 60 °C; RH = 40%; VDD = 3 V"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "°C",
+        "condition": "5 °C < TA < 60 °C; RH = 40%; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics, footnote 11\nRecommended humidity operating range is 10% to 70% RH. Prolonged operation outside this range may result in a measurement offset. The measurement offset will decrease after operating the sensor in this recommended operating range.",
+    "requirements": [
+      {
+        "parameter": "Recommended relative humidity",
+        "operator": ">=",
+        "value": 10,
+        "unit": "%RH",
+        "condition": null
+      },
+      {
+        "parameter": "Recommended relative humidity",
+        "operator": "<=",
+        "value": 70,
+        "unit": "%RH",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nValues in VDD units are multiples of the supply voltage.\nTA = 30 °C; VDD = 3 V\nInput high voltage\nMIN: 0.7 | UNIT: VDD",
+    "requirements": [
+      {
+        "parameter": "Input high voltage",
+        "operator": ">=",
+        "value": 0.7,
+        "unit": "VDD",
+        "condition": "TA = 30 °C; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nValues in VDD units are multiples of the supply voltage.\nTA = 30 °C; VDD = 3 V\nInput low voltage\nMAX: 0.3 | UNIT: VDD",
+    "requirements": [
+      {
+        "parameter": "Input low voltage",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "VDD",
+        "condition": "TA = 30 °C; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nTA = 30 °C; VDD = 3 V; sink current = 3 mA\nOutput low voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output low voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "TA = 30 °C; VDD = 3 V; sink current = 3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nValues in VDD units are multiples of the supply voltage.\nTA = 30 °C; VDD = 3 V\nHysteresis\nMIN: 0.1 | UNIT: VDD",
+    "requirements": [
+      {
+        "parameter": "Hysteresis",
+        "operator": ">=",
+        "value": 0.1,
+        "unit": "VDD",
+        "condition": "TA = 30 °C; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nClock frequency\nMIN: 10 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "I2C interface"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nClock low time\nMIN: 1.3 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Clock low time",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "µs",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nClock high time\nMIN: 0.6 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Clock high time",
+        "operator": ">=",
+        "value": 0.6,
+        "unit": "µs",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nPulse width of spikes suppressed by the input filter\nMAX: 50 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Pulse width of spikes suppressed by the input filter",
+        "operator": "<=",
+        "value": 50,
+        "unit": "ns",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nWithin this interval it is not possible to communicate to the device.\nFrom VDD ≥ 2.7 V to ready for a conversion\nDevice start-up time\nTYP: 10 | MAX: 15 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Device start-up time",
+        "operator": "<=",
+        "value": 15,
+        "unit": "ms",
+        "condition": "From VDD ≥ 2.7 V to ready for a conversion; Communication is unavailable during the start-up interval"
+      }
+    ]
+  },
+  {
+    "passage": "8.3.1 Power Consumption\nIn these applications the HDC1080 spends most of the time in sleep mode: with a typical 100nA of current consumption in sleep mode, the averaged current consumption is minimal. Its low consumption in measurement mode minimizes any self-heating.",
+    "requirements": []
+  },
+  {
+    "passage": "8.3.2 Voltage Supply Monitoring\nThe HDC1080 monitors the supply voltage level and indicates when the voltage supply of the HDC1080 is less than 2.8V. This information is useful in battery-powered systems in order to inform the user to replace the battery.",
+    "requirements": []
+  },
+  {
+    "passage": "8.3.3 Heater\nThe heater is an integrated resistive element that can be used to test the sensor or to drive condensation off the sensor. The heater can be activated using HEAT, bit 13 in the Configuration Register. Once enabled the heater is turned on only in the measurement mode.",
+    "requirements": []
+  }
+]

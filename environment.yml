@@ -1,0 +1,9 @@
+name: nlp_project
+channels:
+  - conda-forge
+dependencies:
+  - python=3.13
+  - pip
+  - ipykernel
+  - pip:
+      - -r requirements.txt

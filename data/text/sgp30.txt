@@ -1,0 +1,880 @@
+--- PDF page 1 ---
+Datasheet SGP30
+Indoor Air Quality Sensor for TVOC and CO2eq Measurements
+
+  Multi-pixel gas sensor for indoor air quality applications
+  Outstanding long-term stability
+  I2C interface with TVOC and CO2eq output signals
+  Very small 6-pin DFN package: 2.45 x 2.45 x 0.9 mm3
+ Low power consumption: 48 mA at 1.8V
+ Tape and reel packaged, reflow solderable
+
+
+
+
+Product Summary
+
+The SGP30 is a digital multi-pixel gas sensor designed for       The sensing element features an unmatched robustness
+easy  integration  into   air  purifier,  demand-controlled         against  contaminating  gases  present   in  real-world
+ventilation, and IoT applications. Sensirion’s CMOSens®          applications enabling a unique long-term stability and low
+technology offers a complete sensor system on a single             drift. The very small 2.45 x 2.45 x 0.9 mm3 DFN package
+chip  featuring a  digital  I2C  interface, a  temperature         enables  applications   in  limited  spaces.  Sensirion’s
+controlled micro hotplate, and two preprocessed indoor air          state-of-the-art  production  process  guarantees  high
+quality  signals. As  the  first  metal-oxide gas  sensor          reproducibility and  reliability. Tape and reel packaging,
+featuring  multiple sensing elements on one  chip, the         together  with  suitability  for  standard SMD assembly
+SGP30 provides more detailed information about the air        processes make the SGP30 predestined for high-volume
+quality.                                                               applications.
+
+
+
+
+
+Figure 1 Functional block diagram of the SGP30.
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               1/19
+
+--- PDF page 2 ---
+1  Sensor Performance
+1.1  Gas Sensing Performance
+The values listed in Table 1 are valid at 25°C, 50% RH and typical VDD.
+
+
+ Parameter          Signal                  Values                             Comments
+
+                   Ethanol signal         0 ppm2 to 1000 ppm Measurement
+ range1                   H2 signal            0 ppm to 1000 ppm
+
+                   Ethanol signal            0.3 ppm to 30 ppm         The specifications below are defined for this measurement
+  Specified range                                                         range. The specified measurement range covers the gas
+                   H2 signal               0.5 ppm to 3 ppm            concentrations expected in indoor air quality applications.
+                                                                   Accuracy is defined as
+                                                                                     c - cset
+                                                                                                                         cset                                         see Figure 2
+                   Ethanol signal                                           with c the measured concentration and cset    cref = 0.4 ppm
+                                                   typ.: 15% of meas. value                                                                           the concentration set point.
+                                                            The concentration c is determined by
+                                                                                                                                            - sout    Accuracy3                                                                 c = cref ∙ exp (sref    )                                                                                   512
+
+                                                                with
+                                         see Figure 3                                                                                                      sout: Ethanol/Hydrogen signal output                   H2 signal                                                                                                                                cref = 0.5 ppm
+                                                   typ.: 10% of meas. value          at concentration c
+                                                                                                                sref: Ethanol/Hydrogen signal output
+                                                                                   at 0.5 ppm H2
+
+                                         see Figure 4
+                   Ethanol signal
+                                                   typ.: 1.3% of meas. value    Long-term                                                   Change of accuracy over time: Siloxane accelerated
+         drift3,4                                                                                                    lifetime test5                                         see Figure 5
+                   H2 signal
+                                                   typ.: 1.3% of meas. value
+
+                   Ethanol signal                                                                            Resolution of Ethanol and Hydrogen signal outputs in
+    Resolution                              0.2 % of meas. value                                                                                             relative change of the measured concentration                   H2 signal
+
+                   Ethanol signal    Sampling
+                                         Max. 40 Hz            Compare with minimum measurement duration in Table 10    frequency                   H2 signal
+
+Table 1 Gas sensing performance. Specifications are at 25°C, 50% RH and typical VDD. The sensors have been operated for at least 24h
+before the first characterization.
+
+
+
+
+
+1 Exposure to ethanol and H2 concentrations up to 1000 ppm have been tested. For applications requiring the measurement of higher gas
+concentrations please contact Sensirion.
+2 ppm: parts per million. 1 ppm = 1000 ppb (parts per billion)
+3 90% of the sensors will be within the typical accuracy tolerance, >99% are within the maximum tolerance.
+4 The long-term drift is stated as change of accuracy per year of operation.
+5 Test conditions: operation in 250 ppm Decamethylcyclopentasiloxane (D5) for 200h simulating 10 years of operation in an indoor
+environment.
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               2/19
+
+--- PDF page 3 ---
+ Accuracy ethanol signal                         Accuracy H2 signal
+
+
+
+
+
+ Figure 2 Typical and maximum accuracy tolerance  in %  of   Figure 3 Typical and maximum accuracy tolerance  in %  of
+ measured value at 25°C, 50% RH and typical VDD. The sensors  measured value at 25°C, 50% RH and typical VDD. The sensors
+ have been operated for at least 24h before the characterization.     have been operated for at least 60h before the characterization.
+
+ Long-term drift Ethanol signal                     Long-term drift H2 signal
+
+
+
+
+
+ Figure 4 Typical and maximum long-term drift in % of measured   Figure 5 Typical and maximum long-term drift in % of measured
+ value at 25°C, 50% RH and typical VDD. The sensors have been   value at 25°C, 50% RH and typical VDD. The sensors have been
+ operated for at least 24h before the first characterization.           operated for at least 60h before the first characterization.
+
+1.2   Air Quality Signals
+Air quality signals TVOC and CO2eq are calculated from Ethanol and H2 measurements using internal conversion and baseline
+compensation algorithms (see Figure 6).
+
+
+                                                          Baseline
+                                                     compensation
+                                         & Signal
+                                                        conversion
+
+                              Signal Processing
+
+
+
+
+
+ Figure 6 Simplified version of the functional block diagram (compare Figure 1) showing the signal
+ paths of the SGP30.
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               3/19
+
+--- PDF page 4 ---
+Specifications of air quality signals are shown in Table 2.
+
+
+ Parameter           Signal                       Values                            Comments
+
+              TVOC signal               0 ppb to 60000 ppb             Maximum possible output range. The gas
+ Output range                                                                     sensing performance is specified for the
+                CO2eq signal              400 ppm to 60000 ppm             measurement range as defined in Table 1
+
+                                     Range                Resolution
+
+                                   0 ppb - 2008 ppb            1 ppb
+
+              TVOC signal     2008 ppb – 11110 ppb         6 ppb
+
+                                11110 ppb – 60000 ppb        32 ppb
+
+                                 400 ppm – 1479 ppm          1 ppm
+
+                                 1479 ppm – 5144 ppm         3 ppm
+                CO2eq signal
+                                5144 ppm – 17597 ppm         9 ppm
+
+                                17597 ppm – 60000 ppm        31 ppm
+
+                                                                      The on-chip baseline compensation algorithm              TVOC signal                     1 Hz
+                                                                           has been optimized for this sampling rate. The
+ Sampling rate
+                                                                                 sensor shows best performance when used
+                CO2eq signal                     1 Hz                                                                                           with this sampling rate.
+
+Table 2 Air quality signal specifications.
+
+1.3  Recommended Operating and Storage Conditions
+Gas Sensing Specifications as detailed in Table 1 are guaranteed only when the sensor is stored and operated under the
+recommended conditions. Prolonged exposure to conditions outside these conditions may accelerate aging.
+The recommended temperature and humidity range for operating the SGP30 is 5–55 °C and 4–30 g m−3 absolute humidity,
+respectively (see Figure 7 for the corresponding translation into relative humidity). It is recommended to store the sensor in a
+temperature range of 5–30 °C and below 30 g m−3 absolute humidity (see Figure 8 for the corresponding translation into relative
+humidity). The sensor must not be exposed towards condensing conditions (i.e., >90 % relative humidity) at any time. To ensure
+a stable performance of the SGP30, conditions described in the document SGP Handling Instructions have to be met. Please
+also refer to the Design-in Guide for optimal integration of the SGP30 into the final device.
+
+
+
+
+
+ Figure 7 Recommended relative humidity and temperature for   Figure 8 Recommended relative humidity and temperature for
+ operating the SGP30.                                                  storing the SGP30.
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               4/19
+
+--- PDF page 5 ---
+2   Electrical Specifications
+ Parameter                                Min.      Typ.     Max.     Unit  Comments
+                                                                                  Minimal voltage must be guaranteed also for the
+ Supply voltage VDD                          1.62        1.8       1.98    V
+                                                                 maximum supply current specified in this table.
+ Hotplate supply voltage VDDH                 1.62        1.8       1.98    V
+                                                                      The measurement mode is activated by sending
+ Supply current in measurement mode6                   48.8           mA    an “sgp30_iaq_init” or “sgp30_measure_raw”
+                                                                     command. Specified at 25°C and typical VDD.
+                                                                      The sleep mode is activated after power-up or
+ Sleep current                                      2        10     μA      after a soft reset. Specified at 25°C and typical
+                                                                    VDD.
+ LOW-level input voltage                         -0.5              0.3*VDD   V
+ HIGH-level input voltage                 0.7*VDD           VDD+0.5   V
+ Vhys hysteresis of Schmitt trigger inputs                      0.05*VDD  V
+ LOW-level output voltage                                   0.2*VDD   V      (open-drain) at 2mA sink current
+ Communication                                Digital 2-wire interface, I2C fast mode.
+
+Table 3 Electrical specifications.
+
+3   Interface Specifications
+
+The SGP30 comes in a 6-pin DFN package, see Table 4.
+ Pin      Name         Comments
+ 1          VDD              Supply voltage
+                                                                         S        GP
+ 2          VSS             Ground                                               1                6
+ 3        SDA                Serial data, bidirectional                                                                               2                5
+ 4       R               Connect to ground (no electrical function)
+                                                                               3  3           0  4 5          VDDH             Supply voltage, hotplate                                  A X         8 9
+ 6        SCL                Serial clock, bidirectional
+
+Table 4 Pin assignment (transparent top view). Dashed lines are only visible from the bottom.
+
+
+
+
+
+6 A 20% higher current is drawn during 5ms on VDDH after entering the measurement mode.
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               5/19
+
+--- PDF page 6 ---
+Figure 9 Typical application circuit (for better clarity in the image, the positioning of the pins does not
+reflect the positions on the real sensor).
+
+
+The electrical specifications of the SGP30 are shown in Table 3. The power supply pins must be decoupled with a 100 nF
+capacitor that shall be placed as close as possible to pin VDD – see Figure 9. The required decoupling depends on the power
+supply network connected to the sensor. We also recommend VDD and VDDH pins to be shorted7.
+SCL is used to synchronize the communication between the microcontroller and the sensor. The SDA pin is used to transfer
+data to and from the sensor. For safe communication, the timing specifications defined in the I2C manual8 must be met. Both
+SCL and SDA lines are open-drain I/Os with diodes to VDD and VSS. They should be connected to external pull-up resistors.
+To avoid signal contention, the microcontroller must only drive SDA and SCL low. The external pull-up resistors (e.g. Rp = 10 kΩ)
+are required to pull the signal high. For dimensioning resistor sizes please take bus capacity and communication frequency into
+account (see for example Section 7.1 of NXPs I2C Manual for more details8). It should be noted that pull-up resistors may be
+included in I/O circuits of microcontrollers.
+The die pad or center pad is electrically connected to GND. Hence, electrical considerations do not impose constraints on the
+wiring of the die pad. However, for mechanical stability it is recommended to solder the center pad to the PCB.
+
+
+4  Absolute Minimum and Maximum Ratings
+Stress levels beyond those listed in Table 5 may cause permanent damage to the device. These are stress ratings for the
+electrical components only and functional operation of the device at these conditions cannot be guaranteed. Exposure to the
+absolute maximum rating conditions for extended periods may affect the reliability of the device.
+
+ Parameter                                              Rating
+ Supply voltage VDD                                              -0.3 V to +2.16 V
+ Supply voltage VDDH                                             -0.3 V to +2.16 V
+ Storage temperature range                                  -40 to +125°C
+
+ Operating temperature range                                 -40 to +85°C
+
+ Humidity Range                                10% - 95% (non-condensing)
+
+ ESD HBM                                           2 kV
+
+ ESD CDM                                           500 V
+
+ Latch up, JESD78 Class II, 125°C                         100 mA
+
+Table 5 Absolute minimum and maximum ratings.
+
+Please refer to Handling Instructions for Sensirion Gas Sensors on Sensirion webpage for full documentation.
+
+
+
+
+7 If VDD and VDDH are not shorted, it is required that VDD is always powered when VDDH is powered. Otherwise, the sensor might be
+damaged.
+8 http://www.nxp.com/documents/user_manual/UM10204.pdf
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               6/19
+
+--- PDF page 7 ---
+5  Timing Specifications
+5.1  Sensor System Timings
+The timings refer to the power up and reset of the ASIC part and do not reflect the usefulness of the readings.
+ Parameter       Symbol      Condition                     Min.     Typ.     Max.    Unit    Comments
+ Power-up time       tPU             After hard reset, VDD ≥VPOR       -         0.4        0.6    ms          -
+  Soft reset time       tSR             After soft reset                          -         0.4        0.6    ms          -
+
+Table 6 System timing specifications.
+
+
+5.2  Communication Timings
+ Parameter                   Symbol   Conditions            Min.     Typ.    Max.      Units    Comments
+ SCL clock frequency                  fSCL           -                    0           -       400      kHz           -
+ Hold  time  (repeated)  START    tHD;STA      After  this period, the   0.6         -            -        µs            -
+  condition                                                      first  clock  pulse   is
+                                            generated
+ LOW period of the SCL clock        tLOW          -                        1.3         -            -        µs            -
+ HIGH period of the SCL clock        tHIGH          -                        0.6         -            -        µs            -
+ Set-up time for a repeated START    tSU;STA        -                        0.6         -            -        µs            -
+  condition
+ SDA hold time                          tHD;DAT        -                    0           -            -         ns            -
+ SDA set-up time                        tSU;DAT        -                    100        -            -         ns            -
+ SCL/SDA rise time                     tR             -                                 -            -       300       ns            -
+ SCL/SDA fall time                        tF              -                                 -            -       300       ns            -
+ SDA valid time                         tVD;DAT        -                                 -            -         0.9      µs            -
+ Set-up time for STOP condition      tSU;STO       -                        0.6         -            -        µs            -
+ Capacitive load on bus line       CB            -                                   400      pF            -
+
+Table 7 Communication timing specifications.
+
+                                    1/fSCL
+                             tHIGH         tLOW           tR                tF
+
+                                                   70%
+  SCL                                                   30%
+
+          tSU;DAT                            tHD;DAT
+
+ DATA IN
+                                                   70%
+  SDA
+                                                   30%
+
+                                                                                         tR
+                                                  tVD;DAT              tF
+DATA OUT
+                                                   70%
+  SDA
+                                                   30%
+
+Figure 10 Timing diagram for digital input/output pads. SDA directions are seen from the sensor.
+Bold SDA lines are controlled by the sensor; plain SDA lines are controlled by the micro-controller.
+Note that SDA valid read time is triggered by falling edge of preceding toggle.
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               7/19
+
+--- PDF page 8 ---
+6   Operation and Communication
+The SGP30 supports I2C fast mode. For detailed information on the I2C protocol, refer to NXP I2C-bus specification8. All SGP30
+commands and data are mapped to a 16-bit address space. Additionally, data and commands are protected with a CRC
+checksum to increase the communication reliability. The 16-bit commands that are sent to the sensor already include a 3-bit
+CRC checksum. Data sent from and received by the sensor is always succeeded by an 8-bit CRC.
+In write direction it is mandatory to transmit the checksum, since the SGP30 only accepts data if it is followed by the correct
+checksum. In read direction it is up to the master to decide if it wants to read and process the checksum.
+
+
+  SGP30                                                     Hex. Code
+   I2C address                                                0x58
+
+Table 8 I2C device address.
+
+
+The typical communication sequence between the I2C master (e.g., a microcontroller in a host device) and the sensor is
+described as follows:
+     1.  The sensor is powered up, communication is initialized
+     2.  The I2C master periodically requests measurement and reads data, in the following sequence:
+          a.   I2C master sends a measurement command
+          b.   I2C master waits until the measurement is finished, either by waiting for the maximum execution time or by waiting
+               for the expected duration and then poll data until the read header is acknowledged by the sensor (expected
+             durations are listed in Table 10)
+          c.   I2C master reads out the measurement result
+
+6.1  Power-Up and Communication Start
+The sensor starts powering-up after reaching the power-up threshold voltage VDD,Min specified in Table 3. After reaching this
+threshold voltage, the sensor needs the time tPU to enter the idle state. Once the idle state is entered  it is ready to receive
+commands from the master.
+Each transmission sequence begins with a START condition (S) and ends with a STOP condition (P) as described in the I2C-
+bus specification.
+
+6.2  Measurement Communication Sequence
+A measurement communication sequence consists of a START condition, the I2C write header (7-bit I2C device address plus 0
+as the write bit) and a 16-bit measurement command. The proper reception of each byte is indicated by the sensor. It pulls the
+SDA pin low (ACK bit) after the falling edge of the 8th SCL clock to indicate the reception. With the acknowledgement of the
+measurement command, the SGP30 starts measuring.
+When the measurement is in progress, no communication with the sensor is possible and the sensor aborts the communication
+with a XCK condition.
+After the sensor has completed the measurement, the master can read the measurement results by sending a START condition
+followed by an I2C read header. The sensor will acknowledge the reception of the read header and responds with data. The
+response data length is listed in Table 10 and is structured in data words, where one word consists of two bytes of data followed
+by one byte CRC checksum. Each byte must be acknowledged by the microcontroller with an ACK condition for the sensor to
+continue sending data. If the sensor does not receive an ACK from the master after any byte of data, it will not continue sending
+data.
+After receiving the checksum for the last word of data, an XCK and STOP condition have to be sent (see Figure 12).
+The I2C master can abort the read transfer with a XCK followed by a STOP condition after any data byte if it is not interested in
+subsequent data, e.g. the CRC byte or following data bytes, in order to save time. Note that the data cannot be read more than
+once, and access to data beyond the specified amount will return a pattern of 1s.
+
+6.3  Measurement Commands
+The available measurement commands of the SGP30 are listed in Table 10.
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               8/19
+
+--- PDF page 9 ---
+Air Quality Signals
+SGP30 uses a dynamic baseline compensation algorithm and on-chip calibration parameters to provide two complementary air
+quality signals. Based on the sensor signals a total VOC signal (TVOC) and a CO2 equivalent signal (CO2eq) are calculated.
+Sending an  “sgp30_iaq_init” command  starts  the  air  quality measurement.  After  the  “sgp30_iaq_init” command, a
+“sgp30_measure_iaq” command has to be sent in regular intervals of 1s to ensure proper operation of the dynamic baseline
+compensation algorithm. The sensor responds with 2 data bytes (MSB first) and 1 CRC byte for each of the two preprocessed
+air quality signals in the order CO2eq (ppm) and TVOC (ppb). For the first 15s after the “sgp30_iaq_init” command the sensor is
+in an initialization phase during which a “sgp30_measure_iaq” command returns fixed values of 400 ppm CO2eq and 0 ppb
+TVOC.
+A new “sgp30_iaq_init” command has to be sent after every power-up or soft reset. The command sequence after start-up for
+initializing and repeating measurements is illustrated in Figure 11.
+
+
+
+
+
+ Figure 11 Command sequence for starting and repeating measurements. An example implementation of a generic driver can be
+ found in the document SGP30 driver integration guide on Sensirion webpage.
+
+
+Set and Get Baseline
+The SGP30 also provides the possibility to read and write the baseline values of the baseline compensation algorithm. This
+feature is used to save the baseline in regular intervals on an external non-volatile memory and restore it after a new power-up
+or soft reset of the sensor. The command “sgp30_get_iaq_baseline” returns the baseline values for the two air quality signals.
+The sensor responds with 2 data bytes (MSB first) and 1 CRC byte for each of the two values in the order CO2eq and TVOC.
+These two values should be stored on an external memory. After a power-up or soft reset, the baseline of the baseline
+compensation algorithm can be restored by sending first an “sgp30_iaq_init” command followed by a “sgp30_set_iaq_baseline”
+command with the two baseline values as parameters in the order as (TVOC, CO2eq). An example implementation of a generic
+driver for the baseline algorithm can be found in the document SGP30 driver integration guide.
+
+Inceptive Baseline for TVOC measurements9
+The inceptive baseline offers an individually calibrated starting reference to the dynamic baseline compensation algorithm.
+Thereby the feature yields a better TVOC concentration accuracy for the very first start-up under bad air condition. This results
+in a better user experience especially when accuracy is required. Please note, that the application of this feature is solely limited
+to the very first start-up period of an SGP sensor. Furthermore, it is limited to the TVOC signal output.
+“sgp30_get_tvoc_inceptive_baseline”   reads   the   precalibrated   reference   point   from   the   sensor  HW  and
+“sgp30_set_tvoc_baseline” activates the inceptive baseline.
+Only use “sgp30_set_tvoc_baseline” when activating the inceptive baseline.
+
+
+
+
+
+9 The inceptive baseline feature is available for SGP30 sensors with feature set 34 and later.
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                               9/19
+
+--- PDF page 10 ---
+Sensor Raw Signals
+The command “sgp30_measure_raw” is intended for part verification and testing purposes. It returns the sensor raw signals
+which are used as inputs for the on-chip calibration and baseline compensation algorithms as shown in the functional block
+diagram in section 1.2. The command performs a measurement to which the sensor responds with 2 data bytes (MSB first) and
+1 CRC byte (see Figure 12) for 2 sensor raw signals in the order H2 signal (sout_H2) and Ethanol signal (sout_EtOH). Both signals
+can be used to calculate gas concentrations c relative to a reference concentration cref by
+                                                                                            - sout                                             c = cref ∙ exp (sref    )                                                      512
+
+with sout the sensor raw signal for H2: sout = sout_H2 or for Ethanol: sout = sout_EtOH, and sref the H2 raw signal or Ethanol raw signal
+output at the corresponding reference concentration cref_H2 or cref_EtOh.
+
+Humidity Compensation
+The SGP30 features an on-chip humidity compensation for the air quality signals (CO2eq and TVOC) and sensor raw signals
+(H2 signal and Ethanol signal). To use the on-chip humidity compensation an absolute humidity value from an external humidity
+sensor like the SHTxx is required. Using the “sgp30_set_absolute_humidity” command, a new humidity value can be written to
+the SGP30 by sending 2 data bytes (MSB first) and 1 CRC byte. The 2 data bytes represent humidity values as a fixed-point
+8.8bit number with a minimum value of 0x0001 (=1/256 g/m3) and a maximum value of 0xFFFF (255 g/m3 + 255/256 g/m3). For
+instance, sending a value of 0x0F80 corresponds to a humidity value of 15.50 g/m3 (15 g/m3 + 128/256 g/m3).
+After setting a new humidity value, this value will be used by the on-chip humidity compensation algorithm until a new humidity
+value is set using the “sgp30_set_absolute_humidity” command. Restarting the sensor (power-on or soft reset) or sending a
+value of 0x0000 (= 0 g/m3) disables the humidity compensation until a new humidity value is sent.
+Absolute humidity values dV in unit g/m3 can be calculated by the following formula:
+                                    RH               17.62 ∙ T
+                                                                                              ∙ 6.112 ∙ exp (                                                                    243.12 + T)                                       100%
+                               dv(T, RH) = 216.7 ∙ [                                      ],                                                         273.15+T
+
+with temperature T and relative humidity RH.
+Example: Inserting T = 25°C and RH = 50% in the formula above results in the absolute humidity dV = 11.8 g/m3.
+
+Feature Set
+The SGP30 features a versioning system for the available set of measurement commands and on-chip algorithms. This so called
+feature set version number can be read out by sending a “sgp30_get_feature_set” command. The sensor responds with 2 data
+bytes (MSB first) and 1 CRC byte (see Table 9). This feature set version number is used to refer to a corresponding set of
+available measurement commands as listed in Table 10.
+
+                           Most significant byte (MSB)                       Least significant byte (LSB)
+                    Bit    1    2    3    4    5    6    7    8      9   10   11   12   13   14   15   16
+                          Product type       Reserved for
+                                                      0                    Product version
+                       SGP30: 0            future use
+
+Table 9 Structure of the SGP feature set number. Please note that the last 5 bits of the product version (bits 12-16 of the LSB) are subject
+to change. This is used to track new features added to the SGP multi-pixel platform.
+
+Measure Test
+The command “sgp30_measure_test” which is included for integration and production line testing runs an on-chip self-test. In
+case of a successful self-test the sensor returns the fixed data pattern 0xD400 (with correct CRC).
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            10/19
+
+--- PDF page 11 ---
+   Feature Set                            0x0022
+  Command                              Hex. Code     Parameter length     Response length     Measurement duration
+                                                            including CRC        including CRC       [ms]
+                                                                [bytes]                [bytes]                                                                                                    Typ.        Max.
+   sgp30_iaq_init                          0x2003              -                                -                   2          10
+   sgp30_measure_iaq                     0x2008              -                   6                  10         12
+   sgp30_get_iaq_baseline                  0x2015              -                   6                   1          10
+   sgp30_set_iaq_baseline                  0x201e        6                               -                   1          10
+   sgp30_set_absolute_humidity              0x2061        3                               -                   1          10
+   sgp30_measure_test10                    0x2032              -                   3                  200        220
+   sgp30_get_feature_set                     0x202f              -                   3                   1          10
+  sgp30_measure_raw                     0x2050              -                   6                  20         25
+   sgp30_get_tvoc_inceptive_baseline         0x20b3              -                   3                   1          10
+   sgp30_set_tvoc_baseline                 0x2077        3                               -                   1          10
+
+
+
+
+
+Table 10 Measurement commands.
+
+6.4  Soft Reset
+A sensor reset can be generated using the “General Call” mode according to I2C-bus specification. It is important to understand
+that a reset generated in this way is not device specific. All devices on the same I2C bus that support the General Call mode will
+perform a reset. The appropriate command consists of two bytes and is shown in Table 11.
+  Command                                                     Hex. Code
+   Address byte                                                  0x00
+  Second byte                                                  0x06
+   Reset Command using the General Call address                    0x0006
+
+
+                                                                              1   2   3   4   5   6   7   8   9   1   2   3   4   5   6   7   8   9
+                                    S  General Call Address ACK   Reset Command   ACK
+                                                                  General Call 1st byte           General Call 2nd byte
+
+
+
+
+   Table 11 Reset through the General Call address (Clear blocks are controlled by the microcontroller, grey blocks by the sensor.).
+
+
+
+
+
+10 The « sgp30_measure_test » command is intended for production line testing and verification only. It should not be used after having
+issued an “sgp30_iaq_init” command. For the duration of the « sgp30_measure_test » command, the sensor is operated in measurement
+mode with a supply current as specified in Table 3. After the command, the sensor is in sleep mode.
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            11/19
+
+--- PDF page 12 ---
+6.5  Get Serial ID
+The readout of the serial ID register can be used to identify the chip and verify the presence of the sensor. The appropriate
+command structure is shown in Table 12. After issuing the measurement command and sending the ACK Bit the sensor needs
+the time tIDLE = 0.5ms to respond to the I2C read header with an ACK Bit. Hence, it is recommended to wait tIDLE =0.5ms before
+issuing the read header.
+The get serial ID command returns 3 words, and every word is followed by an 8-bit CRC checksum. Together the 3 words
+constitute a unique serial ID with a length of 48 bits.
+The ID returned with this command are represented in the big endian (or MSB first) format.
+
+
+  Command                                                     Hex. Code
+   Get Serial ID                                                  0x3682
+
+
+                                                                     1   2   3   4   5   6   7   8   9   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+                             S   I2C Address  WACK  Command MSB  ACK  Command LSB  ACK
+
+                                                    I2C write header                              16-bit command
+
+
+Table 12 Get serial ID command.
+
+
+6.6  Checksum Calculation
+The 8-bit CRC checksum transmitted after each data word is generated by a CRC algorithm. Its properties are displayed in
+Table 13. The CRC covers the contents of the two previously transmitted data bytes. To calculate the checksum only these two
+previously transmitted data bytes are used.
+
+ Property                                       Value
+ Name                                    CRC-8
+ Width                                        8 bit
+ Protected Data                                    read and/or write data
+ Polynomial                                     0x31 (x8 + x5 + x4 + 1)
+  Initialization                                  0xFF
+ Reflect input                                       False
+ Reflect output                                      False
+ Final XOR                                     0x00
+ Examples                            CRC (0xBEEF) = 0x92
+
+Table 13 I2C CRC properties.
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            12/19
+
+--- PDF page 13 ---
+6.7  Communication Data Sequences
+
+
+
+
+
+Figure 12 Communication sequence for starting a measurement and reading measurement results.
+
+
+7   Quality
+7.1  Environmental Stability
+The qualification of the SGP30 was performed based on the JEDEC JESD47 qualification test method.
+
+7.2   Material Contents
+The device is fully RoHS and WEEE compliant, e.g., free of Pb, Cd, and Hg.
+
+8  Device Package
+SGP30 sensors are provided in a DFN (dual flat no leads) package with an outline of 2.45 × 2.45 × 0.9 mm3 and a terminal pitch
+of 0.8 mm. The circular sensor opening of maximally 1.6 mm diameter is centered on the top side of the package. The sensor
+chip is assembled on a Ni/Pd/Au plated copper lead frame. Sensor chip and lead frame are over-molded by a black, epoxy-
+based mold compound. Please note that the side walls of the package are diced and therefore the lead frame sidewall surfaces
+are not plated.
+
+8.1  Moisture Sensitivity Level
+The Moisture Sensitivity Level classification of the SGP30 is MSL1, according to IPC/JEDEC J-STD-020.
+8.2   Traceability
+All SGP30 sensors are laser marked for simple identification and traceability. The marking on the sensor consists of the product
+name and a 4-digit, alphanumeric tracking code. This code is used by Sensirion for batch-level tracking throughout production,
+calibration, and testing. Detailed tracking data can be provided upon justified request. The pin-1 location is indicated by the
+keyhole pattern in the light-colored central area. See Figure 13 for illustration.
+
+
+                           S        GP
+
+
+
+
+                                 3           0
+                           A X         8 9
+
+Figure 13 Laser marking on SGP30. The pin-1 location is indicated by the keyhole pattern in the light-
+colored central area. The bottom line contains a 4-digit alphanumeric tracking code
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            13/19
+
+--- PDF page 14 ---
+8.3  Package Outline
+
+                     2.45                           0.9                                  0.3x45o   0.35
+
+
+
+
+
+                                                                                                                                          0.8
+   2.45                                                                              1.7
+
+                                                                                 0.2*
+
+                                                                                                                                           0.4
+
+
+
+                                                                                    1.25
+
+Figure 14 Package outlines drawing of the SGP30 with nominal values. Dimensions are given in
+millimeters. The die pad shows a small recess in the bottom left part. * These dimensions are not well
+defined and given as a reference only.
+
+
+8.4  Landing Pattern
+Figure 15 shows the PCB landing pattern. The landing pattern is understood to be the metal layer on the PCB, onto which the
+DFN pads are soldered. The solder mask is understood to be the insulating layer on top of the PCB covering the copper traces.
+It is recommended to design the solder mask as a Non-Solder Mask Defined (NSMD) type. For solder paste printing  it is
+recommended to use a laser-cut, stainless steel stencil with electro-polished trapezoidal walls and with 0.125 to 0.150 mm
+stencil thickness. The length of the stencil apertures for the I/O pads should be the same as the PCB pads. However, the position
+of the stencil apertures should have an offset of 0.1 mm away from the package center, as indicated in Figure 15. The die pad
+aperture should cover 70 – 90 % of the die pad area, resulting in a size of about 1.05 mm x 1.5 mm.
+For information on the soldering process and further recommendation on the assembly process please contact Sensirion.
+
+
+
+
+
+Figure 15 Recommended landing pattern.
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            14/19
+
+--- PDF page 15 ---
+8.5  Soldering Instructions
+Standard reflow soldering ovens may be used for soldering. The sensors are designed to withstand a soldering profile
+according to IPC/JEDEC J-STD-020. Peak temperatures of TP = 245 °C during up to tp = 30 seconds for Pb-free assembly in
+IR/Convection reflow ovens (see Figure 16) are recommended. In addition, we also recommend a maximum ramp-down rate
+of < 4 °C/s.
+
+
+
+
+
+ Figure 16 Soldering profile according to JEDEC standard. Recommended conditions are TP =245
+ °C and tP ≤ 30 sec for Pb-free assembly, TL < 220 °C and tL < 150 s. Ramp-up rate < 3 °C/s and
+ ramp-down rate < 4 °C/s.
+
+It is recommended not to use vapor phase soldering to avoid potential contamination of the sensor. Please refer to Handling
+Instructions for Sensirion Gas Sensors on Sensirion webpage for full documentation.
+
+9  Tape & Reel Package
+
+                                                                        Ø1.5 +.1 /-0.0
+                                                          4.00
+                2.00 ±.05 SEE Note 2                                            Ø1.00 MIN
+                     4.00 SEE Note 1                                                                                              1.75 ±.1
+  0.300.30 ±.05±.05
+                                                                                         A
+
+
+
+
+                                                                                                                                        5.50 ±.05
+R 0.2 MAX.                                                                                           SEE NOTE 2
+
+                                B0
+
+                                                                          B
+                                                                                                                                              12.0 +0.3/-0.1
+
+                                                                                         A
+                        K0                         R 0.25 TYP.
+                                             A0
+
+
+                                A 0 = 2.75
+                                B 0 = 2.75
+       SECTION A - A                K 0 = 1.20
+                                                TOLERANCES - UNLESS
+                                              NOTED 1PL ±.2 2PL ±.10
+
+         NOTES:
+              1. 10 SPROCKET HOLE PITCH CUMULATIVE TOLERANCE ±0.2
+              2. POCKET POSITION RELATIVE TO SPROCKET HOLE MEASURED                              DETAIL B
+          AS TRUE POSITION OF POCKET, NOT POCKET HOLE
+              3. A0 AND B0 ARE CALCULATED ON A PLANE AT A DISTANCE "R"
+          ABOVE THE BOTTOM OF THE POCKET
+
+
+Figure 17 Technical drawing of the packaging tape with sensor orientation in tape. Header tape is to
+the right and trailer tape to the left on this drawing. Dimensions are given in millimeters.
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            15/19
+
+--- PDF page 16 ---
+10 Ordering Information
+Use the part names and product numbers shown in the following table when ordering the SGP30 multi-pixel gas sensor. For
+the latest product information and local distributors, visit www.sensirion.com.
+
+
+                         Part Name                       Tape & Reel Size             Product Number
+
+           SGP30, TAPE ON REEL, 2500 PCS                   2500                     1-101646-01
+
+Table 14 SGP30 ordering options
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            16/19
+
+--- PDF page 17 ---
+Revision History
+ Date                  Version       Page(s)     Changes
+ May, 2020              1.0          –           –
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            17/19
+
+--- PDF page 18 ---
+Important Notices
+Warning, Personal Injury
+
+Do not use this product as safety or emergency stop devices or in any other application where failure of the product could result in personal
+injury. Do not use this product for applications other than its intended and authorized use. Before installing, handling, using or servicing this
+product, please consult the data sheet and application notes. Failure to comply with these instructions could result in death or serious injury.
+
+If the Buyer shall purchase or use SENSIRION products for any unintended or unauthorized application, Buyer shall defend, indemnify and hold harmless
+SENSIRION and its officers, employees, subsidiaries, affiliates and distributors against all claims, costs, damages and expenses, and reasonable attorney
+fees arising out of, directly or indirectly, any claim of personal injury or death associated with such unintended or unauthorized use, even if SENSIRION shall
+be allegedly negligent with respect to the design or the manufacture of the product.
+
+ESD Precautions
+
+The inherent design of this component causes it to be sensitive to electrostatic discharge (ESD). To prevent ESD-induced damage and/or degradation, take
+customary and statutory ESD precautions when handling this product.
+See application note “ESD, Latchup and EMC” for more information.
+
+Warranty
+
+SENSIRION warrants solely to the original purchaser of this product for a period of 12 months (one year) from the date of delivery that this product shall be
+of the quality, material and workmanship defined in SENSIRION’s published specifications of the product. Within such period,  if proven to be defective,
+SENSIRION shall repair and/or replace this product, in SENSIRION’s discretion, free of charge to the Buyer, provided that:
+notice in writing describing the defects shall be given to SENSIRION within fourteen (14) days after their appearance;
+such defects shall be found, to SENSIRION’s reasonable satisfaction, to have arisen from SENSIRION’s faulty design, material, or workmanship;
+the defective product shall be returned to SENSIRION’s factory at the Buyer’s expense; and
+the warranty period for any repaired or replaced product shall be limited to the unexpired portion of the original period.
+This warranty does not apply to any equipment which has not been installed and used within the specifications recommended by SENSIRION for the intended
+and proper use of the equipment. EXCEPT FOR THE WARRANTIES EXPRESSLY SET FORTH HEREIN, SENSIRION MAKES NO WARRANTIES, EITHER
+EXPRESS OR IMPLIED, WITH RESPECT TO THE PRODUCT. ANY AND ALL WARRANTIES, INCLUDING WITHOUT LIMITATION, WARRANTIES OF
+MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE, ARE EXPRESSLY EXCLUDED AND DECLINED.
+SENSIRION is only liable for defects of this product arising under the conditions of operation provided for in the data sheet and proper use of the goods.
+SENSIRION explicitly disclaims all warranties, express or implied, for any period during which the goods are operated or stored not in accordance with the
+technical specifications.
+SENSIRION does not assume any liability arising out of any application or use of any product or circuit and specifically disclaims any and all liability, including
+without limitation consequential or incidental damages. All operating parameters, including without limitation recommended parameters, must be validated
+for each customer’s applications by customer’s technical experts. Recommended parameters can and do vary in different applications.
+SENSIRION reserves the right, without further notice, (i) to change the product specifications and/or the information in this document and (ii) to improve
+reliability, functions and design of this product.
+
+Copyright© 2020 by SENSIRION.
+CMOSens® is a trademark of Sensirion
+All rights reserved
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            18/19
+
+--- PDF page 19 ---
+Headquarters and Subsidiaries
+
+ Sensirion AG                   Sensirion Inc., USA              Sensirion Korea Co. Ltd.
+ Laubisruetistr. 50                phone: +1 312 690 5858           phone: +82 31 337 7700~3
+ CH-8712 Staefa ZH               info-us@sensirion.com             info-kr@sensirion.com
+ Switzerland                     www.sensirion.com                www.sensirion.com/kr
+
+ phone: +41 44 306 40 00         Sensirion Japan Co. Ltd.         Sensirion China Co. Ltd.
+ fax:   +41 44 306 40 30         phone: +81 3 3444 4940           phone: +86 755 8252 1501
+ info@sensirion.com               info-jp@sensirion.com             info-cn@sensirion.com
+ www.sensirion.com               www.sensirion.com/jp             www.sensirion.com/cn
+
+ Sensirion Taiwan Co. Ltd
+ phone: +886 3 5506701
+ info@sensirion.com
+ www.sensirion.com            To find your local representative, please visit www.sensirion.com/distributors
+
+
+
+
+
+www.sensirion.com                                Version 1.0 – May 2020 – D1                                            19/19

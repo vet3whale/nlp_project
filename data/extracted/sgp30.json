@@ -1,0 +1,221 @@
+[
+  {
+    "passage": "2 Electrical specifications\nSupply voltage VDD\nMIN: 1.62 | MAX: 1.98 | UNIT: V\nThe minimum voltage must also be maintained under maximum supply-current demand.",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 1.62,
+        "unit": "V",
+        "condition": "Applies also under maximum supply-current demand"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 1.98,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\nHotplate supply voltage VDDH\nMIN: 1.62 | MAX: 1.98 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Hotplate supply voltage VDDH",
+        "operator": ">=",
+        "value": 1.62,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "Hotplate supply voltage VDDH",
+        "operator": "<=",
+        "value": 1.98,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\n25 °C; VDD = 1.8 V; sleep mode after power-up or soft reset\nSleep current\nMAX: 10 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Sleep current",
+        "operator": "<=",
+        "value": 10,
+        "unit": "µA",
+        "condition": "25 °C; VDD = 1.8 V; sleep mode after power-up or soft reset"
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\nOpen-drain output; sink current = 2 mA\nLow-level output voltage\nMAX: 0.2 | UNIT: VDD\nVDD denotes a multiple of the supply voltage, not a fixed voltage.",
+    "requirements": [
+      {
+        "parameter": "Low-level output voltage",
+        "operator": "<=",
+        "value": 0.2,
+        "unit": "VDD",
+        "condition": "Open-drain output; sink current = 2 mA"
+      }
+    ]
+  },
+  {
+    "passage": "4 Absolute minimum and maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply voltage VDD\nMIN: -0.3 | MAX: 2.16 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 2.16,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Sensor system timings\nAfter hard reset; VDD ≥ VPOR; ASIC timing, not readiness of useful gas readings\nPower-up time\nMAX: 0.6 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Power-up time",
+        "operator": "<=",
+        "value": 0.6,
+        "unit": "ms",
+        "condition": "After hard reset; VDD ≥ VPOR; ASIC timing, not readiness of useful gas readings"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Sensor system timings\nAfter soft reset; ASIC timing, not readiness of useful gas readings\nSoft reset time\nMAX: 0.6 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Soft reset time",
+        "operator": "<=",
+        "value": 0.6,
+        "unit": "ms",
+        "condition": "After soft reset; ASIC timing, not readiness of useful gas readings"
+      }
+    ]
+  },
+  {
+    "passage": "5.2 Communication timings\nI2C fast mode\nSCL clock frequency\nMIN: 0 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "SCL clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "I2C fast mode"
+      },
+      {
+        "parameter": "SCL clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "I2C fast mode"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Recommended operating and storage conditions\nRecommended operation is at 5 to 55 °C and 4 to 30 g/m³ absolute humidity. Gas-sensing specifications are guaranteed only under the recommended conditions.",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": 5,
+        "unit": "°C",
+        "condition": "Recommended operating conditions"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 55,
+        "unit": "°C",
+        "condition": "Recommended operating conditions"
+      },
+      {
+        "parameter": "Absolute humidity",
+        "operator": ">=",
+        "value": 4,
+        "unit": "g/m³",
+        "condition": "Recommended operating conditions"
+      },
+      {
+        "parameter": "Absolute humidity",
+        "operator": "<=",
+        "value": 30,
+        "unit": "g/m³",
+        "condition": "Recommended operating conditions"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Recommended operating and storage conditions\nFor storage, the recommended temperature range is 5 to 30 °C and absolute humidity must remain below 30 g/m³.",
+    "requirements": [
+      {
+        "parameter": "Storage temperature",
+        "operator": ">=",
+        "value": 5,
+        "unit": "°C",
+        "condition": "Recommended storage conditions"
+      },
+      {
+        "parameter": "Storage temperature",
+        "operator": "<=",
+        "value": 30,
+        "unit": "°C",
+        "condition": "Recommended storage conditions"
+      },
+      {
+        "parameter": "Absolute humidity",
+        "operator": "<",
+        "value": 30,
+        "unit": "g/m³",
+        "condition": "Recommended storage conditions"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Recommended operating and storage conditions\nThe sensor must never be exposed to condensing conditions, identified here as relative humidity greater than 90%.",
+    "requirements": [
+      {
+        "parameter": "Relative humidity",
+        "operator": "<=",
+        "value": 90,
+        "unit": "%RH",
+        "condition": "At all times; avoid condensing conditions"
+      }
+    ]
+  },
+  {
+    "passage": "3 Interface specifications\nThe power supply pins must be decoupled with a 100 nF capacitor placed as close as possible to VDD.",
+    "requirements": [
+      {
+        "parameter": "Decoupling capacitance",
+        "operator": "=",
+        "value": 100,
+        "unit": "nF",
+        "condition": "Power supply decoupling; capacitor placed close to VDD"
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\n25 °C; VDD = 1.8 V; measurement mode\nSupply current in measurement mode\nTYP: 48.8 | UNIT: mA",
+    "requirements": []
+  },
+  {
+    "passage": "6 Operation and communication, Table 8\nThe SGP30 I2C device address is 0x58.",
+    "requirements": []
+  },
+  {
+    "passage": "4 Absolute minimum and maximum ratings\nESD qualification: HBM 2 kV; CDM 500 V.",
+    "requirements": []
+  }
+]

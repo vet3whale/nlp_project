@@ -1,0 +1,186 @@
+[
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating temperature range\nSupply voltage VDD-GND\nMIN: 3 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD-GND",
+        "operator": ">=",
+        "value": 3,
+        "unit": "V",
+        "condition": "Operating temperature range"
+      },
+      {
+        "parameter": "Supply voltage VDD-GND",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Operating temperature range"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": null
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply voltage VDD\nMIN: -0.3 | MAX: 6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Conversion mode; digital inputs tied to VDD or GND\nSupply current\nMAX: 950 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 950,
+        "unit": "µA",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Conversion mode; digital inputs tied to VDD or GND"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Standby; digital inputs tied to VDD or GND\nSupply current\nMAX: 70 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 70,
+        "unit": "µA",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Standby; digital inputs tied to VDD or GND"
+      }
+    ]
+  },
+  {
+    "passage": "5.6 I2C interface voltage level\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; sink current = 3 mA\nOutput low voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output low voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; sink current = 3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; frequency = 25 kHz; SHLD1 or SHLD2 to GND\nShield driver load capacitance\nMAX: 400 | UNIT: pF",
+    "requirements": [
+      {
+        "parameter": "Shield driver load capacitance",
+        "operator": "<=",
+        "value": 400,
+        "unit": "pF",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; frequency = 25 kHz; SHLD1 or SHLD2 to GND"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nClock frequency\nMIN: 10 | MAX: 400 | UNIT: kHz\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nClock low time\nMIN: 1.3 | UNIT: µs\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Clock low time",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "µs",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nClock high time\nMIN: 0.6 | UNIT: µs\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Clock high time",
+        "operator": ">=",
+        "value": 0.6,
+        "unit": "µs",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nPulse width of spikes suppressed by input filter\nMAX: 50 | UNIT: ns\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Pulse width of spikes suppressed by input filter",
+        "operator": "<=",
+        "value": 50,
+        "unit": "ns",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing, footnote 2\nAn internal hold time of at least 300 ns bridges the undefined region of the falling SCL edge.\nTest conditions: VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating.",
+    "requirements": [
+      {
+        "parameter": "Internal hold time",
+        "operator": ">=",
+        "value": 300,
+        "unit": "ns",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; bridging the undefined region of the falling SCL edge"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; per channel; series resistance at CIN1 to CIN4 = 0 Ω\nMax input offset capacitance\nTYP: 100 | UNIT: pF\nDespite the parameter name, 100 pF is in the TYP column; typical values are not guaranteed.",
+    "requirements": []
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; sample rate = 100 S/s; no external capacitance connected\nOutput noise\nTYP: 33.2 | UNIT: aF/√Hz",
+    "requirements": []
+  },
+  {
+    "passage": "5.4 Thermal information\nJunction-to-ambient thermal resistance: WSON and VSSOP, 10 pins: 46.8 °C/W. This is a thermal metric without a minimum or maximum column.",
+    "requirements": []
+  }
+]

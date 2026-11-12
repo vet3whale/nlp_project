@@ -1,0 +1,228 @@
+[
+  {
+    "passage": "Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; Tamb = 25 °C\nSupply voltage VDD\nMIN: 0 | MAX: 4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; Tamb = 25 °C"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 4,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; Tamb = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nStorage temperature\nMIN: -25 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Storage temperature",
+        "operator": ">=",
+        "value": -25,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Storage temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; Tamb ≤ 25 °C\nTotal power dissipation\nMAX: 50 | UNIT: mW",
+    "requirements": [
+      {
+        "parameter": "Total power dissipation",
+        "operator": "<=",
+        "value": 50,
+        "unit": "mW",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; Tamb ≤ 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C\nSupply voltage VDD\nMIN: 2.5 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 2.5,
+        "unit": "V",
+        "condition": "Tamb = 25 °C"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Tamb = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; VDD = 3.3 V\nI2C high-level input voltage\nMIN: 1.3 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I2C high-level input voltage",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      },
+      {
+        "parameter": "I2C high-level input voltage",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; VDD = 3.3 V\nI2C low-level input voltage\nMIN: -0.3 | MAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I2C low-level input voltage",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      },
+      {
+        "parameter": "I2C low-level input voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C\nDigital low-level current sink capability\nMIN: 3 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "Digital low-level current sink capability",
+        "operator": ">=",
+        "value": 3,
+        "unit": "mA",
+        "condition": "Tamb = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Standard mode\nClock frequency\nMIN: 10 | MAX: 100 | UNIT: kHz\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Standard mode"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 100,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Standard mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Fast mode\nClock frequency\nMIN: 10 | MAX: 400 | UNIT: kHz\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Fast mode"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Fast mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Standard mode\nData hold time\nMIN: 0 | MAX: 3450 | UNIT: ns\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 0,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Standard mode"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 3450,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Standard mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Fast mode\nData hold time\nMIN: 0 | MAX: 900 | UNIT: ns\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 0,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Fast mode"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 900,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Fast mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Standard mode\nClock/data low timeout\nMIN: 25 | MAX: 35 | UNIT: ms\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Clock/data low timeout",
+        "operator": ">=",
+        "value": 25,
+        "unit": "ms",
+        "condition": "Tamb = 25 °C; Standard mode"
+      },
+      {
+        "parameter": "Clock/data low timeout",
+        "operator": "<=",
+        "value": 35,
+        "unit": "ms",
+        "condition": "Tamb = 25 °C; Standard mode"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; VDD = 3.3 V; dark conditions\nShutdown current\nTYP: 0.5 | UNIT: µA",
+    "requirements": []
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; ALS_GAIN = 1/8; ALS_IT = 25 ms\nDetectable maximum illuminance\nTYP: 140000 | UNIT: lux\nThe value is in the TYP column, not the MAX column.",
+    "requirements": []
+  },
+  {
+    "passage": "Description\nThe VEML7700 integrates a photodiode, amplifier, 16-bit analog-to-digital converter and I2C communication interface.",
+    "requirements": []
+  }
+]

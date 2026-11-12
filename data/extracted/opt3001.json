@@ -1,0 +1,339 @@
+[
+  {
+    "passage": "6.1 Absolute Maximum Ratings\nVoltage, VDD to GND: MIN: -0.5 | MAX: 6 | UNIT: V. These are stress ratings only, and do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating Conditions.",
+    "requirements": [
+      {
+        "parameter": "VDD-to-GND voltage",
+        "operator": ">=",
+        "value": -0.5,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      },
+      {
+        "parameter": "VDD-to-GND voltage",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "6.1 Absolute Maximum Ratings, footnote 2\nLong exposure to temperatures higher than 105°C can cause package discoloration, spectral distortion, and measurement inaccuracy.",
+    "requirements": []
+  },
+  {
+    "passage": "6.2 ESD Ratings\nElectrostatic discharge: Human-body model (HBM): VALUE: ±2000 V. Charged-device model (CDM): VALUE: ±500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "6.4 Thermal Information\nDNP (USON), 6 pins. Junction-to-ambient thermal resistance: VALUE: 71.2 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nOperating temperature\nMIN: -40 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": null
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nOperating power-supply voltage\nMIN: 1.6 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating power-supply voltage",
+        "operator": ">=",
+        "value": 1.6,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "Operating power-supply voltage",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence\nPeak irradiance spectral responsivity\nTYP: 550 | UNIT: nm",
+    "requirements": []
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); RN[3:0] = 0110; 0.64 lux per ADC code; 2620.80 lux full-scale; 2000 lux input; white LED; normal-angle incidence\nMeasurement output result\nMIN: 1800 | TYP: 2000 | MAX: 2200 | UNIT: lux",
+    "requirements": [
+      {
+        "parameter": "Measurement output result",
+        "operator": ">=",
+        "value": 1800,
+        "unit": "lux",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); RN[3:0] = 0110; 0.64 lux per ADC code; 2620.80 lux full-scale; 2000 lux input; white LED; normal-angle incidence"
+      },
+      {
+        "parameter": "Measurement output result",
+        "operator": "<=",
+        "value": 2200,
+        "unit": "lux",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); RN[3:0] = 0110; 0.64 lux per ADC code; 2620.80 lux full-scale; 2000 lux input; white LED; normal-angle incidence"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; dark condition; 0.01 lux per ADC code\nDark-condition ADC output\nTYP: 0 | MAX: 0.03 | UNIT: lux",
+    "requirements": [
+      {
+        "parameter": "Dark-condition ADC output",
+        "operator": "<=",
+        "value": 0.03,
+        "unit": "lux",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; dark condition; 0.01 lux per ADC code"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; VDD ≤ I2C pull-up voltage\nI2C pull-up resistor voltage\nMIN: 1.6 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I2C pull-up resistor voltage",
+        "operator": ">=",
+        "value": 1.6,
+        "unit": "V",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; VDD ≤ I2C pull-up voltage"
+      },
+      {
+        "parameter": "I2C pull-up resistor voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; VDD ≤ I2C pull-up voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Active\nQuiescent current\nTYP: 1.8 | MAX: 2.5 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 2.5,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Active"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Shutdown (M[1:0] = 00)\nQuiescent current\nTYP: 0.3 | MAX: 0.47 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 0.47,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Shutdown (M[1:0] = 00)"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 1, 800-ms mode\nTotal integration time\nMIN: 720 | TYP: 800 | MAX: 880 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Total integration time",
+        "operator": ">=",
+        "value": 720,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 1, 800-ms mode"
+      },
+      {
+        "parameter": "Total integration time",
+        "operator": "<=",
+        "value": 880,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 1, 800-ms mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 0, 100-ms mode\nTotal integration time\nMIN: 90 | TYP: 100 | MAX: 110 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Total integration time",
+        "operator": ">=",
+        "value": 90,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 0, 100-ms mode"
+      },
+      {
+        "parameter": "Total integration time",
+        "operator": "<=",
+        "value": 110,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 0, 100-ms mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; IOL = 3 mA\nLow-level output voltage, SDA and INT\nMAX: 0.32 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Low-level output voltage, SDA and INT",
+        "operator": "<=",
+        "value": 0.32,
+        "unit": "V",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; IOL = 3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence\nLow-level input current, SDA, SCL and ADDR\nTYP: 0.01 | MAX: 0.25 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Low-level input current, SDA, SCL and ADDR",
+        "operator": "<=",
+        "value": 0.25,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nSCL operating frequency\nMIN: 0.01 | MAX: 0.4 | UNIT: MHz",
+    "requirements": [
+      {
+        "parameter": "SCL operating frequency",
+        "operator": ">=",
+        "value": 0.01,
+        "unit": "MHz",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "SCL operating frequency",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "MHz",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nSCL operating frequency\nMIN: 0.01 | MAX: 2.6 | UNIT: MHz",
+    "requirements": [
+      {
+        "parameter": "SCL operating frequency",
+        "operator": ">=",
+        "value": 0.01,
+        "unit": "MHz",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "SCL operating frequency",
+        "operator": "<=",
+        "value": 2.6,
+        "unit": "MHz",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nData hold time\nMIN: 20 | MAX: 900 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 20,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 900,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nData hold time\nMIN: 20 | MAX: 140 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 20,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 140,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock low period\nMIN: 1300 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock low period",
+        "operator": ">=",
+        "value": 1300,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock low period\nMIN: 240 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock low period",
+        "operator": ">=",
+        "value": 240,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock high period\nMIN: 600 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock high period",
+        "operator": ">=",
+        "value": 600,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock high period\nMIN: 60 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock high period",
+        "operator": ">=",
+        "value": 60,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics, footnote 5\nThe conversion time, from start of conversion until the data are ready to be read, is the integration time plus 3 ms.",
+    "requirements": []
+  }
+]

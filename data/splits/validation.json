@@ -1,0 +1,523 @@
+[
+  {
+    "passage": "9.2 Absolute maximum ratings\nAbsolute maximum ratings are the limits the device can be exposed to without permanently damaging it. Absolute maximum ratings are stress ratings only, functional operation at these ratings is not guaranteed. Exposure to absolute maximum ratings conditions for extended periods may affect device reliability.",
+    "requirements": []
+  },
+  {
+    "passage": "9.2 Absolute maximum ratings, Table 4\nESD and latchup protection characteristics. Human body model: ±2000 V. Charge device model: ±500 V. Latchup current at T = 85 °C: ±100 mA.",
+    "requirements": []
+  },
+  {
+    "passage": "9.3 Mechanical characteristics\nVDD = 2.5 V; T = 25 °C; Calibrated range\nPressure measurement range\nMIN: 50 | MAX: 110 | UNIT: kPa",
+    "requirements": [
+      {
+        "parameter": "Pressure measurement range",
+        "operator": ">=",
+        "value": 50,
+        "unit": "kPa",
+        "condition": "VDD = 2.5 V; T = 25 °C; Calibrated range"
+      },
+      {
+        "parameter": "Pressure measurement range",
+        "operator": "<=",
+        "value": 110,
+        "unit": "kPa",
+        "condition": "VDD = 2.5 V; T = 25 °C; Calibrated range"
+      }
+    ]
+  },
+  {
+    "passage": "9.3 Mechanical characteristics\nVDD = 2.5 V; T = 25 °C; Operational range\nPressure measurement range\nMIN: 20 | MAX: 110 | UNIT: kPa",
+    "requirements": [
+      {
+        "parameter": "Pressure measurement range",
+        "operator": ">=",
+        "value": 20,
+        "unit": "kPa",
+        "condition": "VDD = 2.5 V; T = 25 °C; Operational range"
+      },
+      {
+        "parameter": "Pressure measurement range",
+        "operator": "<=",
+        "value": 110,
+        "unit": "kPa",
+        "condition": "VDD = 2.5 V; T = 25 °C; Operational range"
+      }
+    ]
+  },
+  {
+    "passage": "9.3 Mechanical characteristics\nVDD = 2.5 V; pressure = 50 to 110 kPa; temperature = 0 to 50 °C\nPressure absolute accuracy error\nMIN: -0.4 | MAX: 0.4 | UNIT: kPa",
+    "requirements": [
+      {
+        "parameter": "Pressure absolute accuracy error",
+        "operator": ">=",
+        "value": -0.4,
+        "unit": "kPa",
+        "condition": "VDD = 2.5 V; pressure = 50 to 110 kPa; temperature = 0 to 50 °C"
+      },
+      {
+        "parameter": "Pressure absolute accuracy error",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "kPa",
+        "condition": "VDD = 2.5 V; pressure = 50 to 110 kPa; temperature = 0 to 50 °C"
+      }
+    ]
+  },
+  {
+    "passage": "9.3 Mechanical characteristics\nVDD = 2.5 V; T = 25 °C; pressure = 50 to 110 kPa; 128x oversample\nPressure reading noise\nTYP: 1.5 | UNIT: Pa RMS",
+    "requirements": []
+  },
+  {
+    "passage": "9.3 Mechanical characteristics\nVDD = 2.5 V; T = 25 °C; pressure = 50 to 110 kPa; FIFO mode\nOutput data rate\nMAX: 1 | UNIT: Hz",
+    "requirements": [
+      {
+        "parameter": "Output data rate",
+        "operator": "<=",
+        "value": 1,
+        "unit": "Hz",
+        "condition": "VDD = 2.5 V; T = 25 °C; pressure = 50 to 110 kPa; FIFO mode"
+      }
+    ]
+  },
+  {
+    "passage": "9.3 Mechanical characteristics\nVDD = 2.5 V; pressure = 50 to 110 kPa\nTemperature measurement range\nMIN: -40 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature measurement range",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "VDD = 2.5 V; pressure = 50 to 110 kPa"
+      },
+      {
+        "parameter": "Temperature measurement range",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "VDD = 2.5 V; pressure = 50 to 110 kPa"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nVDD = 2.5 V; T = 25 °C\nI/O supply voltage\nMIN: 1.62 | TYP: 1.8 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I/O supply voltage",
+        "operator": ">=",
+        "value": 1.62,
+        "unit": "V",
+        "condition": "VDD = 2.5 V; T = 25 °C"
+      },
+      {
+        "parameter": "I/O supply voltage",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "VDD = 2.5 V; T = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nT = 25 °C\nOperating supply voltage\nMIN: 1.95 | TYP: 2.5 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating supply voltage",
+        "operator": ">=",
+        "value": 1.95,
+        "unit": "V",
+        "condition": "T = 25 °C"
+      },
+      {
+        "parameter": "Operating supply voltage",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "T = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nVDD = 2.5 V; T = 25 °C; during acquisition/conversion\nMax current during acquisition and conversion\nTYP: 2 | UNIT: mA",
+    "requirements": []
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nValues in VDDIO units are multiples of the I/O supply voltage.\nVDD = 2.5 V; T = 25 °C\nDigital high-level input voltage, SCL and SDA\nMIN: 0.75 | UNIT: VDDIO",
+    "requirements": [
+      {
+        "parameter": "Digital high-level input voltage, SCL and SDA",
+        "operator": ">=",
+        "value": 0.75,
+        "unit": "VDDIO",
+        "condition": "VDD = 2.5 V; T = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nValues in VDDIO units are multiples of the I/O supply voltage.\nVDD = 2.5 V; T = 25 °C\nDigital low-level input voltage, SCL and SDA\nMAX: 0.3 | UNIT: VDDIO",
+    "requirements": [
+      {
+        "parameter": "Digital low-level input voltage, SCL and SDA",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "VDDIO",
+        "condition": "VDD = 2.5 V; T = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nValues in VDDIO units are multiples of the I/O supply voltage.\nVDD = 2.5 V; T = 25 °C; IO = 500 µA\nHigh-level output voltage, INT1 and INT2\nMIN: 0.9 | UNIT: VDDIO",
+    "requirements": [
+      {
+        "parameter": "High-level output voltage, INT1 and INT2",
+        "operator": ">=",
+        "value": 0.9,
+        "unit": "VDDIO",
+        "condition": "VDD = 2.5 V; T = 25 °C; IO = 500 µA"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nValues in VDDIO units are multiples of the I/O supply voltage.\nVDD = 2.5 V; T = 25 °C; IO = 500 µA\nLow-level output voltage, INT1 and INT2\nMAX: 0.1 | UNIT: VDDIO",
+    "requirements": [
+      {
+        "parameter": "Low-level output voltage, INT1 and INT2",
+        "operator": "<=",
+        "value": 0.1,
+        "unit": "VDDIO",
+        "condition": "VDD = 2.5 V; T = 25 °C; IO = 500 µA"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nTime to obtain valid data from STANDBY mode to ACTIVE mode.\nVDD = 2.5 V; T = 25 °C; High-speed mode; oversample = 1x\nTurn-on time\nMAX: 60 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Turn-on time",
+        "operator": "<=",
+        "value": 60,
+        "unit": "ms",
+        "condition": "VDD = 2.5 V; T = 25 °C; High-speed mode; oversample = 1x; Time to obtain valid data from STANDBY mode to ACTIVE mode"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics\nTime to obtain valid data from STANDBY mode to ACTIVE mode.\nVDD = 2.5 V; T = 25 °C; High-resolution mode; oversample = 128x\nTurn-on time\nMAX: 1000 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Turn-on time",
+        "operator": "<=",
+        "value": 1000,
+        "unit": "ms",
+        "condition": "VDD = 2.5 V; T = 25 °C; High-resolution mode; oversample = 128x; Time to obtain valid data from STANDBY mode to ACTIVE mode"
+      }
+    ]
+  },
+  {
+    "passage": "9.4 Electrical characteristics, I2C addressing\nThe device uses 7-bit addressing and does not acknowledge general call address 000 0000. Client address has been set to 60h or 110 0000. 8-bit read is C1h, 8-bit write is C0h.",
+    "requirements": []
+  },
+  {
+    "passage": "10.1 I2C characteristics\nAll values referred to VIH(min) and VIL(max) levels.\nPull-up = 1 kΩ; Cb = 400 pF\nSCL clock frequency\nMIN: 0 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "SCL clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "Pull-up = 1 kΩ; Cb = 400 pF; Values referenced to VIH(min) and VIL(max) levels"
+      },
+      {
+        "parameter": "SCL clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "Pull-up = 1 kΩ; Cb = 400 pF; Values referenced to VIH(min) and VIL(max) levels"
+      }
+    ]
+  },
+  {
+    "passage": "10.1 I2C characteristics\nAll values referred to VIH(min) and VIL(max) levels.\nPull-up = 1 kΩ; Cb = 20 pF\nSCL clock frequency\nMIN: 0 | MAX: 4 | UNIT: MHz",
+    "requirements": [
+      {
+        "parameter": "SCL clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "MHz",
+        "condition": "Pull-up = 1 kΩ; Cb = 20 pF; Values referenced to VIH(min) and VIL(max) levels"
+      },
+      {
+        "parameter": "SCL clock frequency",
+        "operator": "<=",
+        "value": 4,
+        "unit": "MHz",
+        "condition": "Pull-up = 1 kΩ; Cb = 20 pF; Values referenced to VIH(min) and VIL(max) levels"
+      }
+    ]
+  },
+  {
+    "passage": "10.1 I2C characteristics\nI2C interface; values referred to VIH(min) and VIL(max) levels\nBus free time between STOP and START\nMIN: 1.3 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Bus free time between STOP and START",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "µs",
+        "condition": "I2C interface; values referred to VIH(min) and VIL(max) levels"
+      }
+    ]
+  },
+  {
+    "passage": "10.1 I2C characteristics\nI2C fast mode; values referred to VIH(min) and VIL(max) levels\nSDA setup time\nMIN: 100 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SDA setup time",
+        "operator": ">=",
+        "value": 100,
+        "unit": "ns",
+        "condition": "I2C fast mode; values referred to VIH(min) and VIL(max) levels"
+      }
+    ]
+  },
+  {
+    "passage": "10.1 I2C characteristics, footnote 2\nThe device must internally provide a hold time of at least 300 ns for the SDA signal (with respect to the VIH(min) of the SCL signal) to bridge the undefined region of the falling edge of SCL.",
+    "requirements": [
+      {
+        "parameter": "Internal SDA hold time",
+        "operator": ">=",
+        "value": 300,
+        "unit": "ns",
+        "condition": "With respect to VIH(min) of SCL; bridging the undefined region of the falling edge of SCL"
+      }
+    ]
+  },
+  {
+    "passage": "10.1 I2C characteristics, Table 8\nI2C interface; values referenced to VIH(min) and VIL(max) levels\nRepeated START setup time\nMIN: 0.6 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Repeated START setup time",
+        "operator": ">=",
+        "value": 0.6,
+        "unit": "µs",
+        "condition": "I2C interface; values referenced to VIH(min) and VIL(max) levels"
+      }
+    ]
+  },
+  {
+    "passage": "10.1 I2C characteristics, footnote 6\nThe maximum tf for the SDA and SCL bus lines is specified at 300 ns. The maximum fall time for the SDA output stage tf is specified at 250 ns.",
+    "requirements": [
+      {
+        "parameter": "Fall time",
+        "operator": "<=",
+        "value": 300,
+        "unit": "ns",
+        "condition": "SDA and SCL bus lines"
+      },
+      {
+        "parameter": "Fall time",
+        "operator": "<=",
+        "value": 250,
+        "unit": "ns",
+        "condition": "SDA output stage"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nTA = -40 to 125 °C; GND = ground\nOperating supply voltage\nMIN: 2.7 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating supply voltage",
+        "operator": ">=",
+        "value": 2.7,
+        "unit": "V",
+        "condition": "TA = -40 to 125 °C; GND = ground"
+      },
+      {
+        "parameter": "Operating supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = -40 to 125 °C; GND = ground"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 3.3 V; -20 °C < TA ≤ 100 °C; includes lifetime drift\nTemperature accuracy error\nMIN: -0.5 | MAX: 0.5 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.5,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -20 °C < TA ≤ 100 °C; includes lifetime drift"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -20 °C < TA ≤ 100 °C; includes lifetime drift"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 3.3 V; -40 °C < TA ≤ 125 °C; includes lifetime drift\nTemperature accuracy error\nMIN: -1 | MAX: 1 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -1,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -40 °C < TA ≤ 125 °C; includes lifetime drift"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 1,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -40 °C < TA ≤ 125 °C; includes lifetime drift"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C\nOperating current\nMAX: 400 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Operating current",
+        "operator": "<=",
+        "value": 400,
+        "unit": "µA",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; shutdown mode\nShutdown current\nMAX: 2 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Shutdown current",
+        "operator": "<=",
+        "value": 2,
+        "unit": "µA",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; shutdown mode"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; IOL = 3 mA; active-low open-drain output with external pull-up resistor\nAlert low-level voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Alert low-level voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; IOL = 3 mA; active-low open-drain output with external pull-up resistor"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Digital input/output pin characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; VOL = 0.6 V\nSDA low-level output current\nMIN: 6 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "SDA low-level output current",
+        "operator": ">=",
+        "value": 6,
+        "unit": "mA",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; VOL = 0.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature characteristics\nVDD = 2.7 to 5.5 V; GND = ground\nOperating temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Absolute Maximum Ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply voltage VDD\nMAX: 6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Sensor serial interface timing specifications\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum\nSerial port clock frequency\nMIN: 0 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "Serial port clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      },
+      {
+        "parameter": "Serial port clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Sensor serial interface timing specifications\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum\nInterface timeout\nMIN: 25 | MAX: 35 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Interface timeout",
+        "operator": ">=",
+        "value": 25,
+        "unit": "ms",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      },
+      {
+        "parameter": "Interface timeout",
+        "operator": "<=",
+        "value": 35,
+        "unit": "ms",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Sensor serial interface timing specifications, note 3\nIn a standard-mode I2C system, the MCP9808 requires data-in setup time tSU-DI ≥ 100 ns. It does not stretch SCL low time.\nTest settings: VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum.",
+    "requirements": [
+      {
+        "parameter": "Data-in setup time",
+        "operator": ">=",
+        "value": 100,
+        "unit": "ns",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum; standard-mode I2C"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; resolution = 0.0625 °C/bit\nConversion time\nTYP: 250 | UNIT: ms",
+    "requirements": []
+  },
+  {
+    "passage": "1.0 Temperature characteristics\nThermal resistance, 8L-DFN\nTYP: 68 | UNIT: °C/W",
+    "requirements": []
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics, note 2\nAccuracy drift characterization uses an accelerated life cycle equivalent to 12 years of operation at 55 °C.",
+    "requirements": []
+  }
+]

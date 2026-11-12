@@ -1,0 +1,200 @@
+[
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nTA = -40 to 125 °C; GND = ground\nOperating supply voltage\nMIN: 2.7 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating supply voltage",
+        "operator": ">=",
+        "value": 2.7,
+        "unit": "V",
+        "condition": "TA = -40 to 125 °C; GND = ground"
+      },
+      {
+        "parameter": "Operating supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = -40 to 125 °C; GND = ground"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 3.3 V; -20 °C < TA ≤ 100 °C; includes lifetime drift\nTemperature accuracy error\nMIN: -0.5 | MAX: 0.5 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.5,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -20 °C < TA ≤ 100 °C; includes lifetime drift"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -20 °C < TA ≤ 100 °C; includes lifetime drift"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 3.3 V; -40 °C < TA ≤ 125 °C; includes lifetime drift\nTemperature accuracy error\nMIN: -1 | MAX: 1 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -1,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -40 °C < TA ≤ 125 °C; includes lifetime drift"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 1,
+        "unit": "°C",
+        "condition": "VDD = 3.3 V; -40 °C < TA ≤ 125 °C; includes lifetime drift"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C\nOperating current\nMAX: 400 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Operating current",
+        "operator": "<=",
+        "value": 400,
+        "unit": "µA",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; shutdown mode\nShutdown current\nMAX: 2 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Shutdown current",
+        "operator": "<=",
+        "value": 2,
+        "unit": "µA",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; shutdown mode"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; IOL = 3 mA; active-low open-drain output with external pull-up resistor\nAlert low-level voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Alert low-level voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; IOL = 3 mA; active-low open-drain output with external pull-up resistor"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Digital input/output pin characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; VOL = 0.6 V\nSDA low-level output current\nMIN: 6 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "SDA low-level output current",
+        "operator": ">=",
+        "value": 6,
+        "unit": "mA",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; VOL = 0.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature characteristics\nVDD = 2.7 to 5.5 V; GND = ground\nOperating temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Absolute Maximum Ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply voltage VDD\nMAX: 6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Sensor serial interface timing specifications\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum\nSerial port clock frequency\nMIN: 0 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "Serial port clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      },
+      {
+        "parameter": "Serial port clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Sensor serial interface timing specifications\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum\nInterface timeout\nMIN: 25 | MAX: 35 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Interface timeout",
+        "operator": ">=",
+        "value": 25,
+        "unit": "ms",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      },
+      {
+        "parameter": "Interface timeout",
+        "operator": "<=",
+        "value": 35,
+        "unit": "ms",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Sensor serial interface timing specifications, note 3\nIn a standard-mode I2C system, the MCP9808 requires data-in setup time tSU-DI ≥ 100 ns. It does not stretch SCL low time.\nTest settings: VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum.",
+    "requirements": [
+      {
+        "parameter": "Data-in setup time",
+        "operator": ">=",
+        "value": 100,
+        "unit": "ns",
+        "condition": "VDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; CL = 80 pF; timing referenced to VIL maximum and VIH minimum; standard-mode I2C"
+      }
+    ]
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics\nVDD = 2.7 to 5.5 V; GND = ground; TA = -40 to 125 °C; resolution = 0.0625 °C/bit\nConversion time\nTYP: 250 | UNIT: ms",
+    "requirements": []
+  },
+  {
+    "passage": "1.0 Temperature characteristics\nThermal resistance, 8L-DFN\nTYP: 68 | UNIT: °C/W",
+    "requirements": []
+  },
+  {
+    "passage": "1.0 Temperature sensor DC characteristics, note 2\nAccuracy drift characterization uses an accelerated life cycle equivalent to 12 years of operation at 55 °C.",
+    "requirements": []
+  }
+]

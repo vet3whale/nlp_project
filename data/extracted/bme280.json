@@ -1,0 +1,207 @@
+[
+  {
+    "passage": "1.1 General electrical specification\nSupply ripple ≤ 50 mVpp\nInternal-domain supply voltage VDD\nMIN: 1.71 | MAX: 3.6 | UNIT: V\nThe ripple value is an applicability condition for this supply-voltage specification.",
+    "requirements": [
+      {
+        "parameter": "Internal-domain supply voltage VDD",
+        "operator": ">=",
+        "value": 1.71,
+        "unit": "V",
+        "condition": "Supply ripple ≤ 50 mVpp"
+      },
+      {
+        "parameter": "Internal-domain supply voltage VDD",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Supply ripple ≤ 50 mVpp"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nI/O-domain supply voltage VDDIO\nMIN: 1.2 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I/O-domain supply voltage VDDIO",
+        "operator": ">=",
+        "value": 1.2,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "I/O-domain supply voltage VDDIO",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nSleep mode; full supply-voltage and operating-temperature ranges\nSleep current\nMAX: 0.3 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Sleep current",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "µA",
+        "condition": "Sleep mode; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nInactive period of normal mode; full supply-voltage and operating-temperature ranges\nStandby current\nMAX: 0.5 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Standby current",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "µA",
+        "condition": "Inactive period of normal mode; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nTime to first communication after both VDD > 1.58 V and VDDIO > 0.65 V; temperature 0 to 65 °C\nStart-up time\nMAX: 2 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Start-up time",
+        "operator": "<=",
+        "value": 2,
+        "unit": "ms",
+        "condition": "Time to first communication after both VDD > 1.58 V and VDDIO > 0.65 V; temperature 0 to 65 °C"
+      }
+    ]
+  },
+  {
+    "passage": "1.2 Humidity parameter specification\n1 Hz forced mode; humidity and temperature measurement; full supply-voltage and operating-temperature ranges\nSupply current\nMAX: 2.8 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 2.8,
+        "unit": "µA",
+        "condition": "1 Hz forced mode; humidity and temperature measurement; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\nPressure sensor operational range; full supply-voltage range\nOperating temperature\nMIN: -40 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "Pressure sensor operational range; full supply-voltage range"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Pressure sensor operational range; full supply-voltage range"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\nPressure sensor full-accuracy range; full supply-voltage range\nOperating temperature\nMIN: 0 | MAX: 65 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": 0,
+        "unit": "°C",
+        "condition": "Pressure sensor full-accuracy range; full supply-voltage range"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 65,
+        "unit": "°C",
+        "condition": "Pressure sensor full-accuracy range; full supply-voltage range"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\nFull accuracy; temperature 0 to 65 °C; full supply-voltage range\nOperating pressure\nMIN: 300 | MAX: 1100 | UNIT: hPa",
+    "requirements": [
+      {
+        "parameter": "Operating pressure",
+        "operator": ">=",
+        "value": 300,
+        "unit": "hPa",
+        "condition": "Full accuracy; temperature 0 to 65 °C; full supply-voltage range"
+      },
+      {
+        "parameter": "Operating pressure",
+        "operator": "<=",
+        "value": 1100,
+        "unit": "hPa",
+        "condition": "Full accuracy; temperature 0 to 65 °C; full supply-voltage range"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\n1 Hz forced mode; pressure and temperature measurement; lowest-power configuration; full supply-voltage and operating-temperature ranges\nSupply current\nMAX: 4.2 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 4.2,
+        "unit": "µA",
+        "condition": "1 Hz forced mode; pressure and temperature measurement; lowest-power configuration; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "2 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply-pin voltage, VDD and VDDIO\nMIN: -0.3 | MAX: 4.25 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply-pin voltage, VDD and VDDIO",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply-pin voltage, VDD and VDDIO",
+        "operator": "<=",
+        "value": 4.25,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "2 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; relative humidity ≤ 65%\nStorage temperature\nMIN: -45 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Storage temperature",
+        "operator": ">=",
+        "value": -45,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; relative humidity ≤ 65%"
+      },
+      {
+        "parameter": "Storage temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; relative humidity ≤ 65%"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nHumidity measurement; table test condition: maximum value at 85 °C\nCurrent during humidity measurement\nTYP: 340 | UNIT: µA\n340 µA is in the TYP column; no MIN or MAX value is provided.",
+    "requirements": []
+  },
+  {
+    "passage": "1.4 Temperature sensor specification, footnote 8\nAbsolute temperature accuracy for -20 to 0 °C: target value ±1.25 °C. The footnote says this target is not guaranteed.",
+    "requirements": []
+  },
+  {
+    "passage": "3.2 Power management\nWhen VDDIO is supplied but VDD is not, interface pins remain high impedance. Cycling VDDIO does not reset the sensor.",
+    "requirements": []
+  }
+]

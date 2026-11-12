@@ -1,0 +1,361 @@
+[
+  {
+    "passage": "6.1 Absolute Maximum Ratings\nOver free-air temperature range unless otherwise noted. Supply voltage V+: MIN: -0.3 | MAX: 6 | UNIT: V. These are stress ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating Conditions.",
+    "requirements": [
+      {
+        "parameter": "Supply voltage V+",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; over free-air temperature range unless otherwise noted; functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply voltage V+",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; over free-air temperature range unless otherwise noted; functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "6.2 ESD Ratings\nElectrostatic discharge: Human-body model (HBM): VALUE: ±2000 V. Charged-device model (CDM): VALUE: ±1000 V.",
+    "requirements": []
+  },
+  {
+    "passage": "6.4 Thermal Information\nJunction-to-ambient thermal resistance. YBG (DSBGA), 6 pins: 133.2 °C/W. DRV (WSON), 6 pins: 70.7 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nTA = -55 °C to 150 °C\nSupply voltage\nMIN: 1.8 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage",
+        "operator": ">=",
+        "value": 1.8,
+        "unit": "V",
+        "condition": "TA = -55 °C to 150 °C"
+      },
+      {
+        "parameter": "Supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = -55 °C to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nTA = -55 °C to 70 °C\nSupply voltage\nMIN: 1.7 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage",
+        "operator": ">=",
+        "value": 1.7,
+        "unit": "V",
+        "condition": "TA = -55 °C to 70 °C"
+      },
+      {
+        "parameter": "Supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = -55 °C to 70 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nVoltage at SCL, SDA, ALERT and ADD0\nMIN: 0 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Voltage at SCL, SDA, ALERT and ADD0",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "Voltage at SCL, SDA, ALERT and ADD0",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nOperating free-air temperature\nMIN: -55 | MAX: 150 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": ">=",
+        "value": -55,
+        "unit": "°C",
+        "condition": null
+      },
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": "<=",
+        "value": 150,
+        "unit": "°C",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTMP117; TA = -20 °C to 50 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+\nTemperature accuracy error\nMIN: -0.1 | MAX: 0.1 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.1,
+        "unit": "°C",
+        "condition": "TMP117; TA = -20 °C to 50 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.1,
+        "unit": "°C",
+        "condition": "TMP117; TA = -20 °C to 50 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTMP117; TA = -40 °C to 70 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+\nTemperature accuracy error\nMIN: -0.15 | MAX: 0.15 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.15,
+        "unit": "°C",
+        "condition": "TMP117; TA = -40 °C to 70 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.15,
+        "unit": "°C",
+        "condition": "TMP117; TA = -40 °C to 70 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTMP117; TA = -55 °C to 150 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+\nTemperature accuracy error\nMIN: -0.3 | MAX: 0.3 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "°C",
+        "condition": "TMP117; TA = -55 °C to 150 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "°C",
+        "condition": "TMP117; TA = -55 °C to 150 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; one-shot mode\nConversion time\nMIN: 13 | TYP: 15.5 | MAX: 17.5 | UNIT: ms\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Conversion time",
+        "operator": ">=",
+        "value": 13,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; one-shot mode"
+      },
+      {
+        "parameter": "Conversion time",
+        "operator": "<=",
+        "value": 17.5,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; one-shot mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C\nInput leakage current\nMIN: -0.1 | MAX: 0.1 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Input leakage current",
+        "operator": ">=",
+        "value": -0.1,
+        "unit": "µA",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      },
+      {
+        "parameter": "Input leakage current",
+        "operator": "<=",
+        "value": 0.1,
+        "unit": "µA",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; IOL = -3 mA\nSDA and ALERT output logic low level\nMIN: 0 | MAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "SDA and ALERT output logic low level",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; IOL = -3 mA"
+      },
+      {
+        "parameter": "SDA and ALERT output logic low level",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; IOL = -3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; active conversion; serial bus inactive\nQuiescent current during active conversion\nTYP: 135 | MAX: 220 | UNIT: µA\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Quiescent current during active conversion",
+        "operator": "<=",
+        "value": 220,
+        "unit": "µA",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; active conversion; serial bus inactive"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; V+ = 1.7 to 5.5 V; duty cycle = 1 Hz; averaging mode off; serial bus inactive\nQuiescent current\nTYP: 3.5 | MAX: 5 | UNIT: µA\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 5,
+        "unit": "µA",
+        "condition": "TA = 25 °C; V+ = 1.7 to 5.5 V; duty cycle = 1 Hz; averaging mode off; serial bus inactive"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; V+ = 1.7 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+\nShutdown current\nTYP: 0.15 | MAX: 0.5 | UNIT: µA\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Shutdown current",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "µA",
+        "condition": "TA = 25 °C; V+ = 1.7 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 150 °C; V+ = 1.8 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+\nShutdown current\nMAX: 5 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Shutdown current",
+        "operator": "<=",
+        "value": 5,
+        "unit": "µA",
+        "condition": "TA = 150 °C; V+ = 1.8 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics, footnote 3\nHysteresis is defined as the ability to reproduce a temperature reading as the temperature varies from room → hot → room → cold → room. The temperatures used for this test are -40°C, 25°C, and 150°C.",
+    "requirements": []
+  },
+  {
+    "passage": "6.6 Switching Characteristics\nTA = 25 °C; V+ = 3.3 V\nEEPROM programming time\nTYP: 7 | UNIT: ms",
+    "requirements": []
+  },
+  {
+    "passage": "6.6 Switching Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C\nEEPROM number of writes\nMIN: 1000 | UNIT: writes",
+    "requirements": [
+      {
+        "parameter": "EEPROM number of writes",
+        "operator": ">=",
+        "value": 1000,
+        "unit": "writes",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Switching Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C\nEEPROM data retention time\nMIN: 10 | UNIT: years",
+    "requirements": [
+      {
+        "parameter": "EEPROM data retention time",
+        "operator": ">=",
+        "value": 10,
+        "unit": "years",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode\nSCL operating frequency\nMIN: 1 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "SCL operating frequency",
+        "operator": ">=",
+        "value": 1,
+        "unit": "kHz",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode"
+      },
+      {
+        "parameter": "SCL operating frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode\nData setup time\nMIN: 100 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Data setup time",
+        "operator": ">=",
+        "value": 100,
+        "unit": "ns",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode; SDA bus released if there is no clock\nSerial bus timeout\nMIN: 20 | MAX: 40 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Serial bus timeout",
+        "operator": ">=",
+        "value": 20,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode; SDA bus released if there is no clock"
+      },
+      {
+        "parameter": "Serial bus timeout",
+        "operator": "<=",
+        "value": 40,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode; SDA bus released if there is no clock"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing, data-valid-time row and footnote 2\nFast-mode; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C (unless otherwise noted); measured from SCL LOW to SDA output transition, using the worse transition direction\nData valid time\nMAX: 0.9 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Data valid time",
+        "operator": "<=",
+        "value": 0.9,
+        "unit": "µs",
+        "condition": "Fast-mode; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C (unless otherwise noted); measured from SCL LOW to SDA output transition, using the worse transition direction"
+      }
+    ]
+  }
+]

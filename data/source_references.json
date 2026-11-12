@@ -1,0 +1,818 @@
+{
+  "bme280": {
+    "source_url": "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf",
+    "pdf_file": "datasheets/bme280.pdf",
+    "pdf_sha256": "a2ccdb449fec94380742fe8eec851a11d9bd4142252d332b34682b4deecd7d89",
+    "revision": "BST-BME280-DS001-23, revision 1.23, January 2022",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 8,
+        "section": "1.1 General electrical specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 8,
+        "section": "1.1 General electrical specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 8,
+        "section": "1.1 General electrical specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 8,
+        "section": "1.1 General electrical specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 8,
+        "section": "1.1 General electrical specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 9,
+        "section": "1.2 Humidity parameter specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 10,
+        "section": "1.3 Pressure sensor specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 10,
+        "section": "1.3 Pressure sensor specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 10,
+        "section": "1.3 Pressure sensor specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 10,
+        "page": 10,
+        "section": "1.3 Pressure sensor specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 11,
+        "page": 13,
+        "section": "2 Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 12,
+        "page": 13,
+        "section": "2 Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 13,
+        "page": 8,
+        "section": "1.1 General electrical specification",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 12,
+        "section": "1.4 Temperature sensor specification, footnote 8",
+        "source_type": "prose"
+      },
+      {
+        "entry": 15,
+        "page": 14,
+        "section": "3.2 Power management",
+        "source_type": "prose"
+      }
+    ]
+  },
+  "mcp9808": {
+    "source_url": "https://ww1.microchip.com/downloads/aemDocuments/documents/OTH/ProductDocuments/DataSheets/MCP9808-0.5C-Maximum-Accuracy-Digital-Temperature-Sensor-Data-Sheet-DS20005095B.pdf",
+    "pdf_file": "datasheets/mcp9808.pdf",
+    "pdf_sha256": "e7b6502f744c3e605a424d7b784a23baa471a41f8bc6d51f6321027b0c43972f",
+    "revision": "DS20005095B, 2018",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 4,
+        "section": "1.0 Digital input/output pin characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 4,
+        "section": "1.0 Temperature characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 3,
+        "section": "1.0 Absolute Maximum Ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 10,
+        "page": 5,
+        "section": "1.0 Sensor serial interface timing specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 11,
+        "page": 5,
+        "section": "1.0 Sensor serial interface timing specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 12,
+        "page": 5,
+        "section": "1.0 Sensor serial interface timing specifications, note 3",
+        "source_type": "prose"
+      },
+      {
+        "entry": 13,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 4,
+        "section": "1.0 Temperature characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 15,
+        "page": 3,
+        "section": "1.0 Temperature sensor DC characteristics, note 2",
+        "source_type": "prose"
+      }
+    ]
+  },
+  "sgp30": {
+    "source_url": "https://sensirion.com/media/documents/984E0DD5/61644B8B/Sensirion_Gas_Sensors_Datasheet_SGP30.pdf",
+    "pdf_file": "datasheets/sgp30.pdf",
+    "pdf_sha256": "edf8a16d205ef1ba044a8ce951acb097b0ada4639b856c71819d167a3d0cf58a",
+    "revision": "Version 1.0, May 2020",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 5,
+        "section": "2 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 5,
+        "section": "2 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 5,
+        "section": "2 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 5,
+        "section": "2 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 6,
+        "section": "4 Absolute minimum and maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 7,
+        "section": "5.1 Sensor system timings",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 7,
+        "section": "5.1 Sensor system timings",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 7,
+        "section": "5.2 Communication timings",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 4,
+        "section": "1.3 Recommended operating and storage conditions",
+        "source_type": "prose"
+      },
+      {
+        "entry": 10,
+        "page": 4,
+        "section": "1.3 Recommended operating and storage conditions",
+        "source_type": "prose"
+      },
+      {
+        "entry": 11,
+        "page": 4,
+        "section": "1.3 Recommended operating and storage conditions",
+        "source_type": "prose"
+      },
+      {
+        "entry": 12,
+        "page": 6,
+        "section": "3 Interface specifications",
+        "source_type": "prose"
+      },
+      {
+        "entry": 13,
+        "page": 5,
+        "section": "2 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 8,
+        "section": "6 Operation and communication, Table 8",
+        "source_type": "prose"
+      },
+      {
+        "entry": 15,
+        "page": 6,
+        "section": "4 Absolute minimum and maximum ratings",
+        "source_type": "table"
+      }
+    ]
+  },
+  "sht31": {
+    "source_url": "https://sensirion.com/media/documents/213E6A3B/63A5A569/Datasheet_SHT3x_DIS.pdf",
+    "pdf_file": "datasheets/sht31.pdf",
+    "pdf_sha256": "095b1853e7f4328f5897c9ca6c392a7dd8b0202eda66b0a2629f9cb840dd496d",
+    "revision": "SHT3x-DIS version 7, December 2022",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 6,
+        "section": "2.1 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 6,
+        "section": "2.1 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 6,
+        "section": "2.1 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 6,
+        "section": "2.1 Electrical specifications",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 7,
+        "section": "2.2 Timing specification, Table 4",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 7,
+        "section": "2.2 Timing specification, Table 5",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 7,
+        "section": "2.2 Timing specification, Table 4",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 7,
+        "section": "2.3 Absolute minimum and maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 6,
+        "section": "1.1 Recommended operating condition",
+        "source_type": "prose"
+      },
+      {
+        "entry": 10,
+        "page": 8,
+        "section": "3.1 Power pins",
+        "source_type": "prose"
+      },
+      {
+        "entry": 11,
+        "page": 8,
+        "section": "3 Pin assignment, Table 7",
+        "source_type": "prose"
+      },
+      {
+        "entry": 12,
+        "page": 8,
+        "section": "3.2 Serial clock and serial data",
+        "source_type": "prose"
+      },
+      {
+        "entry": 13,
+        "page": 2,
+        "section": "1 Sensor performance, Table 1",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 2,
+        "section": "1 Sensor performance, Table 2",
+        "source_type": "table"
+      },
+      {
+        "entry": 15,
+        "page": 8,
+        "section": "3.4 ADDR pin",
+        "source_type": "prose"
+      }
+    ]
+  },
+  "veml7700": {
+    "source_url": "https://www.vishay.com/docs/84286/veml7700.pdf",
+    "pdf_file": "datasheets/veml7700.pdf",
+    "pdf_sha256": "f338cf7d5911828a2f2ac8ae8324049380c852e34aa5afa43ac92c98ffe827d1",
+    "revision": "Revision 1.8, 28 November 2024",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 2,
+        "section": "Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 2,
+        "section": "Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 2,
+        "section": "Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 2,
+        "section": "Basic characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 2,
+        "section": "Basic characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 2,
+        "section": "Basic characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 2,
+        "section": "Basic characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 3,
+        "section": "I2C timing characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 3,
+        "section": "I2C timing characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 10,
+        "page": 3,
+        "section": "I2C timing characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 11,
+        "page": 3,
+        "section": "I2C timing characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 12,
+        "page": 3,
+        "section": "I2C timing characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 13,
+        "page": 2,
+        "section": "Basic characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 2,
+        "section": "Basic characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 15,
+        "page": 1,
+        "section": "Description",
+        "source_type": "prose"
+      }
+    ]
+  },
+  "fdc1004": {
+    "source_url": "https://www.ti.com/lit/ds/symlink/fdc1004.pdf",
+    "pdf_file": "datasheets/fdc1004.pdf",
+    "pdf_sha256": "79f6eb7e66c8064b465acf43a153b8ad9091dbd3fff46ab8787176a30529ae1e",
+    "revision": "SNOSCY5C, October 2024",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 4,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 4,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 4,
+        "section": "5.1 Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 5,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 5,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 5,
+        "section": "5.6 I2C interface voltage level",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 5,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 6,
+        "section": "5.7 I2C interface timing",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 6,
+        "section": "5.7 I2C interface timing",
+        "source_type": "table"
+      },
+      {
+        "entry": 10,
+        "page": 6,
+        "section": "5.7 I2C interface timing",
+        "source_type": "table"
+      },
+      {
+        "entry": 11,
+        "page": 6,
+        "section": "5.7 I2C interface timing",
+        "source_type": "table"
+      },
+      {
+        "entry": 12,
+        "page": 6,
+        "section": "5.7 I2C interface timing, footnote 2",
+        "source_type": "prose"
+      },
+      {
+        "entry": 13,
+        "page": 5,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 5,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 15,
+        "page": 4,
+        "section": "5.4 Thermal information",
+        "source_type": "table"
+      }
+    ]
+  },
+  "ina219": {
+    "source_url": "https://www.ti.com/lit/ds/symlink/ina219.pdf",
+    "pdf_file": "datasheets/ina219.pdf",
+    "pdf_sha256": "58004eda854d07478e6fc6f4398c114f60a3bcf18d4877471c7c1a306d1fa1cb",
+    "revision": "SBOS448G, December 2015",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 6,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 6,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 6,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 6,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 10,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 11,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 12,
+        "page": 5,
+        "section": "7.5 Electrical characteristics, footnote 2",
+        "source_type": "prose"
+      },
+      {
+        "entry": 13,
+        "page": 5,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 6,
+        "section": "7.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 15,
+        "page": 5,
+        "section": "7.5 Electrical characteristics, footnote 3",
+        "source_type": "prose"
+      }
+    ]
+  },
+  "tmag5273": {
+    "source_url": "https://www.ti.com/lit/ds/symlink/tmag5273.pdf",
+    "pdf_file": "datasheets/tmag5273.pdf",
+    "pdf_sha256": "3fed45fde64b43affb501a9cc1408e527741df93c576987180c02f3bd5738a88",
+    "revision": "SLYS045C, April 2026",
+    "retrieved_on": "2026-11-12",
+    "review_status": "assistant_annotated_pending_user_review",
+    "passage_preparation": "Selected table facts normalized into labeled columns; prose excerpts paraphrased or whitespace-normalized. No regex-generated labels.",
+    "reference_index_base": 1,
+    "entries": [
+      {
+        "entry": 1,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 2,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 3,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 4,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 5,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 6,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions",
+        "source_type": "table"
+      },
+      {
+        "entry": 7,
+        "page": 5,
+        "section": "5.1 Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 8,
+        "page": 5,
+        "section": "5.1 Absolute maximum ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 9,
+        "page": 6,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 10,
+        "page": 6,
+        "section": "5.5 Electrical characteristics",
+        "source_type": "table"
+      },
+      {
+        "entry": 11,
+        "page": 8,
+        "section": "5.7 Magnetic characteristics for A1, B1, C1, D1",
+        "source_type": "table"
+      },
+      {
+        "entry": 12,
+        "page": 8,
+        "section": "5.7 Magnetic characteristics for A1, B1, C1, D1",
+        "source_type": "table"
+      },
+      {
+        "entry": 13,
+        "page": 5,
+        "section": "5.2 ESD ratings",
+        "source_type": "table"
+      },
+      {
+        "entry": 14,
+        "page": 6,
+        "section": "5.4 Thermal information",
+        "source_type": "table"
+      },
+      {
+        "entry": 15,
+        "page": 5,
+        "section": "5.3 Recommended operating conditions, footnote 1",
+        "source_type": "prose"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1876 @@
+[
+  {
+    "passage": "7.1 Absolute Maximum Ratings\nInput voltage, VDD: MIN: -0.3 | MAX: 6 | UNIT: V. These are stress ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating Conditions.",
+    "requirements": [
+      {
+        "parameter": "VDD input voltage",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      },
+      {
+        "parameter": "VDD input voltage",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "7.2 ESD Ratings\nElectrostatic discharge: Human-body model (HBM): VALUE: ±2000 V. Charged-device model (CDM): VALUE: ±500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "7.4 Thermal Information\nPWSON (DMB), 6 pins. Junction-to-ambient thermal resistance: VALUE: 49.4 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted).\nSupply voltage\nMIN: 2.7 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage",
+        "operator": ">=",
+        "value": 2.7,
+        "unit": "V",
+        "condition": "Over operating range (unless otherwise noted)"
+      },
+      {
+        "parameter": "Supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "Over operating range (unless otherwise noted)"
+      }
+    ]
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted).\nTemperature sensor ambient operating temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature sensor ambient operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted)"
+      },
+      {
+        "parameter": "Temperature sensor ambient operating temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted)"
+      }
+    ]
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted). Humidity sensor: see Figure 2.\nHumidity sensor ambient operating temperature\nMIN: -20 | MAX: 70 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Humidity sensor ambient operating temperature",
+        "operator": ">=",
+        "value": -20,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      },
+      {
+        "parameter": "Humidity sensor ambient operating temperature",
+        "operator": "<=",
+        "value": 70,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      }
+    ]
+  },
+  {
+    "passage": "7.3 Recommended Operating Conditions\nOver operating range (unless otherwise noted). Humidity sensor: see Figure 2.\nHumidity sensor functional operating temperature\nMIN: -20 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Humidity sensor functional operating temperature",
+        "operator": ">=",
+        "value": -20,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      },
+      {
+        "parameter": "Humidity sensor functional operating temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Over operating range (unless otherwise noted); Humidity sensor: see Figure 2; figure contents not included in this passage"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; RH measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current\nSupply current\nTYP: 190 | MAX: 220 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 220,
+        "unit": "µA",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; RH measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; Temperature measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current\nSupply current\nTYP: 160 | MAX: 185 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 185,
+        "unit": "µA",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; Temperature measurement, bit 12 of register 0x02 = 0; excludes I2C read/write and SCL/SDA pull-up resistor current"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; Sleep mode\nSupply current\nTYP: 100 | MAX: 200 | UNIT: nA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 200,
+        "unit": "nA",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; Sleep mode"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\nTA = 30 °C, RH = 40%, VDD = 3 V; non-condensing\nRelative humidity operating range\nMIN: 0 | MAX: 100 | UNIT: %RH",
+    "requirements": [
+      {
+        "parameter": "Relative humidity operating range",
+        "operator": ">=",
+        "value": 0,
+        "unit": "%RH",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; non-condensing"
+      },
+      {
+        "parameter": "Relative humidity operating range",
+        "operator": "<=",
+        "value": 100,
+        "unit": "%RH",
+        "condition": "TA = 30 °C, RH = 40%, VDD = 3 V; non-condensing"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics\n5 °C < TA < 60 °C; RH = 40%; VDD = 3 V\nTemperature accuracy error\nMIN: -0.4 | TYP: ±0.2 | MAX: 0.4 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.4,
+        "unit": "°C",
+        "condition": "5 °C < TA < 60 °C; RH = 40%; VDD = 3 V"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "°C",
+        "condition": "5 °C < TA < 60 °C; RH = 40%; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical Characteristics, footnote 11\nRecommended humidity operating range is 10% to 70% RH. Prolonged operation outside this range may result in a measurement offset. The measurement offset will decrease after operating the sensor in this recommended operating range.",
+    "requirements": [
+      {
+        "parameter": "Recommended relative humidity",
+        "operator": ">=",
+        "value": 10,
+        "unit": "%RH",
+        "condition": null
+      },
+      {
+        "parameter": "Recommended relative humidity",
+        "operator": "<=",
+        "value": 70,
+        "unit": "%RH",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nValues in VDD units are multiples of the supply voltage.\nTA = 30 °C; VDD = 3 V\nInput high voltage\nMIN: 0.7 | UNIT: VDD",
+    "requirements": [
+      {
+        "parameter": "Input high voltage",
+        "operator": ">=",
+        "value": 0.7,
+        "unit": "VDD",
+        "condition": "TA = 30 °C; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nValues in VDD units are multiples of the supply voltage.\nTA = 30 °C; VDD = 3 V\nInput low voltage\nMAX: 0.3 | UNIT: VDD",
+    "requirements": [
+      {
+        "parameter": "Input low voltage",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "VDD",
+        "condition": "TA = 30 °C; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nTA = 30 °C; VDD = 3 V; sink current = 3 mA\nOutput low voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output low voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "TA = 30 °C; VDD = 3 V; sink current = 3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "7.6 I2C Interface Electrical Characteristics\nValues in VDD units are multiples of the supply voltage.\nTA = 30 °C; VDD = 3 V\nHysteresis\nMIN: 0.1 | UNIT: VDD",
+    "requirements": [
+      {
+        "parameter": "Hysteresis",
+        "operator": ">=",
+        "value": 0.1,
+        "unit": "VDD",
+        "condition": "TA = 30 °C; VDD = 3 V"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nClock frequency\nMIN: 10 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "I2C interface"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nClock low time\nMIN: 1.3 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Clock low time",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "µs",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nClock high time\nMIN: 0.6 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Clock high time",
+        "operator": ">=",
+        "value": 0.6,
+        "unit": "µs",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nI2C interface\nPulse width of spikes suppressed by the input filter\nMAX: 50 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Pulse width of spikes suppressed by the input filter",
+        "operator": "<=",
+        "value": 50,
+        "unit": "ns",
+        "condition": "I2C interface"
+      }
+    ]
+  },
+  {
+    "passage": "7.7 I2C Interface Timing Requirements\nWithin this interval it is not possible to communicate to the device.\nFrom VDD ≥ 2.7 V to ready for a conversion\nDevice start-up time\nTYP: 10 | MAX: 15 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Device start-up time",
+        "operator": "<=",
+        "value": 15,
+        "unit": "ms",
+        "condition": "From VDD ≥ 2.7 V to ready for a conversion; Communication is unavailable during the start-up interval"
+      }
+    ]
+  },
+  {
+    "passage": "8.3.1 Power Consumption\nIn these applications the HDC1080 spends most of the time in sleep mode: with a typical 100nA of current consumption in sleep mode, the averaged current consumption is minimal. Its low consumption in measurement mode minimizes any self-heating.",
+    "requirements": []
+  },
+  {
+    "passage": "8.3.2 Voltage Supply Monitoring\nThe HDC1080 monitors the supply voltage level and indicates when the voltage supply of the HDC1080 is less than 2.8V. This information is useful in battery-powered systems in order to inform the user to replace the battery.",
+    "requirements": []
+  },
+  {
+    "passage": "8.3.3 Heater\nThe heater is an integrated resistive element that can be used to test the sensor or to drive condensation off the sensor. The heater can be activated using HEAT, bit 13 in the Configuration Register. Once enabled the heater is turned on only in the measurement mode.",
+    "requirements": []
+  },
+  {
+    "passage": "6.1 Absolute Maximum Ratings\nVoltage, VDD to GND: MIN: -0.5 | MAX: 6 | UNIT: V. These are stress ratings only, and do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating Conditions.",
+    "requirements": [
+      {
+        "parameter": "VDD-to-GND voltage",
+        "operator": ">=",
+        "value": -0.5,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      },
+      {
+        "parameter": "VDD-to-GND voltage",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "6.1 Absolute Maximum Ratings, footnote 2\nLong exposure to temperatures higher than 105°C can cause package discoloration, spectral distortion, and measurement inaccuracy.",
+    "requirements": []
+  },
+  {
+    "passage": "6.2 ESD Ratings\nElectrostatic discharge: Human-body model (HBM): VALUE: ±2000 V. Charged-device model (CDM): VALUE: ±500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "6.4 Thermal Information\nDNP (USON), 6 pins. Junction-to-ambient thermal resistance: VALUE: 71.2 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nOperating temperature\nMIN: -40 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": null
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nOperating power-supply voltage\nMIN: 1.6 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating power-supply voltage",
+        "operator": ">=",
+        "value": 1.6,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "Operating power-supply voltage",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence\nPeak irradiance spectral responsivity\nTYP: 550 | UNIT: nm",
+    "requirements": []
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); RN[3:0] = 0110; 0.64 lux per ADC code; 2620.80 lux full-scale; 2000 lux input; white LED; normal-angle incidence\nMeasurement output result\nMIN: 1800 | TYP: 2000 | MAX: 2200 | UNIT: lux",
+    "requirements": [
+      {
+        "parameter": "Measurement output result",
+        "operator": ">=",
+        "value": 1800,
+        "unit": "lux",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); RN[3:0] = 0110; 0.64 lux per ADC code; 2620.80 lux full-scale; 2000 lux input; white LED; normal-angle incidence"
+      },
+      {
+        "parameter": "Measurement output result",
+        "operator": "<=",
+        "value": 2200,
+        "unit": "lux",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); RN[3:0] = 0110; 0.64 lux per ADC code; 2620.80 lux full-scale; 2000 lux input; white LED; normal-angle incidence"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; dark condition; 0.01 lux per ADC code\nDark-condition ADC output\nTYP: 0 | MAX: 0.03 | UNIT: lux",
+    "requirements": [
+      {
+        "parameter": "Dark-condition ADC output",
+        "operator": "<=",
+        "value": 0.03,
+        "unit": "lux",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; dark condition; 0.01 lux per ADC code"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; VDD ≤ I2C pull-up voltage\nI2C pull-up resistor voltage\nMIN: 1.6 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I2C pull-up resistor voltage",
+        "operator": ">=",
+        "value": 1.6,
+        "unit": "V",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; VDD ≤ I2C pull-up voltage"
+      },
+      {
+        "parameter": "I2C pull-up resistor voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; VDD ≤ I2C pull-up voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Active\nQuiescent current\nTYP: 1.8 | MAX: 2.5 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 2.5,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Active"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Shutdown (M[1:0] = 00)\nQuiescent current\nTYP: 0.3 | MAX: 0.47 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 0.47,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VDD = 3.6 V; CT = 1; automatic full-scale range; dark; Shutdown (M[1:0] = 00)"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 1, 800-ms mode\nTotal integration time\nMIN: 720 | TYP: 800 | MAX: 880 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Total integration time",
+        "operator": ">=",
+        "value": 720,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 1, 800-ms mode"
+      },
+      {
+        "parameter": "Total integration time",
+        "operator": "<=",
+        "value": 880,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 1, 800-ms mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 0, 100-ms mode\nTotal integration time\nMIN: 90 | TYP: 100 | MAX: 110 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Total integration time",
+        "operator": ">=",
+        "value": 90,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 0, 100-ms mode"
+      },
+      {
+        "parameter": "Total integration time",
+        "operator": "<=",
+        "value": 110,
+        "unit": "ms",
+        "condition": "TA = 25 °C; VDD = 3.3 V; white LED; normal-angle incidence; fixed lux range; CT = 0, 100-ms mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; IOL = 3 mA\nLow-level output voltage, SDA and INT\nMAX: 0.32 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Low-level output voltage, SDA and INT",
+        "operator": "<=",
+        "value": 0.32,
+        "unit": "V",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence; IOL = 3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence\nLow-level input current, SDA, SCL and ADDR\nTYP: 0.01 | MAX: 0.25 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Low-level input current, SDA, SCL and ADDR",
+        "operator": "<=",
+        "value": 0.25,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VDD = 3.3 V; CT = 1 (800-ms mode); automatic full-scale range RN[3:0] = 1100b; white LED; normal-angle incidence"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nSCL operating frequency\nMIN: 0.01 | MAX: 0.4 | UNIT: MHz",
+    "requirements": [
+      {
+        "parameter": "SCL operating frequency",
+        "operator": ">=",
+        "value": 0.01,
+        "unit": "MHz",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "SCL operating frequency",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "MHz",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nSCL operating frequency\nMIN: 0.01 | MAX: 2.6 | UNIT: MHz",
+    "requirements": [
+      {
+        "parameter": "SCL operating frequency",
+        "operator": ">=",
+        "value": 0.01,
+        "unit": "MHz",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "SCL operating frequency",
+        "operator": "<=",
+        "value": 2.6,
+        "unit": "MHz",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nData hold time\nMIN: 20 | MAX: 900 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 20,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 900,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nData hold time\nMIN: 20 | MAX: 140 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 20,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 140,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock low period\nMIN: 1300 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock low period",
+        "operator": ">=",
+        "value": 1300,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock low period\nMIN: 240 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock low period",
+        "operator": ">=",
+        "value": 240,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C Fast mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock high period\nMIN: 600 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock high period",
+        "operator": ">=",
+        "value": 600,
+        "unit": "ns",
+        "condition": "I2C Fast mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Timing Requirements\nI2C High-speed mode; timing referenced to 30% and 70% of final settled voltage\nSCL clock high period\nMIN: 60 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "SCL clock high period",
+        "operator": ">=",
+        "value": 60,
+        "unit": "ns",
+        "condition": "I2C High-speed mode; timing referenced to 30% and 70% of final settled voltage"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics, footnote 5\nThe conversion time, from start of conversion until the data are ready to be read, is the integration time plus 3 ms.",
+    "requirements": []
+  },
+  {
+    "passage": "6.1 Absolute Maximum Ratings\nOver free-air temperature range unless otherwise noted. Supply voltage V+: MIN: -0.3 | MAX: 6 | UNIT: V. These are stress ratings only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended Operating Conditions.",
+    "requirements": [
+      {
+        "parameter": "Supply voltage V+",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; over free-air temperature range unless otherwise noted; functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply voltage V+",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; over free-air temperature range unless otherwise noted; functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "6.2 ESD Ratings\nElectrostatic discharge: Human-body model (HBM): VALUE: ±2000 V. Charged-device model (CDM): VALUE: ±1000 V.",
+    "requirements": []
+  },
+  {
+    "passage": "6.4 Thermal Information\nJunction-to-ambient thermal resistance. YBG (DSBGA), 6 pins: 133.2 °C/W. DRV (WSON), 6 pins: 70.7 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nTA = -55 °C to 150 °C\nSupply voltage\nMIN: 1.8 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage",
+        "operator": ">=",
+        "value": 1.8,
+        "unit": "V",
+        "condition": "TA = -55 °C to 150 °C"
+      },
+      {
+        "parameter": "Supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = -55 °C to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nTA = -55 °C to 70 °C\nSupply voltage\nMIN: 1.7 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage",
+        "operator": ">=",
+        "value": 1.7,
+        "unit": "V",
+        "condition": "TA = -55 °C to 70 °C"
+      },
+      {
+        "parameter": "Supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = -55 °C to 70 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nVoltage at SCL, SDA, ALERT and ADD0\nMIN: 0 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Voltage at SCL, SDA, ALERT and ADD0",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "Voltage at SCL, SDA, ALERT and ADD0",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.3 Recommended Operating Conditions\nOperating free-air temperature\nMIN: -55 | MAX: 150 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": ">=",
+        "value": -55,
+        "unit": "°C",
+        "condition": null
+      },
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": "<=",
+        "value": 150,
+        "unit": "°C",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTMP117; TA = -20 °C to 50 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+\nTemperature accuracy error\nMIN: -0.1 | MAX: 0.1 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.1,
+        "unit": "°C",
+        "condition": "TMP117; TA = -20 °C to 50 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.1,
+        "unit": "°C",
+        "condition": "TMP117; TA = -20 °C to 50 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTMP117; TA = -40 °C to 70 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+\nTemperature accuracy error\nMIN: -0.15 | MAX: 0.15 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.15,
+        "unit": "°C",
+        "condition": "TMP117; TA = -40 °C to 70 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.15,
+        "unit": "°C",
+        "condition": "TMP117; TA = -40 °C to 70 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTMP117; TA = -55 °C to 150 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+\nTemperature accuracy error\nMIN: -0.3 | MAX: 0.3 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "°C",
+        "condition": "TMP117; TA = -55 °C to 150 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      },
+      {
+        "parameter": "Temperature accuracy error",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "°C",
+        "condition": "TMP117; TA = -55 °C to 150 °C; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; 8 averages; 1-Hz conversion cycle; thermal pad unsoldered (DRV package); I2C input VIL ≤ 0.05 × V+ and VIH ≥ 0.95 × V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; one-shot mode\nConversion time\nMIN: 13 | TYP: 15.5 | MAX: 17.5 | UNIT: ms\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Conversion time",
+        "operator": ">=",
+        "value": 13,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; one-shot mode"
+      },
+      {
+        "parameter": "Conversion time",
+        "operator": "<=",
+        "value": 17.5,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; one-shot mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C\nInput leakage current\nMIN: -0.1 | MAX: 0.1 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Input leakage current",
+        "operator": ">=",
+        "value": -0.1,
+        "unit": "µA",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      },
+      {
+        "parameter": "Input leakage current",
+        "operator": "<=",
+        "value": 0.1,
+        "unit": "µA",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; IOL = -3 mA\nSDA and ALERT output logic low level\nMIN: 0 | MAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "SDA and ALERT output logic low level",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; IOL = -3 mA"
+      },
+      {
+        "parameter": "SDA and ALERT output logic low level",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; IOL = -3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; active conversion; serial bus inactive\nQuiescent current during active conversion\nTYP: 135 | MAX: 220 | UNIT: µA\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Quiescent current during active conversion",
+        "operator": "<=",
+        "value": 220,
+        "unit": "µA",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; active conversion; serial bus inactive"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; V+ = 1.7 to 5.5 V; duty cycle = 1 Hz; averaging mode off; serial bus inactive\nQuiescent current\nTYP: 3.5 | MAX: 5 | UNIT: µA\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 5,
+        "unit": "µA",
+        "condition": "TA = 25 °C; V+ = 1.7 to 5.5 V; duty cycle = 1 Hz; averaging mode off; serial bus inactive"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 25 °C; V+ = 1.7 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+\nShutdown current\nTYP: 0.15 | MAX: 0.5 | UNIT: µA\nTypical specifications are at TA = 25 °C and V+ = 3.3 V unless otherwise noted.",
+    "requirements": [
+      {
+        "parameter": "Shutdown current",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "µA",
+        "condition": "TA = 25 °C; V+ = 1.7 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics\nTA = 150 °C; V+ = 1.8 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+\nShutdown current\nMAX: 5 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Shutdown current",
+        "operator": "<=",
+        "value": 5,
+        "unit": "µA",
+        "condition": "TA = 150 °C; V+ = 1.8 to 5.5 V; serial bus inactive; SCL, SDA and ADD0 = V+"
+      }
+    ]
+  },
+  {
+    "passage": "6.5 Electrical Characteristics, footnote 3\nHysteresis is defined as the ability to reproduce a temperature reading as the temperature varies from room → hot → room → cold → room. The temperatures used for this test are -40°C, 25°C, and 150°C.",
+    "requirements": []
+  },
+  {
+    "passage": "6.6 Switching Characteristics\nTA = 25 °C; V+ = 3.3 V\nEEPROM programming time\nTYP: 7 | UNIT: ms",
+    "requirements": []
+  },
+  {
+    "passage": "6.6 Switching Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C\nEEPROM number of writes\nMIN: 1000 | UNIT: writes",
+    "requirements": [
+      {
+        "parameter": "EEPROM number of writes",
+        "operator": ">=",
+        "value": 1000,
+        "unit": "writes",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.6 Switching Characteristics\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C\nEEPROM data retention time\nMIN: 10 | UNIT: years",
+    "requirements": [
+      {
+        "parameter": "EEPROM data retention time",
+        "operator": ">=",
+        "value": 10,
+        "unit": "years",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode\nSCL operating frequency\nMIN: 1 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "SCL operating frequency",
+        "operator": ">=",
+        "value": 1,
+        "unit": "kHz",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode"
+      },
+      {
+        "parameter": "SCL operating frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode\nData setup time\nMIN: 100 | UNIT: ns",
+    "requirements": [
+      {
+        "parameter": "Data setup time",
+        "operator": ">=",
+        "value": 100,
+        "unit": "ns",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing\nV+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode; SDA bus released if there is no clock\nSerial bus timeout\nMIN: 20 | MAX: 40 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Serial bus timeout",
+        "operator": ">=",
+        "value": 20,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode; SDA bus released if there is no clock"
+      },
+      {
+        "parameter": "Serial bus timeout",
+        "operator": "<=",
+        "value": 40,
+        "unit": "ms",
+        "condition": "V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C; Fast-mode; SDA bus released if there is no clock"
+      }
+    ]
+  },
+  {
+    "passage": "6.7 Two-Wire Interface Timing, data-valid-time row and footnote 2\nFast-mode; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C (unless otherwise noted); measured from SCL LOW to SDA output transition, using the worse transition direction\nData valid time\nMAX: 0.9 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Data valid time",
+        "operator": "<=",
+        "value": 0.9,
+        "unit": "µs",
+        "condition": "Fast-mode; V+ = 1.7 to 5.5 V for TA = -55 to 70 °C, or V+ = 1.8 to 5.5 V for TA = -55 to 150 °C (unless otherwise noted); measured from SCL LOW to SDA output transition, using the worse transition direction"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nOperating supply voltage\nMIN: 3 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Operating supply voltage",
+        "operator": ">=",
+        "value": 3,
+        "unit": "V",
+        "condition": "TA = 25 °C; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B"
+      },
+      {
+        "parameter": "Operating supply voltage",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "TA = 25 °C; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nQuiescent current\nMAX: 1 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 1,
+        "unit": "mA",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; power-down mode; INA219A or INA219B\nQuiescent current\nMAX: 15 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Quiescent current",
+        "operator": "<=",
+        "value": 15,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; power-down mode; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A\nInput-referred offset voltage\nMIN: -100 | MAX: 100 | UNIT: µV\nThe source specifies MAX ±100 µV; represented as signed lower and upper bounds.",
+    "requirements": [
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": ">=",
+        "value": -100,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      },
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": "<=",
+        "value": 100,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B\nInput-referred offset voltage\nMIN: -50 | MAX: 50 | UNIT: µV\nThe source specifies MAX ±50 µV; represented as signed lower and upper bounds.",
+    "requirements": [
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": ">=",
+        "value": -50,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      },
+      {
+        "parameter": "Input-referred offset voltage",
+        "operator": "<=",
+        "value": 50,
+        "unit": "µV",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 12-bit resolution; INA219A or INA219B\nADC conversion time\nMAX: 586 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "ADC conversion time",
+        "operator": "<=",
+        "value": 586,
+        "unit": "µs",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 12-bit resolution; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 9-bit resolution; INA219A or INA219B\nADC conversion time\nMAX: 93 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "ADC conversion time",
+        "operator": "<=",
+        "value": 93,
+        "unit": "µs",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 9-bit resolution; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; sink current = 3 mA; INA219A or INA219B\nLogic-low SDA output voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Logic-low SDA output voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; sink current = 3 mA; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A\nCurrent measurement error\nMIN: -0.5 | MAX: 0.5 | UNIT: %\nThe source MAX is a signed ± error bound.",
+    "requirements": [
+      {
+        "parameter": "Current measurement error",
+        "operator": ">=",
+        "value": -0.5,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      },
+      {
+        "parameter": "Current measurement error",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B\nCurrent measurement error\nMIN: -0.3 | MAX: 0.3 | UNIT: %\nThe source MAX is a signed ± error bound.",
+    "requirements": [
+      {
+        "parameter": "Current measurement error",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      },
+      {
+        "parameter": "Current measurement error",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "%",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 0 ≤ VIN ≤ VS; SDA as input, SCL, A0, A1; INA219A or INA219B\nDigital input leakage current\nMAX: 1 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Digital input leakage current",
+        "operator": "<=",
+        "value": 1,
+        "unit": "µA",
+        "condition": "TA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; 0 ≤ VIN ≤ VS; SDA as input, SCL, A0, A1; INA219A or INA219B"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics, footnote 2\nThe bus-voltage range field specifies ADC scaling only. Never apply more than 26 V to the device, even if the ADC full-scale setting is 32 V.",
+    "requirements": [
+      {
+        "parameter": "Applied bus voltage",
+        "operator": "<=",
+        "value": 26,
+        "unit": "V",
+        "condition": "Any ADC bus-voltage scaling setting"
+      }
+    ]
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nDigital input capacitance\nTYP: 3 | UNIT: pF",
+    "requirements": []
+  },
+  {
+    "passage": "7.5 Electrical characteristics\nTA = 25 °C; VS = 3.3 V; VIN+ = 12 V; VSHUNT = 32 mV; PGA = /1; BRNG = 1; INA219A or INA219B\nPower-on-reset threshold\nTYP: 2 | UNIT: V",
+    "requirements": []
+  },
+  {
+    "passage": "7.5 Electrical characteristics, footnote 3\nRTI means referred-to-input.",
+    "requirements": []
+  },
+  {
+    "passage": "2 Electrical specifications\nSupply voltage VDD\nMIN: 1.62 | MAX: 1.98 | UNIT: V\nThe minimum voltage must also be maintained under maximum supply-current demand.",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 1.62,
+        "unit": "V",
+        "condition": "Applies also under maximum supply-current demand"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 1.98,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\nHotplate supply voltage VDDH\nMIN: 1.62 | MAX: 1.98 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Hotplate supply voltage VDDH",
+        "operator": ">=",
+        "value": 1.62,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "Hotplate supply voltage VDDH",
+        "operator": "<=",
+        "value": 1.98,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\n25 °C; VDD = 1.8 V; sleep mode after power-up or soft reset\nSleep current\nMAX: 10 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Sleep current",
+        "operator": "<=",
+        "value": 10,
+        "unit": "µA",
+        "condition": "25 °C; VDD = 1.8 V; sleep mode after power-up or soft reset"
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\nOpen-drain output; sink current = 2 mA\nLow-level output voltage\nMAX: 0.2 | UNIT: VDD\nVDD denotes a multiple of the supply voltage, not a fixed voltage.",
+    "requirements": [
+      {
+        "parameter": "Low-level output voltage",
+        "operator": "<=",
+        "value": 0.2,
+        "unit": "VDD",
+        "condition": "Open-drain output; sink current = 2 mA"
+      }
+    ]
+  },
+  {
+    "passage": "4 Absolute minimum and maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply voltage VDD\nMIN: -0.3 | MAX: 2.16 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 2.16,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Sensor system timings\nAfter hard reset; VDD ≥ VPOR; ASIC timing, not readiness of useful gas readings\nPower-up time\nMAX: 0.6 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Power-up time",
+        "operator": "<=",
+        "value": 0.6,
+        "unit": "ms",
+        "condition": "After hard reset; VDD ≥ VPOR; ASIC timing, not readiness of useful gas readings"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Sensor system timings\nAfter soft reset; ASIC timing, not readiness of useful gas readings\nSoft reset time\nMAX: 0.6 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Soft reset time",
+        "operator": "<=",
+        "value": 0.6,
+        "unit": "ms",
+        "condition": "After soft reset; ASIC timing, not readiness of useful gas readings"
+      }
+    ]
+  },
+  {
+    "passage": "5.2 Communication timings\nI2C fast mode\nSCL clock frequency\nMIN: 0 | MAX: 400 | UNIT: kHz",
+    "requirements": [
+      {
+        "parameter": "SCL clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "I2C fast mode"
+      },
+      {
+        "parameter": "SCL clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "I2C fast mode"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Recommended operating and storage conditions\nRecommended operation is at 5 to 55 °C and 4 to 30 g/m³ absolute humidity. Gas-sensing specifications are guaranteed only under the recommended conditions.",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": 5,
+        "unit": "°C",
+        "condition": "Recommended operating conditions"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 55,
+        "unit": "°C",
+        "condition": "Recommended operating conditions"
+      },
+      {
+        "parameter": "Absolute humidity",
+        "operator": ">=",
+        "value": 4,
+        "unit": "g/m³",
+        "condition": "Recommended operating conditions"
+      },
+      {
+        "parameter": "Absolute humidity",
+        "operator": "<=",
+        "value": 30,
+        "unit": "g/m³",
+        "condition": "Recommended operating conditions"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Recommended operating and storage conditions\nFor storage, the recommended temperature range is 5 to 30 °C and absolute humidity must remain below 30 g/m³.",
+    "requirements": [
+      {
+        "parameter": "Storage temperature",
+        "operator": ">=",
+        "value": 5,
+        "unit": "°C",
+        "condition": "Recommended storage conditions"
+      },
+      {
+        "parameter": "Storage temperature",
+        "operator": "<=",
+        "value": 30,
+        "unit": "°C",
+        "condition": "Recommended storage conditions"
+      },
+      {
+        "parameter": "Absolute humidity",
+        "operator": "<",
+        "value": 30,
+        "unit": "g/m³",
+        "condition": "Recommended storage conditions"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Recommended operating and storage conditions\nThe sensor must never be exposed to condensing conditions, identified here as relative humidity greater than 90%.",
+    "requirements": [
+      {
+        "parameter": "Relative humidity",
+        "operator": "<=",
+        "value": 90,
+        "unit": "%RH",
+        "condition": "At all times; avoid condensing conditions"
+      }
+    ]
+  },
+  {
+    "passage": "3 Interface specifications\nThe power supply pins must be decoupled with a 100 nF capacitor placed as close as possible to VDD.",
+    "requirements": [
+      {
+        "parameter": "Decoupling capacitance",
+        "operator": "=",
+        "value": 100,
+        "unit": "nF",
+        "condition": "Power supply decoupling; capacitor placed close to VDD"
+      }
+    ]
+  },
+  {
+    "passage": "2 Electrical specifications\n25 °C; VDD = 1.8 V; measurement mode\nSupply current in measurement mode\nTYP: 48.8 | UNIT: mA",
+    "requirements": []
+  },
+  {
+    "passage": "6 Operation and communication, Table 8\nThe SGP30 I2C device address is 0x58.",
+    "requirements": []
+  },
+  {
+    "passage": "4 Absolute minimum and maximum ratings\nESD qualification: HBM 2 kV; CDM 500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C\nMain supply voltage VCC\nMIN: 1.7 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": ">=",
+        "value": 1.7,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C"
+      },
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nVCC = 1.7 to 3.6 V\nOperating free-air temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "VCC = 1.7 to 3.6 V"
+      },
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": "VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nOutput voltage, SDA and INT\nMIN: 0 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output voltage, SDA and INT",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      },
+      {
+        "parameter": "Output voltage, SDA and INT",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nOutput current, SDA and INT\nMAX: 2 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "Output current, SDA and INT",
+        "operator": "<=",
+        "value": 2,
+        "unit": "mA",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nInput high voltage, SCL, SDA and INT\nMIN: 0.7 | UNIT: VCC\nThe value is a multiple of VCC.",
+    "requirements": [
+      {
+        "parameter": "Input high voltage, SCL, SDA and INT",
+        "operator": ">=",
+        "value": 0.7,
+        "unit": "VCC",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nInput low voltage, SCL, SDA and INT\nMAX: 0.3 | UNIT: VCC\nThe value is a multiple of VCC.",
+    "requirements": [
+      {
+        "parameter": "Input low voltage, SCL, SDA and INT",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "VCC",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range\nMain supply voltage VCC\nMIN: -0.3 | MAX: 4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      },
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": "<=",
+        "value": 4,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range\nInput voltage, SCL, SDA and INT\nMIN: -0.3 | MAX: 7 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Input voltage, SCL, SDA and INT",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      },
+      {
+        "parameter": "Input voltage, SCL, SDA and INT",
+        "operator": "<=",
+        "value": 7,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; IOUT = 2 mA\nOutput low voltage, SDA and INT\nMIN: 0 | MAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output low voltage, SDA and INT",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; IOUT = 2 mA"
+      },
+      {
+        "parameter": "Output low voltage, SDA and INT",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; IOUT = 2 mA"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; output disabled; VOZ = 5.5 V\nOutput leakage current, SDA and INT\nMIN: -100 | MAX: 100 | UNIT: nA\nThe source MAX ±100 nA is represented as signed bounds.",
+    "requirements": [
+      {
+        "parameter": "Output leakage current, SDA and INT",
+        "operator": ">=",
+        "value": -100,
+        "unit": "nA",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; output disabled; VOZ = 5.5 V"
+      },
+      {
+        "parameter": "Output leakage current, SDA and INT",
+        "operator": "<=",
+        "value": 100,
+        "unit": "nA",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; output disabled; VOZ = 5.5 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 Magnetic characteristics for A1, B1, C1, D1\nA1, B1, C1 or D1 variant; TA = 25 °C\nSensitivity error, X, Y and Z axes\nMIN: -20 | MAX: 20 | UNIT: %\nMAX ±20% error; TYP ±5% is not the guaranteed limit.",
+    "requirements": [
+      {
+        "parameter": "Sensitivity error, X, Y and Z axes",
+        "operator": ">=",
+        "value": -20,
+        "unit": "%",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      },
+      {
+        "parameter": "Sensitivity error, X, Y and Z axes",
+        "operator": "<=",
+        "value": 20,
+        "unit": "%",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 Magnetic characteristics for A1, B1, C1, D1\nA1, B1, C1 or D1 variant; TA = 25 °C\nMagnetic offset\nMIN: -1000 | MAX: 1000 | UNIT: µT\nThe source MAX ±1000 µT is represented as signed bounds.",
+    "requirements": [
+      {
+        "parameter": "Magnetic offset",
+        "operator": ">=",
+        "value": -1000,
+        "unit": "µT",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      },
+      {
+        "parameter": "Magnetic offset",
+        "operator": "<=",
+        "value": 1000,
+        "unit": "µT",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "5.2 ESD ratings\nESD qualification, all pins: human-body model ±2000 V; charged-device model ±500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "5.4 Thermal information\nDBV (SOT-23), 6 pins: junction-to-ambient thermal resistance is 162 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "5.3 Recommended operating conditions, footnote 1\nIf the supply ramp is slower than recommended, run a wake-up and sleep cycle after power-up or power-up reset to avoid an I2C address glitch in sleep mode. Standby and continuous modes do not require this action.",
+    "requirements": []
+  },
+  {
+    "passage": "Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; Tamb = 25 °C\nSupply voltage VDD\nMIN: 0 | MAX: 4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; Tamb = 25 °C"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 4,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; Tamb = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nStorage temperature\nMIN: -25 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Storage temperature",
+        "operator": ">=",
+        "value": -25,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Storage temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; Tamb ≤ 25 °C\nTotal power dissipation\nMAX: 50 | UNIT: mW",
+    "requirements": [
+      {
+        "parameter": "Total power dissipation",
+        "operator": "<=",
+        "value": 50,
+        "unit": "mW",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; Tamb ≤ 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C\nSupply voltage VDD\nMIN: 2.5 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 2.5,
+        "unit": "V",
+        "condition": "Tamb = 25 °C"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Tamb = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; VDD = 3.3 V\nI2C high-level input voltage\nMIN: 1.3 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I2C high-level input voltage",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      },
+      {
+        "parameter": "I2C high-level input voltage",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; VDD = 3.3 V\nI2C low-level input voltage\nMIN: -0.3 | MAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I2C low-level input voltage",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      },
+      {
+        "parameter": "I2C low-level input voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "Tamb = 25 °C; VDD = 3.3 V"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C\nDigital low-level current sink capability\nMIN: 3 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "Digital low-level current sink capability",
+        "operator": ">=",
+        "value": 3,
+        "unit": "mA",
+        "condition": "Tamb = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Standard mode\nClock frequency\nMIN: 10 | MAX: 100 | UNIT: kHz\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Standard mode"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 100,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Standard mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Fast mode\nClock frequency\nMIN: 10 | MAX: 400 | UNIT: kHz\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Fast mode"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "Tamb = 25 °C; Fast mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Standard mode\nData hold time\nMIN: 0 | MAX: 3450 | UNIT: ns\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 0,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Standard mode"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 3450,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Standard mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Fast mode\nData hold time\nMIN: 0 | MAX: 900 | UNIT: ns\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Data hold time",
+        "operator": ">=",
+        "value": 0,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Fast mode"
+      },
+      {
+        "parameter": "Data hold time",
+        "operator": "<=",
+        "value": 900,
+        "unit": "ns",
+        "condition": "Tamb = 25 °C; Fast mode"
+      }
+    ]
+  },
+  {
+    "passage": "I2C timing characteristics\nTamb = 25 °C; Standard mode\nClock/data low timeout\nMIN: 25 | MAX: 35 | UNIT: ms\nBased on standard I2C protocol requirements; not tested in production.",
+    "requirements": [
+      {
+        "parameter": "Clock/data low timeout",
+        "operator": ">=",
+        "value": 25,
+        "unit": "ms",
+        "condition": "Tamb = 25 °C; Standard mode"
+      },
+      {
+        "parameter": "Clock/data low timeout",
+        "operator": "<=",
+        "value": 35,
+        "unit": "ms",
+        "condition": "Tamb = 25 °C; Standard mode"
+      }
+    ]
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; VDD = 3.3 V; dark conditions\nShutdown current\nTYP: 0.5 | UNIT: µA",
+    "requirements": []
+  },
+  {
+    "passage": "Basic characteristics\nTamb = 25 °C; ALS_GAIN = 1/8; ALS_IT = 25 ms\nDetectable maximum illuminance\nTYP: 140000 | UNIT: lux\nThe value is in the TYP column, not the MAX column.",
+    "requirements": []
+  },
+  {
+    "passage": "Description\nThe VEML7700 integrates a photodiode, amplifier, 16-bit analog-to-digital converter and I2C communication interface.",
+    "requirements": []
+  }
+]

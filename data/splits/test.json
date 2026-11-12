@@ -1,0 +1,589 @@
+[
+  {
+    "passage": "1.1 General electrical specification\nSupply ripple ≤ 50 mVpp\nInternal-domain supply voltage VDD\nMIN: 1.71 | MAX: 3.6 | UNIT: V\nThe ripple value is an applicability condition for this supply-voltage specification.",
+    "requirements": [
+      {
+        "parameter": "Internal-domain supply voltage VDD",
+        "operator": ">=",
+        "value": 1.71,
+        "unit": "V",
+        "condition": "Supply ripple ≤ 50 mVpp"
+      },
+      {
+        "parameter": "Internal-domain supply voltage VDD",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Supply ripple ≤ 50 mVpp"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nI/O-domain supply voltage VDDIO\nMIN: 1.2 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "I/O-domain supply voltage VDDIO",
+        "operator": ">=",
+        "value": 1.2,
+        "unit": "V",
+        "condition": null
+      },
+      {
+        "parameter": "I/O-domain supply voltage VDDIO",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nSleep mode; full supply-voltage and operating-temperature ranges\nSleep current\nMAX: 0.3 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Sleep current",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "µA",
+        "condition": "Sleep mode; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nInactive period of normal mode; full supply-voltage and operating-temperature ranges\nStandby current\nMAX: 0.5 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Standby current",
+        "operator": "<=",
+        "value": 0.5,
+        "unit": "µA",
+        "condition": "Inactive period of normal mode; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nTime to first communication after both VDD > 1.58 V and VDDIO > 0.65 V; temperature 0 to 65 °C\nStart-up time\nMAX: 2 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Start-up time",
+        "operator": "<=",
+        "value": 2,
+        "unit": "ms",
+        "condition": "Time to first communication after both VDD > 1.58 V and VDDIO > 0.65 V; temperature 0 to 65 °C"
+      }
+    ]
+  },
+  {
+    "passage": "1.2 Humidity parameter specification\n1 Hz forced mode; humidity and temperature measurement; full supply-voltage and operating-temperature ranges\nSupply current\nMAX: 2.8 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 2.8,
+        "unit": "µA",
+        "condition": "1 Hz forced mode; humidity and temperature measurement; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\nPressure sensor operational range; full supply-voltage range\nOperating temperature\nMIN: -40 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "Pressure sensor operational range; full supply-voltage range"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Pressure sensor operational range; full supply-voltage range"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\nPressure sensor full-accuracy range; full supply-voltage range\nOperating temperature\nMIN: 0 | MAX: 65 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": 0,
+        "unit": "°C",
+        "condition": "Pressure sensor full-accuracy range; full supply-voltage range"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 65,
+        "unit": "°C",
+        "condition": "Pressure sensor full-accuracy range; full supply-voltage range"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\nFull accuracy; temperature 0 to 65 °C; full supply-voltage range\nOperating pressure\nMIN: 300 | MAX: 1100 | UNIT: hPa",
+    "requirements": [
+      {
+        "parameter": "Operating pressure",
+        "operator": ">=",
+        "value": 300,
+        "unit": "hPa",
+        "condition": "Full accuracy; temperature 0 to 65 °C; full supply-voltage range"
+      },
+      {
+        "parameter": "Operating pressure",
+        "operator": "<=",
+        "value": 1100,
+        "unit": "hPa",
+        "condition": "Full accuracy; temperature 0 to 65 °C; full supply-voltage range"
+      }
+    ]
+  },
+  {
+    "passage": "1.3 Pressure sensor specification\n1 Hz forced mode; pressure and temperature measurement; lowest-power configuration; full supply-voltage and operating-temperature ranges\nSupply current\nMAX: 4.2 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 4.2,
+        "unit": "µA",
+        "condition": "1 Hz forced mode; pressure and temperature measurement; lowest-power configuration; full supply-voltage and operating-temperature ranges"
+      }
+    ]
+  },
+  {
+    "passage": "2 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply-pin voltage, VDD and VDDIO\nMIN: -0.3 | MAX: 4.25 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply-pin voltage, VDD and VDDIO",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply-pin voltage, VDD and VDDIO",
+        "operator": "<=",
+        "value": 4.25,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "2 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; relative humidity ≤ 65%\nStorage temperature\nMIN: -45 | MAX: 85 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Storage temperature",
+        "operator": ">=",
+        "value": -45,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; relative humidity ≤ 65%"
+      },
+      {
+        "parameter": "Storage temperature",
+        "operator": "<=",
+        "value": 85,
+        "unit": "°C",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; relative humidity ≤ 65%"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 General electrical specification\nHumidity measurement; table test condition: maximum value at 85 °C\nCurrent during humidity measurement\nTYP: 340 | UNIT: µA\n340 µA is in the TYP column; no MIN or MAX value is provided.",
+    "requirements": []
+  },
+  {
+    "passage": "1.4 Temperature sensor specification, footnote 8\nAbsolute temperature accuracy for -20 to 0 °C: target value ±1.25 °C. The footnote says this target is not guaranteed.",
+    "requirements": []
+  },
+  {
+    "passage": "3.2 Power management\nWhen VDDIO is supplied but VDD is not, interface pins remain high impedance. Cycling VDDIO does not reset the sensor.",
+    "requirements": []
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating temperature range\nSupply voltage VDD-GND\nMIN: 3 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD-GND",
+        "operator": ">=",
+        "value": 3,
+        "unit": "V",
+        "condition": "Operating temperature range"
+      },
+      {
+        "parameter": "Supply voltage VDD-GND",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Operating temperature range"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": null
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": null
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed\nSupply voltage VDD\nMIN: -0.3 | MAX: 6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Conversion mode; digital inputs tied to VDD or GND\nSupply current\nMAX: 950 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 950,
+        "unit": "µA",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Conversion mode; digital inputs tied to VDD or GND"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Standby; digital inputs tied to VDD or GND\nSupply current\nMAX: 70 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 70,
+        "unit": "µA",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; Standby; digital inputs tied to VDD or GND"
+      }
+    ]
+  },
+  {
+    "passage": "5.6 I2C interface voltage level\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; sink current = 3 mA\nOutput low voltage\nMAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output low voltage",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; sink current = 3 mA"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; frequency = 25 kHz; SHLD1 or SHLD2 to GND\nShield driver load capacitance\nMAX: 400 | UNIT: pF",
+    "requirements": [
+      {
+        "parameter": "Shield driver load capacitance",
+        "operator": "<=",
+        "value": 400,
+        "unit": "pF",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; frequency = 25 kHz; SHLD1 or SHLD2 to GND"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nClock frequency\nMIN: 10 | MAX: 400 | UNIT: kHz\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Clock frequency",
+        "operator": ">=",
+        "value": 10,
+        "unit": "kHz",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      },
+      {
+        "parameter": "Clock frequency",
+        "operator": "<=",
+        "value": 400,
+        "unit": "kHz",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nClock low time\nMIN: 1.3 | UNIT: µs\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Clock low time",
+        "operator": ">=",
+        "value": 1.3,
+        "unit": "µs",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nClock high time\nMIN: 0.6 | UNIT: µs\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Clock high time",
+        "operator": ">=",
+        "value": 0.6,
+        "unit": "µs",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating\nPulse width of spikes suppressed by input filter\nMAX: 50 | UNIT: ns\nSpecified by design or characterization; not production tested.",
+    "requirements": [
+      {
+        "parameter": "Pulse width of spikes suppressed by input filter",
+        "operator": "<=",
+        "value": 50,
+        "unit": "ns",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 I2C interface timing, footnote 2\nAn internal hold time of at least 300 ns bridges the undefined region of the falling SCL edge.\nTest conditions: VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating.",
+    "requirements": [
+      {
+        "parameter": "Internal hold time",
+        "operator": ">=",
+        "value": 300,
+        "unit": "ns",
+        "condition": "VDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; bridging the undefined region of the falling SCL edge"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; per channel; series resistance at CIN1 to CIN4 = 0 Ω\nMax input offset capacitance\nTYP: 100 | UNIT: pF\nDespite the parameter name, 100 pF is in the TYP column; typical values are not guaranteed.",
+    "requirements": []
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nVDD = 3.3 V; TA = TJ = 25 °C; factory-test conditions with limited self-heating; sample rate = 100 S/s; no external capacitance connected\nOutput noise\nTYP: 33.2 | UNIT: aF/√Hz",
+    "requirements": []
+  },
+  {
+    "passage": "5.4 Thermal information\nJunction-to-ambient thermal resistance: WSON and VSSOP, 10 pins: 46.8 °C/W. This is a thermal metric without a minimum or maximum column.",
+    "requirements": []
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; temperature -40 to 125 °C\nSupply voltage VDD\nMIN: 2.15 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": 2.15,
+        "unit": "V",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; single-shot idle state; T = 25 °C\nSupply current\nMAX: 2 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 2,
+        "unit": "µA",
+        "condition": "SHT31-DIS; single-shot idle state; T = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; single-shot idle state; T = 125 °C\nSupply current\nMAX: 6 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 6,
+        "unit": "µA",
+        "condition": "SHT31-DIS; single-shot idle state; T = 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "2.1 Electrical specifications\nSHT31-DIS; temperature -40 to 125 °C; measuring\nSupply current\nMAX: 1500 | UNIT: µA",
+    "requirements": [
+      {
+        "parameter": "Supply current",
+        "operator": "<=",
+        "value": 1500,
+        "unit": "µA",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; measuring"
+      }
+    ]
+  },
+  {
+    "passage": "2.2 Timing specification, Table 4\nSHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V; high repeatability\nMeasurement duration\nMAX: 15 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Measurement duration",
+        "operator": "<=",
+        "value": 15,
+        "unit": "ms",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V; high repeatability"
+      }
+    ]
+  },
+  {
+    "passage": "2.2 Timing specification, Table 5\nSHT31-DIS; temperature -40 to 125 °C; 2.15 V ≤ VDD < 2.4 V; high repeatability\nMeasurement duration\nMAX: 15.5 | UNIT: ms",
+    "requirements": [
+      {
+        "parameter": "Measurement duration",
+        "operator": "<=",
+        "value": 15.5,
+        "unit": "ms",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; 2.15 V ≤ VDD < 2.4 V; high repeatability"
+      }
+    ]
+  },
+  {
+    "passage": "2.2 Timing specification, Table 4\nSHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V\nReset pulse duration\nMIN: 1 | UNIT: µs",
+    "requirements": [
+      {
+        "parameter": "Reset pulse duration",
+        "operator": ">=",
+        "value": 1,
+        "unit": "µs",
+        "condition": "SHT31-DIS; temperature -40 to 125 °C; 2.4 V ≤ VDD ≤ 5.5 V"
+      }
+    ]
+  },
+  {
+    "passage": "2.3 Absolute minimum and maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; short exposure only; ratings tested individually\nSupply voltage VDD\nMIN: -0.3 | MAX: 6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; short exposure only; ratings tested individually"
+      },
+      {
+        "parameter": "Supply voltage VDD",
+        "operator": "<=",
+        "value": 6,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; short exposure only; ratings tested individually"
+      }
+    ]
+  },
+  {
+    "passage": "1.1 Recommended operating condition\nRecommended normal operation is within 5 to 60 °C and 20 to 80 %RH. Extended exposure outside this range can temporarily offset the humidity signal.",
+    "requirements": [
+      {
+        "parameter": "Operating temperature",
+        "operator": ">=",
+        "value": 5,
+        "unit": "°C",
+        "condition": "Recommended normal operation"
+      },
+      {
+        "parameter": "Operating temperature",
+        "operator": "<=",
+        "value": 60,
+        "unit": "°C",
+        "condition": "Recommended normal operation"
+      },
+      {
+        "parameter": "Relative humidity",
+        "operator": ">=",
+        "value": 20,
+        "unit": "%RH",
+        "condition": "Recommended normal operation"
+      },
+      {
+        "parameter": "Relative humidity",
+        "operator": "<=",
+        "value": 80,
+        "unit": "%RH",
+        "condition": "Recommended normal operation"
+      }
+    ]
+  },
+  {
+    "passage": "3.1 Power pins\nDecouple the power supply pins with a 100 nF capacitor as close to the sensor as possible.",
+    "requirements": [
+      {
+        "parameter": "Decoupling capacitance",
+        "operator": "=",
+        "value": 100,
+        "unit": "nF",
+        "condition": "Power supply pins; capacitor placed close to the sensor"
+      }
+    ]
+  },
+  {
+    "passage": "3 Pin assignment, Table 7\nIf nRESET is connected to VDD, use a series resistor of R ≥ 2 kΩ. If unused, leaving nRESET floating is recommended.",
+    "requirements": [
+      {
+        "parameter": "Series resistance",
+        "operator": ">=",
+        "value": 2,
+        "unit": "kΩ",
+        "condition": "nRESET connected to VDD"
+      }
+    ]
+  },
+  {
+    "passage": "3.2 Serial clock and serial data\nSCL clock frequency can be selected from 0 to 1000 kHz. Communication up to 400 kHz must meet I2C Fast Mode; higher frequencies must follow Table 21.",
+    "requirements": [
+      {
+        "parameter": "SCL clock frequency",
+        "operator": ">=",
+        "value": 0,
+        "unit": "kHz",
+        "condition": "I2C Fast Mode up to 400 kHz, Table 21 for higher frequencies"
+      },
+      {
+        "parameter": "SCL clock frequency",
+        "operator": "<=",
+        "value": 1000,
+        "unit": "kHz",
+        "condition": "I2C Fast Mode up to 400 kHz, Table 21 for higher frequencies"
+      }
+    ]
+  },
+  {
+    "passage": "1 Sensor performance, Table 1\nSHT31; typical value only\nRelative humidity accuracy tolerance\nTYP: ±2 | UNIT: %RH",
+    "requirements": []
+  },
+  {
+    "passage": "1 Sensor performance, Table 2\nSHT31; 0 to 90 °C; typical value only\nTemperature accuracy tolerance\nTYP: ±0.2 | UNIT: °C",
+    "requirements": []
+  },
+  {
+    "passage": "3.4 ADDR pin\nThe ADDR pin selects the I2C address. Its logic level must remain constant from the I2C start condition until communication finishes.",
+    "requirements": []
+  }
+]

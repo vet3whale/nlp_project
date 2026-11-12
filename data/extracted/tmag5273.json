@@ -1,0 +1,221 @@
+[
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C\nMain supply voltage VCC\nMIN: 1.7 | MAX: 3.6 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": ">=",
+        "value": 1.7,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C"
+      },
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": "<=",
+        "value": 3.6,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nVCC = 1.7 to 3.6 V\nOperating free-air temperature\nMIN: -40 | MAX: 125 | UNIT: °C",
+    "requirements": [
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": ">=",
+        "value": -40,
+        "unit": "°C",
+        "condition": "VCC = 1.7 to 3.6 V"
+      },
+      {
+        "parameter": "Operating free-air temperature",
+        "operator": "<=",
+        "value": 125,
+        "unit": "°C",
+        "condition": "VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nOutput voltage, SDA and INT\nMIN: 0 | MAX: 5.5 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output voltage, SDA and INT",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      },
+      {
+        "parameter": "Output voltage, SDA and INT",
+        "operator": "<=",
+        "value": 5.5,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nOutput current, SDA and INT\nMAX: 2 | UNIT: mA",
+    "requirements": [
+      {
+        "parameter": "Output current, SDA and INT",
+        "operator": "<=",
+        "value": 2,
+        "unit": "mA",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nInput high voltage, SCL, SDA and INT\nMIN: 0.7 | UNIT: VCC\nThe value is a multiple of VCC.",
+    "requirements": [
+      {
+        "parameter": "Input high voltage, SCL, SDA and INT",
+        "operator": ">=",
+        "value": 0.7,
+        "unit": "VCC",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.3 Recommended operating conditions\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V\nInput low voltage, SCL, SDA and INT\nMAX: 0.3 | UNIT: VCC\nThe value is a multiple of VCC.",
+    "requirements": [
+      {
+        "parameter": "Input low voltage, SCL, SDA and INT",
+        "operator": "<=",
+        "value": 0.3,
+        "unit": "VCC",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range\nMain supply voltage VCC\nMIN: -0.3 | MAX: 4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      },
+      {
+        "parameter": "Main supply voltage VCC",
+        "operator": "<=",
+        "value": 4,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      }
+    ]
+  },
+  {
+    "passage": "5.1 Absolute maximum ratings\nAbsolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range\nInput voltage, SCL, SDA and INT\nMIN: -0.3 | MAX: 7 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Input voltage, SCL, SDA and INT",
+        "operator": ">=",
+        "value": -0.3,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      },
+      {
+        "parameter": "Input voltage, SCL, SDA and INT",
+        "operator": "<=",
+        "value": 7,
+        "unit": "V",
+        "condition": "Absolute maximum stress rating; normal functional operation is not guaranteed; over operating free-air temperature range"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; IOUT = 2 mA\nOutput low voltage, SDA and INT\nMIN: 0 | MAX: 0.4 | UNIT: V",
+    "requirements": [
+      {
+        "parameter": "Output low voltage, SDA and INT",
+        "operator": ">=",
+        "value": 0,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; IOUT = 2 mA"
+      },
+      {
+        "parameter": "Output low voltage, SDA and INT",
+        "operator": "<=",
+        "value": 0.4,
+        "unit": "V",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; IOUT = 2 mA"
+      }
+    ]
+  },
+  {
+    "passage": "5.5 Electrical characteristics\nOperating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; output disabled; VOZ = 5.5 V\nOutput leakage current, SDA and INT\nMIN: -100 | MAX: 100 | UNIT: nA\nThe source MAX ±100 nA is represented as signed bounds.",
+    "requirements": [
+      {
+        "parameter": "Output leakage current, SDA and INT",
+        "operator": ">=",
+        "value": -100,
+        "unit": "nA",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; output disabled; VOZ = 5.5 V"
+      },
+      {
+        "parameter": "Output leakage current, SDA and INT",
+        "operator": "<=",
+        "value": 100,
+        "unit": "nA",
+        "condition": "Operating free-air temperature -40 to 125 °C; VCC = 1.7 to 3.6 V; output disabled; VOZ = 5.5 V"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 Magnetic characteristics for A1, B1, C1, D1\nA1, B1, C1 or D1 variant; TA = 25 °C\nSensitivity error, X, Y and Z axes\nMIN: -20 | MAX: 20 | UNIT: %\nMAX ±20% error; TYP ±5% is not the guaranteed limit.",
+    "requirements": [
+      {
+        "parameter": "Sensitivity error, X, Y and Z axes",
+        "operator": ">=",
+        "value": -20,
+        "unit": "%",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      },
+      {
+        "parameter": "Sensitivity error, X, Y and Z axes",
+        "operator": "<=",
+        "value": 20,
+        "unit": "%",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "5.7 Magnetic characteristics for A1, B1, C1, D1\nA1, B1, C1 or D1 variant; TA = 25 °C\nMagnetic offset\nMIN: -1000 | MAX: 1000 | UNIT: µT\nThe source MAX ±1000 µT is represented as signed bounds.",
+    "requirements": [
+      {
+        "parameter": "Magnetic offset",
+        "operator": ">=",
+        "value": -1000,
+        "unit": "µT",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      },
+      {
+        "parameter": "Magnetic offset",
+        "operator": "<=",
+        "value": 1000,
+        "unit": "µT",
+        "condition": "A1, B1, C1 or D1 variant; TA = 25 °C"
+      }
+    ]
+  },
+  {
+    "passage": "5.2 ESD ratings\nESD qualification, all pins: human-body model ±2000 V; charged-device model ±500 V.",
+    "requirements": []
+  },
+  {
+    "passage": "5.4 Thermal information\nDBV (SOT-23), 6 pins: junction-to-ambient thermal resistance is 162 °C/W.",
+    "requirements": []
+  },
+  {
+    "passage": "5.3 Recommended operating conditions, footnote 1\nIf the supply ramp is slower than recommended, run a wake-up and sleep cycle after power-up or power-up reset to avoid an I2C address glitch in sleep mode. Standby and continuous modes do not require this action.",
+    "requirements": []
+  }
+]
